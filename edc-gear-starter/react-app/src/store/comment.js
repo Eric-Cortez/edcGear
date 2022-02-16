@@ -31,14 +31,24 @@ const deleteComment = comment => ({
     comment,
 })
 
-export const getAllComments = (postId) => async dispatch => {
-    const response = await fetch(`/api/posts/${postId}/comments`)
+export const getAllComments = () => async dispatch => {
+    const response = await fetch(`/api/comments`)
 
     if (response.ok) {
         const list = await response.json()
         dispatch(load(list.comments))
     }
 }
+
+//------getting all comments for one post 
+// export const getAllComments = (postId) => async dispatch => {
+//     const response = await fetch(`/api/posts/${postId}/comments`)
+
+//     if (response.ok) {
+//         const list = await response.json()
+//         dispatch(load(list.comments))
+//     }
+// }
 
 
 // export const getOneComment = (commentId) => async dispatch => {

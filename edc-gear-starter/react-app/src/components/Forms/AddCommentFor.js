@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
-import { postPost } from '../../store/post';
+import { postComment } from '../../store/comment';
+import { getAllPosts } from '../../store/post';
 
 const AddCommentForm = ({ post }) => {
-    console.log(post.id, post)
+    // console.log(post.id, post)
     const history = useHistory()
     const dispatch = useDispatch();
 
@@ -12,19 +13,19 @@ const AddCommentForm = ({ post }) => {
     const [errors, setErrors] = useState([]);
     const [displayErrors, setDisplayErrors] = useState(false);
     const user = useSelector(state => state?.session?.user);
-
-
+    
     const onSubmit = async (e) => {
-        // e.preventDefault();
-        // let post;
-        // if (user && errors.length === 0) {
-        //     post = await dispatch(postPost({ userId: user.id, body: comment}));
-        // } else {
-        //     setDisplayErrors(true);
-        // }
-        // if (post) {
-        //     history.push(`/`);
-        // }
+        e.preventDefault();
+        
+        let newComment;
+        if (user && errors.length === 0) {
+            newComment = await dispatch(postComment({ userId: user.id, body: comment, postId: post.id}));
+        } else {
+            setDisplayErrors(true);
+        }
+        if (newComment) {
+            history.push(`/`);
+        }
     };
 
     useEffect(() => {

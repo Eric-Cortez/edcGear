@@ -61,6 +61,9 @@ function App() {
         <ProtectedRoute path='/posts' exact>
           <AddPostForm />
         </ProtectedRoute>
+        <ProtectedRoute path='/posts/:postId' exact>
+          <h2>Post Detail page</h2>
+        </ProtectedRoute>
       </Switch>
 
       <Footer />  

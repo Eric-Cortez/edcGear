@@ -12,7 +12,6 @@ const EditPostForm = ({ posts }) => {
 
 
     const [caption, setCaption] = useState(currPost?.body);
-    console.log(currPost?.body, "body", caption, "Caption")
     const [errors, setErrors] = useState([]);
     const [displayErrors, setDisplayErrors] = useState(false);
     const user = useSelector(state => state?.session?.user);
