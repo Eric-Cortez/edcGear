@@ -87,4 +87,4 @@ def delete_post(postId):
     current_post = Post.query.get(postId)
     db.session.delete(current_post)
     db.session.commit()
-    return "Delete Successful"
+    return { "message": "Delete Successful"}
