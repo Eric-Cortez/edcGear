@@ -54,7 +54,7 @@ def one_comment(commentId):
 # EDIT COMMENT
 @comment_routes.route('/<int:commentId>', methods=['PUT'])
 # @login_required
-def edit_post(commentId):
+def edit_comment(commentId):
     data = request.json
     form = EditCommentForm()
     form['csrf_token'].data = request.cookies['csrf_token']
@@ -69,11 +69,11 @@ def edit_post(commentId):
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
-# # DELETE COMMENT
-# @comment_routes.route('/<int:postId>', methods=["DELETE"])
-# # @login_required
-# def delete_post(postId):
-#     current_post = Post.query.get(postId)
-#     db.session.delete(current_post)
-#     db.session.commit()
-#     return {"message": "Delete Successful"}
+# DELETE COMMENT
+@comment_routes.route('/<int:commentId>', methods=["DELETE"])
+@login_required
+def delete_comment(commentId):
+    current_comment = Comment.query.get(commentId)
+    db.session.delete(current_comment)
+    db.session.commit()
+    return {"message": "Delete Successful"}
