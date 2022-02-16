@@ -1,40 +1,53 @@
 
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
-import LogoutButton from './auth/LogoutButton';
+import { NavLink, Link } from 'react-router-dom';
+import LogoutButton from '../auth/LogoutButton';
+import SearchBar from '../SearchBar';
+import edcGear from '../../images/edcGear.png'
+import "./NavBar.css"
 
 const NavBar = () => {
   const dispatch = useDispatch
   const sessionUser = useSelector(state => state?.session?.user)
   console.log(sessionUser)
 
+  useEffect (() => {
+
+  }, [])
+
   return (
-    <nav>
-      <ul>
-        {sessionUser && 
+    <nav id="nav-div">
+      <Link exact to='/' >
+        <img id="nav-logo" alt="logo" src={edcGear} />
+      </Link>
+      {sessionUser && 
+      <SearchBar />}
+      <ul id="nav-ul">
+        {/* {sessionUser && 
         <li>
           <NavLink to='/' exact={true} activeClassName='active'>
             Home
           </NavLink>
-        </li>}
-        
+        </li>} */}
+        {!sessionUser && 
         <li>
           <NavLink to='/login' exact={true} activeClassName='active'>
             Login
           </NavLink>
-        </li>
-
+        </li>}
+        
+        {!sessionUser && 
         <li>
           <NavLink to='/sign-up' exact={true} activeClassName='active'>
             Sign Up
           </NavLink>
-        </li>
+        </li>}
 
 
         {sessionUser && 
         <li>
-          <NavLink to='/users' exact={true} activeClassName='active'>
+          <NavLink id="users-link" to='/users' exact={true} activeClassName='active'>
             Users
           </NavLink>
         </li>}
