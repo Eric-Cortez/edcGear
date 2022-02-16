@@ -78,3 +78,13 @@ def edit_post(postId):
         db.session.commit()
         return currentPost.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+
+# DELETE Post 
+@post_routes.route('/<int:postId>', methods=["DELETE"])
+# @login_required
+def delete_post(postId):
+    current_post = Post.query.get(postId)
+    db.session.delete(current_post)
+    db.session.commit()
+    return "Delete Successful"
