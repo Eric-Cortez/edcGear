@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { getAllPosts, removePost } from '../../store/post';
 import "./HomePage.css"
+import AddCommentForm from '../Forms/AddCommentFor';
 
 function HomePage() {
     const dispatch = useDispatch()
@@ -40,6 +41,7 @@ function HomePage() {
                          <Link to={`/posts/${post.id}/edit`}>edit</Link>
                          <button onClick={handleDelete} value={post?.id}>delete</button>
                         </>}
+                        <AddCommentForm post={post}/>
                     </div>
                 ))}
             </div>
