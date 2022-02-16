@@ -10,7 +10,7 @@ import "./NavBar.css"
 const NavBar = () => {
   const dispatch = useDispatch
   const sessionUser = useSelector(state => state?.session?.user)
-  console.log(sessionUser)
+
 
   useEffect (() => {
 
@@ -26,28 +26,38 @@ const NavBar = () => {
       <ul id="nav-ul">
         {/* {sessionUser && 
         <li>
-          <NavLink to='/' exact={true} activeClassName='active'>
+          <NavLink to='/' exact activeClassName='active'>
             Home
           </NavLink>
         </li>} */}
         {!sessionUser && 
         <li>
-          <NavLink to='/login' exact={true} activeClassName='active'>
+          <NavLink to='/login' exact activeClassName='active'>
             Login
           </NavLink>
         </li>}
         
         {!sessionUser && 
         <li>
-          <NavLink to='/sign-up' exact={true} activeClassName='active'>
+          <NavLink to='/sign-up' exact activeClassName='active'>
             Sign Up
           </NavLink>
         </li>}
 
 
         {sessionUser && 
+          <NavLink to='/posts'><i className="fal fa-plus-square"></i></NavLink>
+        }
+
+        {sessionUser &&
+          <li className='nav-li user-info users-link'>
+            <p id="username">{`Welcome, ${sessionUser?.username}`}</p>
+
+          </li>}
+
+        {sessionUser && 
         <li>
-          <NavLink id="users-link" to='/users' exact={true} activeClassName='active'>
+          <NavLink className="users-link" to='/users' exact activeClassName='active'>
             Users
           </NavLink>
         </li>}

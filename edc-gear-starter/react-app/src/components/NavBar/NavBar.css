@@ -31,7 +31,7 @@ nav {
  margin-left: 25px;
 }
 
-#users-link {
+.users-link {
     color: #D3D2BC;
     text-decoration: none;
 }
@@ -43,4 +43,10 @@ nav {
     align-items: center;
     justify-content: center;
     margin: 20px 0;
+}
+
+.fa-plus-square {
+    color: #D3D2BC;
+    height: 30px;
+    width: 30px;
 }
