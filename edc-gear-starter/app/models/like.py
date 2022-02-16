@@ -10,9 +10,9 @@ class Like(db.Model):
     post_id = db.Column(db.Integer, db.ForeignKey("posts.id"), nullable=False)
     comment_id = db.Column(db.Integer, db.ForeignKey("comments.id"), nullable=False)
     created_at = db.Column(db.DateTime(timezone=True),
-                           server_default=func.now(), nullable=False)
+                           server_default=func.now())
     updated_at = db.Column(db.DateTime(timezone=True),
-                           server_default=func.now(), nullable=False)
+                           server_default=func.now())
 
     user = db.relationship(
         "User", back_populates="like")
