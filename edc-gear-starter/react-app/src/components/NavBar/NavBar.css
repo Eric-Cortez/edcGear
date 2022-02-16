@@ -45,8 +45,8 @@ nav {
     margin: 20px 0;
 }
 
-.fa-plus-square {
+i.fa-plus-square {
     color: #D3D2BC;
-    height: 30px;
-    width: 30px;
+    height: 100px;
+    width: 100px;
 }
