@@ -42,7 +42,7 @@ def one_posts(postId):
 
 
 # POST A NEW POST 
-@post_routes.route('/new', methods=['POST'])
+@post_routes.route('/', methods=['POST'])
 # @login_required
 def post_post():
     data = request.json
@@ -63,7 +63,7 @@ def post_post():
 
 
 # EDIT Post 
-@post_routes.route('/<int:postId>/edit', methods=['PUT'])
+@post_routes.route('/<int:postId>', methods=['PUT'])
 # @login_required
 def edit_post(postId):
     data = request.json
