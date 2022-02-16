@@ -1,0 +1,23 @@
+.thread-image {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.thread-div {
+    display: flex;
+    flex-direction: column;
+}
+
+#home-page {
+    border: 2px solid red;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.each-post-div {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,35 @@
+footer {
+    height: 50px;
+    background-color: #323436;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-links {
+    font-size: 15px;
+       color: #D3D2BC;
+    font-weight: 300;
+    padding-top: 20px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+#footer {
+    position:fixed;
+    bottom: 0;
+    z-index: 1;
+    width: 100vw;
+}
+
+.input-label {
+    font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+    line-height: 18px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+}
+
+.input-div {
+    display: flex;
+    flex-direction: column;
+}

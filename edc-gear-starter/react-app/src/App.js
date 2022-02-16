@@ -3,11 +3,14 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
-import NavBar from './components/NavBar';
+import NavBar from './components/NavBar/index.js';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
+import Footer from './components/Footer';
+import HomePage from './components/HomePage';
+import AddPostForm from './components/Forms/AddPostForm';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -26,24 +29,36 @@ function App() {
 
   return (
     <BrowserRouter>
+
+
       <NavBar />
+
+
       <Switch>
-        <Route path='/login' exact={true}>
+        <Route path='/login' exact>
           <LoginForm />
         </Route>
-        <Route path='/sign-up' exact={true}>
+        <Route path='/sign-up' exact>
           <SignUpForm />
         </Route>
-        <ProtectedRoute path='/users' exact={true} >
+        <ProtectedRoute path='/users' exact>
           <UsersList/>
         </ProtectedRoute>
-        <ProtectedRoute path='/users/:userId' exact={true} >
+        <ProtectedRoute path='/users/:userId' exact>
           <User />
         </ProtectedRoute>
-        <ProtectedRoute path='/' exact={true} >
-          <h1>My Home Page</h1>
+        <ProtectedRoute path='/' exact>
+          <HomePage />
         </ProtectedRoute>
+
+        <ProtectedRoute path='/posts' exact>
+          <AddPostForm />
+        </ProtectedRoute>
+
       </Switch>
+
+      <Footer />  
+          
     </BrowserRouter>
   );
 }
