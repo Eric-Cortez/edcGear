@@ -53,7 +53,7 @@ def one_comment(commentId):
 
 # EDIT COMMENT
 @comment_routes.route('/<int:commentId>', methods=['PUT'])
-# @login_required
+@login_required
 def edit_comment(commentId):
     data = request.json
     form = EditCommentForm()
