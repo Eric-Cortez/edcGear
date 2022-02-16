@@ -13,13 +13,13 @@ footer {
     margin: 0 10px;
     text-decoration: none;
 }
-
+/* 
 #footer {
     position:fixed;
     bottom: 0;
     z-index: 1;
     width: 100vw;
-}
+} */
 
 .input-label {
     font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
