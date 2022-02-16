@@ -1,7 +1,7 @@
 from flask import Blueprint, request
 from flask_login import login_required
 from app.models import Comment, db
-from app.forms import AddCommentForm, EditCommentForm
+from app.forms import EditCommentForm, AddCommentForm
 from sqlalchemy.orm import joinedload
 from datetime import datetime
 
@@ -21,33 +21,51 @@ def validation_errors_to_error_messages(validation_errors):
 
 
 
+
+# POST A NEW COMMENT
+@comment_routes.route('/', methods=['POST'])
+@login_required
+def post_new_comment_on_post():
+    data = request.json
+    form = AddCommentForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+
+    if form.validate_on_submit():
+        comment = Comment(
+            user_id=data["user_id"],
+            post_id=data["post_id"],
+            body=form.data['body'],
+            created_at=datetime.now())
+        db.session.add(comment)
+        db.session.commit()
+        return comment.to_dict()
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
 #GET ONE COMMENTS
 @comment_routes.route('/<int:commentId>')
 @login_required
-def one_posts(commentId):
+def one_comment(commentId):
     # GET Route for one comment
     comment = Comment.query.get(commentId)
 
     return comment.to_dict()
 
 
-
-
 # # EDIT COMMENT
-# @comment_routes.route('/<int:postId>', methods=['PUT'])
+# @comment_routes.route('/<int:commentId>', methods=['PUT'])
 # # @login_required
-# def edit_post(postId):
+# def edit_post(commentId):
 #     data = request.json
-#     form = EditPostForm()
+#     form = EditCommentForm()
 #     form['csrf_token'].data = request.cookies['csrf_token']
 
-#     currentPost = Post.query.get(postId)
-#     if form.validate_on_submit() and currentPost:
-#         currentPost.body = form.data['body']
-#         currentPost.updated_at = datetime.now()
+#     currentComment = Comment.query.get(commentId)
+#     if form.validate_on_submit() and currentComment:
+#         currentComment.body = form.data['body']
+#         currentComment.updated_at = datetime.now()
 
 #         db.session.commit()
-#         return currentPost.to_dict()
+#         return currentComment.to_dict()
 #     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
