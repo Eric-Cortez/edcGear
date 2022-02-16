@@ -2,7 +2,7 @@ from turtle import update
 from flask import Blueprint, request
 from flask_login import login_required
 from app.models import Post, db, Comment
-from app.forms import AddPostForm, EditPostForm
+from app.forms import AddPostForm, EditPostForm, AddCommentForm
 from sqlalchemy.orm import joinedload
 from datetime import datetime
 
@@ -90,14 +90,35 @@ def delete_post(postId):
     return { "message": "Delete Successful"}
 
 
-
+# Comment 
 #-------------------------------------------------------------------------#
 
 #GET ALL COMMENTS FOR A SPECIFIC POST
 @post_routes.route('/<int:postId>/comments')
-# @login_required
+@login_required 
 def all_comment_on_post(postId):
     # GET Route for all comments
     # sorted in asc order
     comments = Comment.query.filter(Comment.post_id == postId).order_by(Comment.id.asc()).all()
     return {'comments': [comment.to_dict() for comment in comments]}
+
+
+# POST A NEW COMMENT
+@post_routes.route('/<int:postId>/comment', methods=['POST'])
+# @login_required
+def post_new_comment_on_post(postId):
+    data = request.json
+    form = AddCommentForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+
+    if form.validate_on_submit():
+        comment = Comment(
+            user_id=data["user_id"],
+            post_id=postId,
+            body=form.data['body'],
+            created_at=datetime.now()
+        )
+        db.session.add(comment)
+        db.session.commit()
+        return comment.to_dict()
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401

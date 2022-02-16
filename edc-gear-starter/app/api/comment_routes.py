@@ -23,7 +23,7 @@ def validation_errors_to_error_messages(validation_errors):
 
 #GET ONE COMMENTS
 @comment_routes.route('/<int:commentId>')
-# @login_required
+@login_required
 def one_posts(commentId):
     # GET Route for one comment
     comment = Comment.query.get(commentId)
@@ -31,25 +31,6 @@ def one_posts(commentId):
     return comment.to_dict()
 
 
-# # POST A NEW COMMENT
-# @comment_routes.route('/', methods=['POST'])
-# # @login_required
-# def post_post():
-#     data = request.json
-#     form = AddPostForm()
-#     form['csrf_token'].data = request.cookies['csrf_token']
-
-#     if form.validate_on_submit():
-#         post = Post(
-#             user_id=data["user_id"],
-#             image_url=form.data["image_url"],
-#             body=form.data['body'],
-#             created_at=datetime.now()
-#         )
-#         db.session.add(post)
-#         db.session.commit()
-#         return post.to_dict()
-#     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
 # # EDIT COMMENT
