@@ -1,7 +1,7 @@
 from turtle import update
 from flask import Blueprint, request
 from flask_login import login_required
-from app.models import Post, db, User
+from app.models import Post, db, Comment
 from app.forms import AddPostForm, EditPostForm
 from sqlalchemy.orm import joinedload
 from datetime import datetime
@@ -22,7 +22,7 @@ def validation_errors_to_error_messages(validation_errors):
 
 #GET ALL POSTS 
 @post_routes.route('/')
-# @login_required
+@login_required
 def all_posts():
     # GET Route for all posts
     # sorted in desc order 
@@ -32,7 +32,7 @@ def all_posts():
 
 #GET ONE POST
 @post_routes.route('/<int:postId>')
-# @login_required
+@login_required
 def one_posts(postId):
     # GET Route for one post
     post = Post.query.get(postId)
@@ -43,7 +43,7 @@ def one_posts(postId):
 
 # POST A NEW POST 
 @post_routes.route('/', methods=['POST'])
-# @login_required
+@login_required
 def post_post():
     data = request.json
     form = AddPostForm()
@@ -64,7 +64,7 @@ def post_post():
 
 # EDIT Post 
 @post_routes.route('/<int:postId>', methods=['PUT'])
-# @login_required
+@login_required
 def edit_post(postId):
     data = request.json
     form = EditPostForm()
@@ -82,9 +82,19 @@ def edit_post(postId):
 
 # DELETE Post 
 @post_routes.route('/<int:postId>', methods=["DELETE"])
-# @login_required
+@login_required
 def delete_post(postId):
     current_post = Post.query.get(postId)
     db.session.delete(current_post)
     db.session.commit()
     return { "message": "Delete Successful"}
+
+
+#GET ALL COMMENTS FOR A SPECIFIC POST
+@post_routes.route('/<int:postId>/comments')
+# @login_required
+def all_comment_on_post(postId):
+    # GET Route for all comments
+    # sorted in asc order
+    comments = Comment.query.filter(Comment.post_id == postId).order_by(Comment.id.asc()).all()
+    return {'comments': [comment.to_dict() for comment in comments]}
