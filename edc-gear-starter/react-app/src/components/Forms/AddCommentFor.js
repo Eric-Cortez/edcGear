@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
-import { postComment } from '../../store/comment';
+import { getAllComments, postComment } from '../../store/comment';
 import { getAllPosts } from '../../store/post';
 
 const AddCommentForm = ({ post }) => {
@@ -24,6 +24,8 @@ const AddCommentForm = ({ post }) => {
             setDisplayErrors(true);
         }
         if (newComment) {
+            dispatch(getAllComments())
+            setComment("")
             history.push(`/`);
         }
     };
@@ -33,7 +35,7 @@ const AddCommentForm = ({ post }) => {
 
         // if (errors) setErrors(errors)
 
-    }, [])
+    }, [comment])
 
     const updateComment = (e) => {
         setComment(e.target.value);
