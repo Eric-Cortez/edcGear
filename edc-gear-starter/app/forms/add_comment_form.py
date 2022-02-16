@@ -4,6 +4,6 @@ from wtforms.validators import DataRequired, Email, ValidationError
 from app.models import Comment
 
 
-class CommentForm(FlaskForm):
+class AddCommentForm(FlaskForm):
     body = TextAreaField('body', validators=[DataRequired("Please provide a comment")])
     submit = SubmitField('submit')
