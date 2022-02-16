@@ -90,6 +90,9 @@ def delete_post(postId):
     return { "message": "Delete Successful"}
 
 
+
+#-------------------------------------------------------------------------#
+
 #GET ALL COMMENTS FOR A SPECIFIC POST
 @post_routes.route('/<int:postId>/comments')
 # @login_required

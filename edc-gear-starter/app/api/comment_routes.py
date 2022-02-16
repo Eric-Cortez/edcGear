@@ -21,14 +21,14 @@ def validation_errors_to_error_messages(validation_errors):
 
 
 
-# #GET ONE COMMENTS
-# @comment_routes.route('/<int:postId>')
-# # @login_required
-# def one_posts(postId):
-#     # GET Route for one post
-#     post = Post.query.get(postId)
+#GET ONE COMMENTS
+@comment_routes.route('/<int:commentId>')
+# @login_required
+def one_posts(commentId):
+    # GET Route for one comment
+    comment = Comment.query.get(commentId)
 
-#     return post.to_dict()
+    return comment.to_dict()
 
 
 # # POST A NEW COMMENT
