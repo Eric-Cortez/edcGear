@@ -62,24 +62,19 @@ def post_post():
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
-# # EDIT Post 
-# @post_routes.route('/<int:reviewId>/edit-review', methods=['PUT'])
-# # @login_required
-# def edit_product(reviewId):
-#     data = request.json
-#     form = EditPostFrom()
+# EDIT Post 
+@post_routes.route('/<int:postId>/edit', methods=['PUT'])
+# @login_required
+def edit_post(postId):
+    data = request.json
+    form = EditPostForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
 
-#     form['csrf_token'].data = request.cookies['csrf_token']
+    currentPost = Post.query.get(postId)
+    if form.validate_on_submit() and currentPost:
+        currentPost.body = form.data['body']
+        currentPost.updated_at = datetime.now()
 
-#     currentReview = Review.query.get(reviewId)
-
-#     if form.validate_on_submit() and currentReview:
-
-#         currentReview.user_id = data["user_id"]
-#         currentReview.product_id = data["product_id"]
-#         currentReview.title = form.data['title']
-#         currentReview.content = form.data['content']
-
-#         db.session.commit()
-#         return currentReview.to_dict()
-#     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+        db.session.commit()
+        return currentPost.to_dict()
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
