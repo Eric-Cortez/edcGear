@@ -51,22 +51,22 @@ def one_comment(commentId):
     return comment.to_dict()
 
 
-# # EDIT COMMENT
-# @comment_routes.route('/<int:commentId>', methods=['PUT'])
-# # @login_required
-# def edit_post(commentId):
-#     data = request.json
-#     form = EditCommentForm()
-#     form['csrf_token'].data = request.cookies['csrf_token']
+# EDIT COMMENT
+@comment_routes.route('/<int:commentId>', methods=['PUT'])
+# @login_required
+def edit_post(commentId):
+    data = request.json
+    form = EditCommentForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
 
-#     currentComment = Comment.query.get(commentId)
-#     if form.validate_on_submit() and currentComment:
-#         currentComment.body = form.data['body']
-#         currentComment.updated_at = datetime.now()
+    currentComment = Comment.query.get(commentId)
+    if form.validate_on_submit() and currentComment:
+        currentComment.body = form.data['body']
+        currentComment.updated_at = datetime.now()
 
-#         db.session.commit()
-#         return currentComment.to_dict()
-#     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+        db.session.commit()
+        return currentComment.to_dict()
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
 # # DELETE COMMENT
