@@ -9,16 +9,16 @@ class Post(db.Model):
     image_url = db.Column(db.String(255), nullable=False)
     body = db.Column(db.Text)
     created_at = db.Column(db.DateTime(timezone=True),
-                           server_default=func.now(), nullable=False)
+                           server_default=func.now())
     updated_at = db.Column(db.DateTime(timezone=True),
-                           server_default=func.now(), nullable=False)
+                           server_default=func.now())
     
     user = db.relationship(
         "User", back_populates="post")
     comment = db.relationship(
-        "Comment", back_populates="post")
+        "Comment", back_populates="post", cascade="all,delete-orphan")
     like = db.relationship(
-        "Like", back_populates="post")
+        "Like", back_populates="post", cascade="all,delete-orphan")
     
 
     def to_dict(self):

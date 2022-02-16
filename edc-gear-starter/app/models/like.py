@@ -7,12 +7,12 @@ class Like(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-    post_id = db.Column(db.Integer, db.ForeignKey("posts.id"), nullable=False)
-    comment_id = db.Column(db.Integer, db.ForeignKey("comments.id"), nullable=False)
+    post_id = db.Column(db.Integer, db.ForeignKey("posts.id"))
+    comment_id = db.Column(db.Integer, db.ForeignKey("comments.id"))
     created_at = db.Column(db.DateTime(timezone=True),
-                           server_default=func.now(), nullable=False)
+                           server_default=func.now())
     updated_at = db.Column(db.DateTime(timezone=True),
-                           server_default=func.now(), nullable=False)
+                           server_default=func.now())
 
     user = db.relationship(
         "User", back_populates="like")
