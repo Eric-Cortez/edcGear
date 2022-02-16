@@ -3,13 +3,12 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link, useHistory, useParams } from 'react-router-dom';
 import { getAllPosts, updatePost } from '../../store/post';
 
-const EditPostForm = () => {
+const EditPostForm = ({ posts }) => {
     const history = useHistory()
     const dispatch = useDispatch();
     const { postId } = useParams()
 
-    const allPosts = useSelector(state=> state?.post?.list)
-    const currPost = allPosts.find(post => post?.id === +postId)
+    const currPost = posts.find(post => post?.id === +postId)
 
 
     const [caption, setCaption] = useState(currPost?.body);
