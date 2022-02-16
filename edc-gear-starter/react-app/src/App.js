@@ -11,6 +11,7 @@ import { authenticate } from './store/session';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
 import AddPostForm from './components/Forms/AddPostForm';
+import EditPostForm from './components/Forms/EditPostForm';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -50,11 +51,12 @@ function App() {
         <ProtectedRoute path='/' exact>
           <HomePage />
         </ProtectedRoute>
-
+        <ProtectedRoute path='/posts/:postId/edit' exact>
+          <EditPostForm />
+        </ProtectedRoute>
         <ProtectedRoute path='/posts' exact>
           <AddPostForm />
         </ProtectedRoute>
-
       </Switch>
 
       <Footer />  

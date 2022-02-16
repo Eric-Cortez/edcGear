@@ -2,8 +2,8 @@
 const LOAD_ALL = "posts/LOAD_ALL"
 const ADD_POST = "posts/ADD_POST"
 // const LOAD_ONE_POST = "posts/LOAD_ONE_POST";
-// const EDIT_POST = "posts/EDIT_POST"
-// const DELETE_POST = "posts/DELETE_POST"
+const EDIT_POST = "posts/EDIT_POST"
+const DELETE_POST = "posts/DELETE_POST"
 
 
 const load = list => ({
@@ -21,15 +21,15 @@ const addPost = post => ({
     post,
 })
 
-// const editPost = post => ({
-//     type: EDIT_POST,
-//     post,
-// })
+const editPost = post => ({
+    type: EDIT_POST,
+    post,
+})
 
-// const deletePost = post => ({
-//     type: DELETE_POST,
-//     post,
-// })
+const deletePost = post => ({
+    type: DELETE_POST,
+    post,
+})
 
 export const getAllPosts = () => async dispatch => {
     const response = await fetch(`/api/posts/`)
@@ -71,41 +71,42 @@ export const postPost = (payload) => async dispatch => {
     }
 }
 
-// export const updatePost = (payload) => async dispatch => {
-//     const { postId, body } = payload
-//     const response = await fetch(`/api/posts/${postId}`, {
-//         method: 'PUT',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({
-//             "body": body
-//         })
-//     })
-//     if (response.ok) {
-//         const editedPost = await response.json()
-//         dispatch(editPost(editedPost))
-//         return editedPost
-//     }
-// }
+export const updatePost = (payload) => async dispatch => {
+    const { postId, body } = payload
+    const response = await fetch(`/api/posts/${postId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "body": body
+        })
+    })
+    if (response.ok) {
+        const editedPost = await response.json()
+        dispatch(editPost(editedPost))
+        return editedPost
+    }
+}
 
-// export const removePost = (postId) => async dispatch => {
-//     const response = await fetch(`/api/posts/${postId}`, {
-//         method: 'delete'
-//     })
+export const removePost = (postId) => async dispatch => {
+    const response = await fetch(`/api/posts/${postId}`, {
+        method: 'delete'
+    })
 
-//     if (response.ok) {
-//         const post = await response.json()
-//         dispatch(deletePost(post))
-//     }
-// }
+    if (response.ok) {
+        const post = await response.json()
+        dispatch(deletePost(post))
+        return { message: "Delete Successful" }
+    }
+}
 
 const initialState = {
     list: []
 }
 
 const postReducer = (state = initialState, action) => {
-    // let newState
+    let newState
     switch (action.type) {
         case LOAD_ALL: {
             return {
@@ -120,18 +121,23 @@ const postReducer = (state = initialState, action) => {
             }
         }
 
-        // case EDIT_POST: {
+        case EDIT_POST: {
+            return {
+                ...state,
+                [action.payload]: action.id
+            }
+        }
+        // case LOAD_ONE_POST: {
         //     return {
         //         ...state,
         //         [action.payload]: action.id
         //     }
         // }
-
-        // case DELETE_POST: {
-        //     newState = { ...state }
-        //     delete newState[action.post]
-        //     return newState
-        // }
+        case DELETE_POST: {
+            newState = { ...state }
+            delete newState[action.post]
+            return newState
+        }
 
         default: return state
     }
