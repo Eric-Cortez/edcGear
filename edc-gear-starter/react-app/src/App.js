@@ -13,6 +13,7 @@ import HomePage from './components/HomePage';
 import AddPostForm from './components/Forms/AddPostForm';
 import EditPostForm from './components/Forms/EditPostForm';
 import { getAllPosts } from './store/post';
+import PostDetails from './components/PostDetails/index.js';
 
 
 function App() {
@@ -62,7 +63,7 @@ function App() {
           <AddPostForm />
         </ProtectedRoute>
         <ProtectedRoute path='/posts/:postId' exact>
-          <h2>Post Detail page</h2>
+          <PostDetails />
         </ProtectedRoute>
       </Switch>
 

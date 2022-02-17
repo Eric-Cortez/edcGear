@@ -51,7 +51,7 @@ function HomePage() {
                          <Link to={`/posts/${post?.id}/edit`}>edit</Link>
                          <button onClick={handleDelete} value={post?.id}>delete</button>
                         </>}
-                        <AddCommentForm post={post}/>
+                        {/* <AddCommentForm post={post}/> */}
                     </div>
                 ))}
             </div>
