@@ -6,6 +6,7 @@
 .thread-div {
     display: flex;
     flex-direction: column;
+    padding-top: 20px;
 }
 
 #home-page {
@@ -57,7 +58,8 @@ i.fa-comment {
 .user-info-div {
     display: flex;
     align-items: center;
-    padding: 8px 10px;
+    padding: 6px 10px;
+    justify-content: space-between;
 }
 
 
@@ -108,4 +110,30 @@ i.fa-comment {
 p.top-username-p {
     font-weight: 500;
     color: rgb(38,38,38);
+}
+
+.caption-body-thread {
+    font-weight: 400;
+    color: rgb(38,38,38);
+}
+
+.info-img-name {
+    display: flex;
+}
+
+i.fa-ellipsis-h {
+    color: rgb(38,38,38);
+    font-size: 24px;
+}
+
+.comment-link {
+    color: rgb(142,142,142);
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.display-time-posted {
+    color: rgb(142,142,142);
+    font-size: 12px;
+    font-weight: 300;
 }
