@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
 import NavBar from './components/NavBar/index.js';
@@ -12,14 +12,20 @@ import Footer from './components/Footer';
 import HomePage from './components/HomePage';
 import AddPostForm from './components/Forms/AddPostForm';
 import EditPostForm from './components/Forms/EditPostForm';
+import { getAllPosts } from './store/post';
+import PostDetails from './components/PostDetails/index.js';
+import EditCommentForm from './components/Forms/EditCommentForm';
+
 
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
+  const posts = useSelector(state => state?.post?.list)
 
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
+      await dispatch(getAllPosts())
       setLoaded(true);
     })();
   }, [dispatch]);
@@ -52,10 +58,16 @@ function App() {
           <HomePage />
         </ProtectedRoute>
         <ProtectedRoute path='/posts/:postId/edit' exact>
-          <EditPostForm />
+          <EditPostForm posts={ posts }/>
         </ProtectedRoute>
         <ProtectedRoute path='/posts' exact>
           <AddPostForm />
+        </ProtectedRoute>
+        <ProtectedRoute path='/posts/:postId' exact>
+          <PostDetails />
+        </ProtectedRoute>
+        <ProtectedRoute path='/comments/:commentId/edit' posts={posts} exact>
+          <EditCommentForm />
         </ProtectedRoute>
       </Switch>
 

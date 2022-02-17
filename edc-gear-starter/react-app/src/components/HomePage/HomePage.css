@@ -19,4 +19,7 @@
 .each-post-div {
     display: flex;
     flex-direction: column;
+    border: 1px solid lightgray;
+    margin: 5px;
+    padding-bottom: 5px;
 }

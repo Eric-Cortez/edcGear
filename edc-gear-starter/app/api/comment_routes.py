@@ -18,7 +18,14 @@ def validation_errors_to_error_messages(validation_errors):
             errorMessages.append(f'{field} : {error}')
     return errorMessages
 
-
+#GET ALL COMMENTS
+@comment_routes.route('/')
+# @login_required
+def all_comments():
+    # GET Route for all commnets
+    # sorted in desc order
+    commnets = Comment.query.order_by(Comment.id.asc()).all()
+    return {'comments': [comment.to_dict() for comment in commnets]}
 
 
 
