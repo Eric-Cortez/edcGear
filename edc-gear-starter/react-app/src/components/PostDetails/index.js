@@ -70,7 +70,7 @@ const PostDetails = () => {
                     <p>{comment.updated_at}</p>
                     {comment.user_id === user.id &&
                         <>
-                            {/* <Link to={`/`}>edit</Link> */}
+                        <Link to={`/comments/${comment.id}/edit`}>edit</Link>
                             <button onClick={handleDelete} value={comment?.id}>delete</button>
                         </>}
                 </>

@@ -14,6 +14,7 @@ import AddPostForm from './components/Forms/AddPostForm';
 import EditPostForm from './components/Forms/EditPostForm';
 import { getAllPosts } from './store/post';
 import PostDetails from './components/PostDetails/index.js';
+import EditCommentForm from './components/Forms/EditCommentForm';
 
 
 function App() {
@@ -64,6 +65,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/posts/:postId' exact>
           <PostDetails />
+        </ProtectedRoute>
+        <ProtectedRoute path='/comments/:commentId/edit' posts={posts} exact>
+          <EditCommentForm />
         </ProtectedRoute>
       </Switch>
 
