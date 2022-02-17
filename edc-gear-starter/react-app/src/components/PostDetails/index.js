@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom';
-import { getAllComments, postComment } from '../../store/comment';
+import { getAllComments, postComment, removeComment } from '../../store/comment';
 import { getAllPosts } from '../../store/post';
+import { Link } from 'react-router-dom';
 
 const PostDetails = () => {
 
@@ -45,6 +46,16 @@ const PostDetails = () => {
 
     // }, [comment])
 
+
+    const handleDelete = async (e) => {
+        e.preventDefault()
+        const commentId = e.target.value
+        const data = await dispatch(removeComment(commentId))
+        if (data.message === "Delete Successful") {
+            dispatch(getAllComments())
+        }
+    }
+
     const updateComment = (e) => {
         setComment(e.target.value);
     };
@@ -57,6 +68,11 @@ const PostDetails = () => {
                 <>
                     <p>{comment.body}</p>
                     <p>{comment.updated_at}</p>
+                    {comment.user_id === user.id &&
+                        <>
+                            {/* <Link to={`/`}>edit</Link> */}
+                            <button onClick={handleDelete} value={comment?.id}>delete</button>
+                        </>}
                 </>
             ))
             }
