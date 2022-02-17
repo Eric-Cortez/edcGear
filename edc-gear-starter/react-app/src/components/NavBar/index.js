@@ -46,7 +46,7 @@ const NavBar = () => {
 
 
         {sessionUser && 
-          <NavLink to='/posts'><i className="fal fa-plus-square">+</i></NavLink>
+          <NavLink to='/posts'><i className="far fa-plus-square"></i></NavLink>
         }
 
         {sessionUser &&

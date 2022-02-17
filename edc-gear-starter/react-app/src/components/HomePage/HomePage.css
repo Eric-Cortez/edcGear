@@ -1,6 +1,6 @@
 .thread-image {
-    max-width: 300px;
-    max-height: 300px;
+    width: 515px;
+    height: 515px;
 }
 
 .thread-div {
@@ -22,4 +22,19 @@
     border: 1px solid lightgray;
     margin: 5px;
     padding-bottom: 5px;
+}
+
+.thread-image-content {
+    width: 515px;
+    height: 150px;
+}
+
+i.fa-heart {
+    color: read;
+}
+
+.user-image {
+    max-width: 30px;
+    max-height: 30px;
+    border-radius: 50%;
 }
