@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { useHistory, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getAllComments, postComment, removeComment } from '../../store/comment';
 import { getAllPosts } from '../../store/post';
 import { Link } from 'react-router-dom';
 
 const PostDetails = () => {
 
-    const history = useHistory()
     const dispatch = useDispatch();
     const { postId } = useParams()
 

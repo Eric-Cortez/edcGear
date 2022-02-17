@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { getAllPosts, removePost } from '../../store/post';
 import "./HomePage.css"
-import AddCommentForm from '../Forms/AddCommentFor';
+// import AddCommentForm from '../Forms/AddCommentFor';
 import { getAllComments } from '../../store/comment'
 
 // import CommentCount from '../CommentCount';

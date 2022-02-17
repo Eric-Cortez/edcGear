@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { NavLink, Link } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import SearchBar from '../SearchBar';
@@ -8,7 +8,7 @@ import edcGear from '../../images/edcGear.png'
 import "./NavBar.css"
 
 const NavBar = () => {
-  const dispatch = useDispatch
+ 
   const sessionUser = useSelector(state => state?.session?.user)
 
 

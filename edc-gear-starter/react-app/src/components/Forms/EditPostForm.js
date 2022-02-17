@@ -19,8 +19,14 @@ const EditPostForm = () => {
 
     useEffect(()=> {
         dispatch(getAllPosts())
+        if(caption) localStorage.setItem("caption", caption)
 
     }, [dispatch])
+
+    useEffect(()=> {
+        const localStorageCaption = localStorage.getItem("caption")
+        setCaption(localStorageCaption)
+    },[])
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -34,7 +40,7 @@ const EditPostForm = () => {
             history.push(`/`);
         }
     };
-
+ 
 
     useEffect(() => {
         const errors = [];
@@ -44,6 +50,7 @@ const EditPostForm = () => {
         // if (errors) setErrors(errors)
 
     }, [caption])
+
 
 
     const updateCaption = (e) => {
