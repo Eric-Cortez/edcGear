@@ -3,11 +3,12 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link, useHistory, useParams } from 'react-router-dom';
 import { getAllPosts, updatePost } from '../../store/post';
 
-const EditPostForm = ({ posts }) => {
+const EditPostForm = () => {
     const history = useHistory()
     const dispatch = useDispatch();
     const { postId } = useParams()
-
+    
+    const posts = useSelector(state => state?.post?.list)
     const currPost = posts.find(post => post?.id === +postId)
 
 

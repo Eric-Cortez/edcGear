@@ -32,7 +32,7 @@ const deleteComment = comment => ({
 })
 
 export const getAllComments = () => async dispatch => {
-    const response = await fetch(`/api/comments`)
+    const response = await fetch(`/api/comments/`)
 
     if (response.ok) {
         const list = await response.json()

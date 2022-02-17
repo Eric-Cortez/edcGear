@@ -20,12 +20,10 @@ import EditCommentForm from './components/Forms/EditCommentForm';
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
-  const posts = useSelector(state => state?.post?.list)
 
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
-      await dispatch(getAllPosts())
       setLoaded(true);
     })();
   }, [dispatch]);
@@ -58,7 +56,7 @@ function App() {
           <HomePage />
         </ProtectedRoute>
         <ProtectedRoute path='/posts/:postId/edit' exact>
-          <EditPostForm posts={ posts }/>
+          <EditPostForm />
         </ProtectedRoute>
         <ProtectedRoute path='/posts' exact>
           <AddPostForm />
@@ -66,7 +64,7 @@ function App() {
         <ProtectedRoute path='/posts/:postId' exact>
           <PostDetails />
         </ProtectedRoute>
-        <ProtectedRoute path='/comments/:commentId/edit' posts={posts} exact>
+        <ProtectedRoute path='/comments/:commentId/edit' exact>
           <EditCommentForm />
         </ProtectedRoute>
       </Switch>
