@@ -19,7 +19,7 @@ const PostDetails = () => {
     const post = posts.find(post => post?.id === +postId)
     const comments = useSelector(state => state?.comment?.list)
     const commentsForPost = comments.filter(comment => comment?.post_id === +postId)
-    console.log(displayErrors)
+    
     useEffect(() => {
         dispatch(getAllComments())
         dispatch(getAllPosts())

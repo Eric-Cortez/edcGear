@@ -4,8 +4,8 @@
 // import { getAllComments, postComment } from '../../store/comment';
 // import { getAllPosts } from '../../store/post';
 
-// const AddCommentForm = ({ post }) => {
-//     // console.log(post.id, post)
+// const AddCommentForm = () => {
+
 //     const history = useHistory()
 //     const dispatch = useDispatch();
 

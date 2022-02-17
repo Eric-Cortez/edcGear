@@ -17,8 +17,15 @@ const EditCommentForm = ( ) => {
     const [errors, setErrors] = useState([]);
     const [displayErrors, setDisplayErrors] = useState(false);
     const user = useSelector(state => state?.session?.user);
-    console.log(newComment)
+
    
+
+    useEffect(() => {
+        const errors = [];
+        if (!newComment || newComment === " " || newComment === "  ") errors.push("please provide a comment")
+        if (errors) setErrors(errors)
+
+    }, [newComment])
 
     const onSubmit = async (e) => {
         e.preventDefault();
