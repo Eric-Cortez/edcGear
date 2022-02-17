@@ -13,12 +13,36 @@ const EditCommentForm = ( ) => {
     useEffect(()=> {
         dispatch(getAllComments())
     }, [dispatch])
+
     const [newComment, setNewComment] = useState(currComment?.body);
     const [errors, setErrors] = useState([]);
     const [displayErrors, setDisplayErrors] = useState(false);
     const user = useSelector(state => state?.session?.user);
-    console.log(newComment)
+
    
+
+
+
+    useEffect(() => {
+        if (newComment) localStorage.setItem("newComment", newComment)
+    }, [dispatch])
+
+    useEffect(() => {
+        const localStorageCaption = localStorage.getItem("newComment")
+        setNewComment(localStorageCaption)
+    }, [])
+
+
+
+
+
+
+    useEffect(() => {
+        const errors = [];
+        if (!newComment || newComment === " " || newComment === "  ") errors.push("please provide a comment")
+        if (errors) setErrors(errors)
+
+    }, [newComment])
 
     const onSubmit = async (e) => {
         e.preventDefault();

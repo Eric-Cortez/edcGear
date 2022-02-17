@@ -3,11 +3,12 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link, useHistory, useParams } from 'react-router-dom';
 import { getAllPosts, updatePost } from '../../store/post';
 
-const EditPostForm = ({ posts }) => {
+const EditPostForm = () => {
     const history = useHistory()
     const dispatch = useDispatch();
     const { postId } = useParams()
-
+    
+    const posts = useSelector(state => state?.post?.list)
     const currPost = posts.find(post => post?.id === +postId)
 
 
@@ -18,8 +19,14 @@ const EditPostForm = ({ posts }) => {
 
     useEffect(()=> {
         dispatch(getAllPosts())
+        if(caption) localStorage.setItem("caption", caption)
 
     }, [dispatch])
+
+    useEffect(()=> {
+        const localStorageCaption = localStorage.getItem("caption")
+        setCaption(localStorageCaption)
+    },[])
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -33,7 +40,7 @@ const EditPostForm = ({ posts }) => {
             history.push(`/`);
         }
     };
-
+ 
 
     useEffect(() => {
         const errors = [];
@@ -43,6 +50,7 @@ const EditPostForm = ({ posts }) => {
         // if (errors) setErrors(errors)
 
     }, [caption])
+
 
 
     const updateCaption = (e) => {
@@ -70,7 +78,7 @@ const EditPostForm = ({ posts }) => {
                         className='text-area'
                         type='text'
                         name='Caption'
-                        required
+                        // required
                         onChange={updateCaption}
                         value={caption}
                     ></textarea>
