@@ -43,7 +43,7 @@ function HomePage() {
                         <div className='user-info-div'>
                            
                             <img className="user-image" src={users.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile"/>
-                            <p>{users.find(user => user?.id === post?.user_id)?.username}</p>
+                            <p className='top-username-p'>{users.find(user => user?.id === post?.user_id)?.username}</p>
                            
                         </div> }
                         <img className="thread-image"key={post?.image_url} src={post?.image_url} alt="posts on feed"/> 
@@ -56,6 +56,7 @@ function HomePage() {
                             <p> count - likes</p>
                         </div>
                         <div className='post-caption-div'>
+                            <p className='caption-user-name'>{users.find(user => user?.id === post?.user_id)?.username}</p>
                             <p key={post?.body}>{post?.body}</p>
                         </div>
                         <div className='post-timestamp-div'>
