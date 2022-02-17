@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
 import NavBar from './components/NavBar/index.js';
@@ -12,7 +12,6 @@ import Footer from './components/Footer';
 import HomePage from './components/HomePage';
 import AddPostForm from './components/Forms/AddPostForm';
 import EditPostForm from './components/Forms/EditPostForm';
-import { getAllPosts } from './store/post';
 import PostDetails from './components/PostDetails/index.js';
 import EditCommentForm from './components/Forms/EditCommentForm';
 

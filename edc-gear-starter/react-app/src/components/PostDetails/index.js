@@ -19,7 +19,7 @@ const PostDetails = () => {
     const post = posts.find(post => post?.id === +postId)
     const comments = useSelector(state => state?.comment?.list)
     const commentsForPost = comments.filter(comment => comment?.post_id === +postId)
-  
+    console.log(displayErrors)
     useEffect(() => {
         dispatch(getAllComments())
         dispatch(getAllPosts())
@@ -30,6 +30,7 @@ const PostDetails = () => {
         let newComment;
         if (user && errors.length === 0) {
             newComment = await dispatch(postComment({ userId: user.id, body: comment, postId }));
+            setDisplayErrors(false)
         } else {
             setDisplayErrors(true);
         }
@@ -39,12 +40,12 @@ const PostDetails = () => {
         }
     };
 
-    // useEffect(() => {
-    //     const errors = [];
+    useEffect(() => {
+        const errors = [];
+        if(!comment || comment === " " || comment === "  ") errors.push("please provide a comment")
+        if (errors) setErrors(errors)
 
-    //     // if (errors) setErrors(errors)
-
-    // }, [comment])
+    }, [comment])
 
 
     const handleDelete = async (e) => {

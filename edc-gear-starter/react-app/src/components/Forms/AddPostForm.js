@@ -18,7 +18,7 @@ const AddPostForm = () => {
         e.preventDefault();
         let post;
         if (user && errors.length === 0) {
-           post = await dispatch(postPost({ userId: user.id, imageUrl, body: caption}));
+           post = await dispatch(postPost({ userId: user?.id, imageUrl, body: caption}));
         } else {
             setDisplayErrors(true);
         }
@@ -30,7 +30,7 @@ const AddPostForm = () => {
 
     useEffect(() => {
         const errors = [];
-    
+        
         if (imageUrl?.length > 255 || imageUrl?.length <= 0) errors.push("Image Url is must be less 255 characters")
         if (!imageUrl?.includes("http" || "https")) errors.push("Please provide a valid image Url")
         if (errors) setErrors(errors)
@@ -79,7 +79,6 @@ const AddPostForm = () => {
                         className='text-area'
                         type='text'
                         name='Caption'
-                        required
                         onChange={updateCaption}
                         value={caption}
                     ></textarea>

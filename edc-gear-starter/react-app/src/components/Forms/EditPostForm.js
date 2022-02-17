@@ -71,7 +71,7 @@ const EditPostForm = () => {
                         className='text-area'
                         type='text'
                         name='Caption'
-                        required
+                        // required
                         onChange={updateCaption}
                         value={caption}
                     ></textarea>
