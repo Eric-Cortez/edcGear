@@ -40,31 +40,41 @@ function HomePage() {
                 {allPosts && allPosts?.map(post => (
                     <div key={`1${post.id}`}className='each-post-div'>
                         {users &&
-                        <div>
+                        <div className='user-info-div'>
                            
                             <img className="user-image" src={users.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile"/>
                             <p>{users.find(user => user?.id === post?.user_id)?.username}</p>
                            
                         </div> }
                         <img className="thread-image"key={post?.image_url} src={post?.image_url} alt="posts on feed"/> 
-                       
-                        <button className="like-btn"><i className="far fa-heart"></i></button> 
-                        {/* <button className="un-like-btn"><i className="fas fa-heart"></i></button> */}
-                        <button className="comment-on-post-btn"><i className="far fa-comment"></i></button>
-                        <p key={post?.body}>{post?.body}</p>
-                        <p key={post?.updated_at}>{post?.updated_at}</p>
-                        <div className='thread-image-content'>
+                        <div className='post-nav-buttons'>
+                            <button className="like-btn"><i className="far fa-heart"></i></button> 
+                            {/* <button className="un-like-btn"><i className="fas fa-heart"></i></button> */}
+                            <Link to={`/posts/${post?.id}`} className="comment-on-post-btn"><i className="far fa-comment"></i></Link>
+                        </div>
+                        <div className='thread-like-count-div'>
+                            <p> count - likes</p>
+                        </div>
+                        <div className='post-caption-div'>
+                            <p key={post?.body}>{post?.body}</p>
+                        </div>
+                        <div className='post-timestamp-div'>
+                            <p key={post?.updated_at}>{post?.updated_at}</p>
+                        </div>
+                        <div className='thread-comment-count-div'>
                             {comments && 
                             <Link to={`/posts/${post?.id}`}> View all  {comments?.filter(comments => comments?.post_id === post?.id).length} comment
                             </Link>}
-
+                        </div>
+                        <div className='thread-post-edit-delete-div'>  
                             {post.user_id === user.id &&
                             <>
                             <Link to={`/posts/${post?.id}/edit`}>edit</Link>
                             <button onClick={handleDelete} value={post?.id}>delete</button>
                             </>}
-                            {/* <AddCommentForm post={post}/> */} 
                         </div>
+                            {/* <AddCommentForm post={post}/> */} 
+                      
                        
                     </div>
                 ))}
