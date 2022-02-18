@@ -122,8 +122,9 @@ p.top-username-p {
 }
 
 i.fa-ellipsis-h {
-    color: rgb(38,38,38);
-    font-size: 24px;
+    color: rgb(142,142,142);
+    /* color: rgb(38,38,38); */
+    font-size: 19px;
 }
 
 .comment-link {
@@ -136,4 +137,51 @@ i.fa-ellipsis-h {
     color: rgb(142,142,142);
     font-size: 12px;
     font-weight: 300;
+}
+
+.preview-div {
+    position: relative;
+    z-index: 1;
+}
+
+.post-btns-preview-div {
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    border: 1px solid lightgray;
+    width: auto;
+    height: auto;
+    position: absolute;
+    padding: 10px;
+    top: 0px;
+    right: .5rem;
+    text-align: center;
+    z-index: 0;
+    user-select: none;
+    border-radius: 12px;
+}
+
+.post-preview-edit {
+    text-decoration: none;
+    font-size: 15px; 
+    margin: 3px;
+    font-weight: 700;
+    color:black;
+    padding-bottom: 4px;
+    border-bottom: 0.5px solid rgb(118, 118, 118);
+}
+
+
+.post-preview-del {
+    font-size: 15px;
+    background-color: whitesmoke;
+    border: none;
+    color: black;
+    font-weight: 700;
+    color:#ed4956;
+}
+
+.preview-ellipsis-btn {
+    background-color: whitesmoke;
+    border: none;
 }
