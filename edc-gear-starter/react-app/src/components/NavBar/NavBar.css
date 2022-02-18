@@ -4,7 +4,7 @@ nav {
     background-color: #323436;
     display:flex;
     justify-content: space-between;
-    height: 100px;
+    height: 80px;
 }
 
 #nav-ul > * {
@@ -26,7 +26,7 @@ nav {
 }
 
 #nav-logo {
- height: 100px;
+ height: 80px;
  width: 150px;
  margin-left: 25px;
 }
