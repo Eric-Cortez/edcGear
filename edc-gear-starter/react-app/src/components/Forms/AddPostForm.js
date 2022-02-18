@@ -13,7 +13,7 @@ const AddPostForm = ({setShowModal}) => {
     const [displayErrors, setDisplayErrors] = useState(false);
     const user = useSelector(state => state?.session?.user);
 
-    console.log(imageUrl, caption)
+   
     const onSubmit = async (e) => {
         e.preventDefault();
         let post;

@@ -11,7 +11,11 @@ const EditCommentForm = ( ) => {
     const comments = useSelector(state => state?.comment?.list)
     const currComment = comments.find(comment => comment?.id === +commentId)
     useEffect(()=> {
-        dispatch(getAllComments())
+        (async () => {
+            await dispatch(getAllComments())
+          
+        })();
+ 
     }, [dispatch])
 
     const [newComment, setNewComment] = useState(currComment?.body);
@@ -57,7 +61,7 @@ const EditCommentForm = ( ) => {
             setDisplayErrors(true);
         }
         if (editedComment) {
-            dispatch(getAllComments())
+            await dispatch(getAllComments())
             history.push(`/posts/${currComment?.post_id}`);
         }
     };

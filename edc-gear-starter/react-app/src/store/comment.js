@@ -36,7 +36,7 @@ export const getAllComments = () => async dispatch => {
 
     if (response.ok) {
         const list = await response.json()
-        dispatch(load(list.comments))
+        await dispatch(load(list.comments))
     }
 }
 
@@ -76,7 +76,7 @@ export const postComment = (payload) => async dispatch => {
 
     if (response.ok) {
         const newComment = await response.json()
-        dispatch(addComment(newComment))
+        await dispatch(addComment(newComment))
         return newComment
     }
 }
@@ -94,7 +94,7 @@ export const updateComment = (payload) => async dispatch => {
     })
     if (response.ok) {
         const editedComment = await response.json()
-        dispatch(editComment(editedComment))
+        await dispatch(editComment(editedComment))
         return editedComment
     }
 }
@@ -106,7 +106,7 @@ export const removeComment = (commentId) => async dispatch => {
 
     if (response.ok) {
         const comment = await response.json()
-        dispatch(deleteComment(comment))
+        await dispatch(deleteComment(comment))
         return { message: "Delete Successful" }
     }
 }

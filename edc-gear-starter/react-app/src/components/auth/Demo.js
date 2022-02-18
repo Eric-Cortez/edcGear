@@ -4,12 +4,12 @@ import * as session from '../../store/session'
 const Demo = () => {
     const dispatch = useDispatch()
 
-    const handleClick = (e) => {
+    const handleClick = async (e) => {
         e.preventDefault()
 
         const credential = 'demo@aa.io';
         const password = 'password'
-        dispatch(session.login(credential, password))
+        await dispatch(session.login(credential, password))
             .catch(async (res) => {
                 return await res.json()
             });

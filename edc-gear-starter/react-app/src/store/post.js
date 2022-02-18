@@ -36,7 +36,7 @@ export const getAllPosts = () => async dispatch => {
 
     if (response.ok) {
         const list = await response.json()
-        dispatch(load(list.posts))
+        await dispatch(load(list.posts))
     }
 }
 
@@ -66,7 +66,7 @@ export const postPost = (payload) => async dispatch => {
 
     if (response.ok) {
         const newPost = await response.json()
-        dispatch(addPost(newPost))
+        await dispatch(addPost(newPost))
         return newPost
     }
 }
@@ -84,7 +84,7 @@ export const updatePost = (payload) => async dispatch => {
     })
     if (response.ok) {
         const editedPost = await response.json()
-        dispatch(editPost(editedPost))
+        await dispatch(editPost(editedPost))
         return editedPost
     }
 }
@@ -96,7 +96,7 @@ export const removePost = (postId) => async dispatch => {
 
     if (response.ok) {
         const post = await response.json()
-        dispatch(deletePost(post))
+        await dispatch(deletePost(post))
         return { message: "Delete Successful" }
     }
 }

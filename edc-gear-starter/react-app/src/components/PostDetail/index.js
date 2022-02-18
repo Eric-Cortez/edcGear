@@ -22,8 +22,14 @@ const PostDetails = () => {
     const commentsForPost = comments.filter(comment => comment?.post_id === +postId)
     
     useEffect(() => {
-        dispatch(getAllComments())
-        dispatch(getAllPosts())
+
+        (async () => {
+           await dispatch(getAllComments())
+           await dispatch(getAllPosts())
+           
+        })();
+
+
     }, [dispatch])
 
     const onSubmit = async (e) => {
@@ -36,7 +42,7 @@ const PostDetails = () => {
             setDisplayErrors(true);
         }
         if (newComment) {
-            dispatch(getAllComments())
+            await dispatch(getAllComments())
             setComment("")
         }
     };
@@ -54,7 +60,7 @@ const PostDetails = () => {
         const commentId = e.target.value
         const data = await dispatch(removeComment(commentId))
         if (data.message === "Delete Successful") {
-            dispatch(getAllComments())
+            await dispatch(getAllComments())
         }
     }
 

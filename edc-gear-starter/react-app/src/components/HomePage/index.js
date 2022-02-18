@@ -24,9 +24,13 @@ function HomePage() {
 
 
     useEffect(() => {
-        dispatch(getAllPosts())
-        dispatch(getAllComments())
-        dispatch(getAllUsers())
+
+        (async () => {
+           await dispatch(getAllPosts())
+           await dispatch(getAllComments())
+           await dispatch(getAllUsers())
+        })();
+
     }, [dispatch])
 
     const calTimFromMil = (milSec) => {

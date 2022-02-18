@@ -19,7 +19,10 @@ const EditPostForm = ({ postId, setShowModal, setEditShowModal}) => {
     const user = useSelector(state => state?.session?.user);
 
     useEffect(()=> {
-        dispatch(getAllPosts())
+        (async () => {
+            await  dispatch(getAllPosts())
+          
+        })();
         if(caption) localStorage.setItem("caption", caption)
 
     }, [dispatch])
