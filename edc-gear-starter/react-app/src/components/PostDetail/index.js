@@ -4,12 +4,13 @@ import { useParams } from 'react-router-dom';
 import { getAllComments, postComment, removeComment } from '../../store/comment';
 import { getAllPosts } from '../../store/post';
 import { Link } from 'react-router-dom';
+import EditCommentForm from '../Forms/EditCommentForm';
 
 
-const PostDetails = () => {
+const PostDetails = ({ postId }) => {
 
     const dispatch = useDispatch();
-    const { postId } = useParams()
+    // const { postId } = useParams()
 
     
     const [comment, setComment] = useState('');
@@ -76,7 +77,7 @@ const PostDetails = () => {
                
                
                 <div id="modal-content">
-               */}
+               */} 
 \
                 <img src={post?.image_url} alt="post"/>
                 <p>{post?.body}</p>
@@ -86,7 +87,12 @@ const PostDetails = () => {
                         <p>{comment.updated_at}</p>
                         {comment.user_id === user.id &&
                             <>
+
+
                             <Link to={`/comments/${comment.id}/edit`}>edit</Link>
+
+
+
                                 <button onClick={handleDelete} value={comment?.id}>delete</button>
                             </>}
                     </>

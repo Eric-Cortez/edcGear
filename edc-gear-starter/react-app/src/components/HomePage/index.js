@@ -9,6 +9,7 @@ import { getAllUsers } from "../../store/user"
 // import EditDelete from './EditDelete';
 import EditDeleteModal from '../../context/EditDeletePostModal';
 // import CommentCount from '../CommentCount';
+import PostDetailModal from '../../context/PostDetailModal';
 
 function HomePage() {
     const dispatch = useDispatch()
@@ -90,8 +91,8 @@ function HomePage() {
                             <button className="like-btn"><i className="fas fa-heart"></i></button> 
                             {/* <button className="un-like-btn"><i className="fas fa-heart"></i></button> */}
                             
-                            
-                            <Link to={`/posts/${post?.id}`} className="comment-on-post-btn open-modal-btn"><i className="far fa-comment"></i></Link>
+                            <PostDetailModal postId={post?.id} commentBubble="commentBubble"/>
+                            {/* <Link to={`/posts/${post?.id}`} className="comment-on-post-btn open-modal-btn"><i className="far fa-comment"></i></Link> */}
                        
                        
                         </div>
@@ -103,10 +104,12 @@ function HomePage() {
                             <p className='caption-body-thread' key={post?.body}>{post?.body}</p>
                         </div>
                         <div className='thread-comment-count-div'>
-                            {comments && comments?.filter(comments => comments?.post_id === post?.id).length > 0 ?
+                           
+                             {comments && comments?.filter(comments => comments?.post_id === post?.id).length > 0 ?
                             <Link className="comment-link" to={`/posts/${post?.id}`}> 
                             View all {comments?.filter(comments => comments?.post_id === post?.id).length} comment
-                            </Link>: ""}
+                            </Link>: ""} 
+
                         </div>
                         <div className='post-timestamp-div'>
                             <p className="display-time-posted" key={post?.updated_at}>
