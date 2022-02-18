@@ -6,7 +6,7 @@ import "./HomePage.css"
 // import AddCommentForm from '../Forms/AddCommentFor';
 import { getAllComments } from '../../store/comment'
 import { getAllUsers } from "../../store/user"
-
+import EditDelete from './EditDelete';
 // import CommentCount from '../CommentCount';
 
 function HomePage() {
@@ -16,33 +16,11 @@ function HomePage() {
     const user = useSelector(state => state?.session?.user);
     const comments = useSelector(state => state?.comment?.list);
     const users = useSelector(state => state?.user?.list)
-    const [preview, setPreview] = useState(false)
+
   
-    const handleDelete = async(e) => {
-        e.preventDefault()
-        const postId = e.target.value
-        const data = await dispatch(removePost(postId))
-        if (data.message === "Delete Successful" ){
-            dispatch(getAllPosts())
-            history.push("/")
-        }
-    }
-
-    const handlePreviewClick = (e) => {
-       
-        if (preview) setPreview(false)
-        else setPreview(true)
-    }
+ 
 
 
-    useEffect(() => {
-        if (!preview) return;
-        const closePostMenu = () => {
-            setPreview(false);
-        };
-        document.addEventListener("click", closePostMenu);
-        return () => document.removeEventListener("click", closePostMenu)
-    }, [preview])
 
     useEffect(() => {
         dispatch(getAllPosts())
@@ -87,18 +65,19 @@ function HomePage() {
                             </div>
 
 
-                            {post.user_id === user.id &&
-                            <div className='thread-post-edit-delete-div'>
-                                        <button className="preview-ellipsis-btn" value={post.id} onClick={handlePreviewClick}><i  className="fas fa-ellipsis-h"></i></button>
-                                    { preview &&
-                                        <div className='preview-div'>  
-                                            <div className='post-btns-preview-div'>
-                                                <Link className="post-preview-edit" to={`/posts/${post?.id}/edit`}>edit</Link>
-                                                <button className="post-preview-del" onClick={handleDelete} value={post?.id}>delete</button>
-                                            </div>
-                                        </div>
-                                    }
-                            </div>}
+                          
+                                    
+                                   
+                                        <EditDelete post={post} />
+
+                                        {/* // <div className='preview-div'>  
+                                        //     <div className='post-btns-preview-div'>
+                                        //         <Link className="post-preview-edit" to={`/posts/${post?.id}/edit`}>edit</Link>
+                                        //         <button className="post-preview-del" onClick={handleDelete} value={post?.id}>delete</button>
+                                        //     </div>
+                                        // </div>
+                                  */}
+                        
                            
                         </div> }
                         <img className="thread-image"key={post?.image_url} src={post?.image_url} alt="posts on feed"/> 
