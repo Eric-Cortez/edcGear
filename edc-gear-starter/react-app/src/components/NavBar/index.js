@@ -6,6 +6,7 @@ import LogoutButton from '../auth/LogoutButton';
 import SearchBar from '../SearchBar';
 import edcGear from '../../images/edcGear.png'
 import "./NavBar.css"
+import AddPostModal from '../../context/AddPostModal';
 
 const NavBar = () => {
  
@@ -46,7 +47,8 @@ const NavBar = () => {
 
 
         {sessionUser && 
-          <NavLink to='/posts'><i className="far fa-plus-square"></i></NavLink>
+          <AddPostModal />
+          // <NavLink to='/posts'><i className="far fa-plus-square"></i></NavLink>
         }
 
         {sessionUser &&
