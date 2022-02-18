@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
-import { postPost } from '../../store/post';
+import { getAllPosts, postPost } from '../../store/post';
 
-const AddPostForm = () => {
+const AddPostForm = ({setShowModal}) => {
     const history = useHistory()
     const dispatch = useDispatch();
 
@@ -13,7 +13,7 @@ const AddPostForm = () => {
     const [displayErrors, setDisplayErrors] = useState(false);
     const user = useSelector(state => state?.session?.user);
 
-
+    console.log(imageUrl, caption)
     const onSubmit = async (e) => {
         e.preventDefault();
         let post;
@@ -23,7 +23,9 @@ const AddPostForm = () => {
             setDisplayErrors(true);
         }
         if (post) {
+            await dispatch(getAllPosts())
             history.push(`/`);
+            setShowModal(false)
         }
     };
 
