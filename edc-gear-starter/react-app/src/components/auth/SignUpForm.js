@@ -21,6 +21,8 @@ const SignUpForm = () => {
       if (data) {
         setErrors(data)
       }
+    } else {
+      setErrors(["Passwords Don't Match"])
     }
   };
 
@@ -59,6 +61,7 @@ const SignUpForm = () => {
         <div>
           <label>User Name</label>
           <input
+            required
             type='text'
             name='username'
             onChange={updateUsername}
@@ -68,7 +71,8 @@ const SignUpForm = () => {
         <div>
           <label>Email</label>
           <input
-            type='text'
+            required
+            type='email'
             name='email'
             onChange={updateEmail}
             value={email}
@@ -77,6 +81,7 @@ const SignUpForm = () => {
         <div>
           <label>imageUrl</label>
           <input
+            required
             type='text'
             name='imageUrl'
             onChange={updateImageUrl}
@@ -86,6 +91,7 @@ const SignUpForm = () => {
         <div>
           <label>Password</label>
           <input
+            required
             type='password'
             name='password'
             onChange={updatePassword}
@@ -95,11 +101,11 @@ const SignUpForm = () => {
         <div>
           <label>Repeat Password</label>
           <input
+            required
             type='password'
             name='repeat_password'
             onChange={updateRepeatPassword}
             value={repeatPassword}
-            required={true}
           ></input>
         </div>
         <button type='submit'>Sign Up</button>

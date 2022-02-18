@@ -59,8 +59,8 @@ function HomePage() {
                 {allPosts && allPosts?.map(post => (
                     <div key={`1${post.id}`}className='each-post-div'>
                         {users &&
-                        <div className='user-info-div'>
-                            <div className='info-img-name'>
+                            <div key={`2${post.id}`} className='user-info-div'>
+                                <div key={`3${post.id}`} className='info-img-name'>
                                 <img className="user-image" src={users.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile"/>
                                 <p className='top-username-p'>{users.find(user => user?.id === post?.user_id)?.username}</p>
                             </div>
@@ -83,7 +83,7 @@ function HomePage() {
                         </div> }
                         <img className="thread-image"key={post?.image_url} src={post?.image_url} alt="posts on feed"/> 
                         <div className='post-nav-buttons'>
-                            <button className="like-btn"><i className="far fa-heart"></i></button> 
+                            <button className="like-btn"><i className="fas fa-heart"></i></button> 
                             {/* <button className="un-like-btn"><i className="fas fa-heart"></i></button> */}
                             
                             

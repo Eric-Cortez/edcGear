@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 import { getAllComments, postComment, removeComment } from '../../store/comment';
 import { getAllPosts } from '../../store/post';
 import { Link } from 'react-router-dom';
-import "./PostDetailModal.css"
 
 
 const PostDetails = () => {
@@ -64,7 +63,8 @@ const PostDetails = () => {
     };
 
     return (
-        <div id="modal">
+        <div >
+            {/* // <div id="modal"> */}
             {/* <div id="modal-background">
                 <button onClick={() => closeModal(false)}> X </button>      
                
