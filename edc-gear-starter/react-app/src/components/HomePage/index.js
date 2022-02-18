@@ -6,7 +6,8 @@ import "./HomePage.css"
 // import AddCommentForm from '../Forms/AddCommentFor';
 import { getAllComments } from '../../store/comment'
 import { getAllUsers } from "../../store/user"
-import EditDelete from './EditDelete';
+// import EditDelete from './EditDelete';
+import EditDeleteModal from '../../context/EditDeletePostModal';
 // import CommentCount from '../CommentCount';
 
 function HomePage() {
@@ -66,9 +67,9 @@ function HomePage() {
 
 
                           
-                                    
+                                {/* <EditDelete post={post}  /> */}
                                    
-                                        <EditDelete post={post} />
+                                        <EditDeleteModal post={post} />
 
                                         {/* // <div className='preview-div'>  
                                         //     <div className='post-btns-preview-div'>

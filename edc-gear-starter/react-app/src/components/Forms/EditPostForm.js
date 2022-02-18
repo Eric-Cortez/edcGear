@@ -3,10 +3,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link, useHistory, useParams } from 'react-router-dom';
 import { getAllPosts, updatePost } from '../../store/post';
 
-const EditPostForm = () => {
+const EditPostForm = ({ postId, setShowModal, setEditShowModal}) => {
+ 
     const history = useHistory()
     const dispatch = useDispatch();
-    const { postId } = useParams()
+    // const { postId } = useParams()
     
     const posts = useSelector(state => state?.post?.list)
     const currPost = posts.find(post => post?.id === +postId)
@@ -37,6 +38,9 @@ const EditPostForm = () => {
             setDisplayErrors(true);
         }
         if (post) {
+            await dispatch(getAllPosts())
+            setShowModal(false)
+            setEditShowModal(false)
             history.push(`/`);
         }
     };
@@ -87,7 +91,7 @@ const EditPostForm = () => {
                 <div className='submit-btn-div'>
                     <button className="submit-btn" type='submit'>Submit</button>
                 </div>
-                <Link to="/">Cancel</Link>
+                {/* <Link to="/">Cancel</Link> */}
             </form>
         </div>
     )

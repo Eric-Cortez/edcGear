@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Modal } from '../Modal';
 import AddPostForm from "../../components/Forms/AddPostForm.js"
+import "../Modal.css"
 
 function AddPostModal() {
     const [showModal, setShowModal] = useState(false);
