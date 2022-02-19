@@ -81,8 +81,8 @@ div.username-p {
     border-bottom: 0.4px solid rgba(128,128,128,.2);
     overflow-y: scroll;
     display: flex;
-   flex-direction: column-reverse;
-
+    flex-direction: column-reverse;
+    justify-content: flex-end;
 }
 #comment-list-div::-webkit-scrollbar {
   display: none;
@@ -128,9 +128,14 @@ textarea.post-detail-textarea {
     color: rgb(0,149,246);
     background-color:transparent;
     border: none;
-    height: 20px;
+    height: 30px;
     font-size: 16px;
     font-weight: bolder;
+    padding-bottom: 20px;
+}
+
+.comment-submit-btn:hover {
+    cursor: pointer;
 }
 
 .each-comment-div {
@@ -266,9 +271,12 @@ i.fa-edit {
     color: rgb(0,149,246);
     background-color:transparent;
     border: none;
-    height: 20px;
+    height: 40px;
     font-size: 15px;
     font-weight: bolder;
+    padding: 20px 10px;
+    display: flex;
+    align-items: center;
 }
 
 #outer-edit-div {

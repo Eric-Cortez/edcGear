@@ -9,7 +9,7 @@ function EditPostModal({ postId, setEditShowModal}) {
  
     return (
         <>
-            <button onClick={() => setShowModal(true)}>Edit</button>
+            <button id="post-preview-edit" onClick={() => setShowModal(true)}>Edit</button>
             {showModal && (
                 <Modal onClose={() =>{
                     setEditShowModal(false)

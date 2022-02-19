@@ -56,10 +56,11 @@
   border-top: 0.4px solid rgba(128,128,128,.2);
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .image-input-div {
-  height: 300px;
+  height: 330px;
   padding: 16px;
 }
 
@@ -73,4 +74,22 @@
   font-size: 12px;
   display: flex;
   justify-content: center;
+}
+
+#captions-textarea-div {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding-top: 10px;
+}
+
+.post-submit-btn {
+  margin-top: 10px;
+  padding: 10px;
+  color: rgb(0,149,246);
+  background-color:transparent;
+  border: none;
+  height: 20px;
+  font-size: 15px;
+  font-weight: bolder;
 }
