@@ -5,10 +5,10 @@ const Footer = () => {
 
     return (
         <footer id="footer">
-            <a className="footer-links" href="https://github.com/Eric-Cortez">Developer Eric Cortez gitHub </a>
-            <a className="footer-links" href="https://www.linkedin.com/in/eric-cortez-0101/">linkedin</a>
+            <a target="_blank" rel="noreferrer" className="footer-links" href="https://github.com/Eric-Cortez">Developer Eric Cortez gitHub </a>
+            <a  target="_blank"  rel="noreferrer" className="footer-links" href="https://www.linkedin.com/in/eric-cortez-0101/">linkedin</a>
         </footer>
     );
 }
 
-export default Footer;
+export default Footer; 

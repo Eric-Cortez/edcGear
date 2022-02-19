@@ -7,9 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 function EditDeleteModal({ post }) {
     const [showEditModal, setEditShowModal] = useState(false);
     const user = useSelector(state => state?.session?.user);
-    console.log(user.id)
-    console.log(post.user_id)
-    
+
 
 
     return (

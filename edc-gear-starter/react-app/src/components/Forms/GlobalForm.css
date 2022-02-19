@@ -1,0 +1,40 @@
+#edit-post-image {
+    margin: 0;
+    padding: 0;
+    height: 370px;
+    width: 500px;
+    max-height: 380px;
+    max-width: 500px;
+}
+
+.edit-image-div {
+    width: 500;
+}
+
+.text-area-caption {
+    color: #8e8e8e;
+    width: 300px;
+}
+
+#edit-post{
+    padding: 0;
+}
+
+#edit-post-caption-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.caption-input-label {
+    margin: 12px 5px 0 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #8e8e8e;
+}
+
+.edit {
+    height: 100%;
+    margin: 0;
+}

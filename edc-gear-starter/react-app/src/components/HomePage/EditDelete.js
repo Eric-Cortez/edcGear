@@ -20,7 +20,7 @@ const EditDelete = ({ post, setEditShowModal}) => {
         const postId = e.target.value
         const data = await dispatch(removePost(postId))
         if (data.message === "Delete Successful") {
-            dispatch(getAllPosts())
+            await dispatch(getAllPosts())
             history.push("/")
         }
     }
@@ -54,7 +54,7 @@ const EditDelete = ({ post, setEditShowModal}) => {
           <div className='post-btns-preview-div'>
                           <EditPostModal postId={post.id} setEditShowModal={setEditShowModal}/>
               {/* <Link className="post-preview-edit" to={`/posts/${post.id}/edit`}>edit</Link> */}
-              <button className="post-preview-del" onClick={handleDelete} value={post.id}>delete</button>
+              <button className="post-preview-del" onClick={handleDelete} value={post.id}>Delete</button>
           </div>
       </div>
                   

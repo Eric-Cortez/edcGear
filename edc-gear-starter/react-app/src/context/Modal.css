@@ -15,10 +15,81 @@
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
+  /* border-radius: 15px; */
 }
 
 #modal-content {
   position: absolute;
   background-color:white;
+  border-radius: 15px;
+  /* height: 517px;
+  width: 922px; */
+  height: auto;
+  width: auto;
+}
+
+#thread-comment-btn-model {
+  background: none;
+  border: none;
+}
+
+#create-new-post-div {
+  width: 500px;
+  height: 500px;
+  border-radius: 15px;
+}
+
+#create-new-post-title {
+  border-bottom: 0.4px solid rgba(128,128,128,.2);
+  display: flex;
+  height: 42px;
+  justify-content: center;
+}
+
+#new-post-h2 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#post-caption-div {
+  border-top: 0.4px solid rgba(128,128,128,.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.image-input-div {
+  height: 330px;
+  padding: 16px;
+}
+
+.each-error-div {
+  height: 30px;
+}
+
+.each-error-div > * {
+  padding-top: 5px;
+  color: red;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+#captions-textarea-div {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding-top: 10px;
+}
+
+.post-submit-btn {
+  margin-top: 10px;
+  padding: 10px;
+  color: rgb(0,149,246);
+  background-color:transparent;
+  border: none;
+  height: 20px;
+  font-size: 15px;
+  font-weight: bolder;
 }

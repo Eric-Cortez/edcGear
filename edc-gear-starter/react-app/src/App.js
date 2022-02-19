@@ -13,6 +13,7 @@ import HomePage from './components/HomePage';
 import AddPostForm from './components/Forms/AddPostForm';
 import EditPostForm from './components/Forms/EditPostForm';
 import PostDetail from './components/PostDetail/index.js';
+import PostDetailPage from './components/PostDetailPage';
 import EditCommentForm from './components/Forms/EditCommentForm';
 
 
@@ -62,7 +63,7 @@ function App() {
           <AddPostForm />
         </ProtectedRoute>
         <ProtectedRoute path='/posts/:postId' exact>
-          <PostDetail />
+          <PostDetailPage />
         </ProtectedRoute>
         <ProtectedRoute path='/comments/:commentId/edit' exact>
           <EditCommentForm />
