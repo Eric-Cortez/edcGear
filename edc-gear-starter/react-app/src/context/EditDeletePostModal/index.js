@@ -14,7 +14,7 @@ function EditDeleteModal({ post }) {
         <>
             { user.id === post.user_id &&
             <>
-                <button onClick={() => setEditShowModal(true)}>...</button>
+                <button id="thread-edit-post-btn" onClick={() => setEditShowModal(true)}>...</button>
                 {showEditModal && (
                     <Modal onClose={() => setEditShowModal(false)}>
                         <EditDelete post={post} setEditShowModal={setEditShowModal} />
