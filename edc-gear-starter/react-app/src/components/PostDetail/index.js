@@ -134,7 +134,7 @@ const PostDetails = ({ postId }) => {
                         <p id="post-last-edited">Edited · {calTimFromMil(Date.parse(new Date().toString()) - Date.parse(post?.updated_at), "short")}</p> 
 
 
-                    {commentsForPost && commentsForPost.reverse().map(comment => (
+                    {commentsForPost && commentsForPost.map(comment => (
                         <div className='each-comment-div'>
                             <div className='left-post-comment-div'>
                                 <img className="post-modal-image" src={allUsers?.find(user => user?.id === comment?.user_id)?.image_url} alt="user-profile" />
@@ -157,8 +157,8 @@ const PostDetails = ({ postId }) => {
                             
                                     {comment.user_id === user.id &&
                                         <div id="comment-control">
-                                            <EditCommentInPlaceModel commentId={comment?.id} />
                                             <button id="post-modal-del"onClick={handleDelete} value={comment?.id}>x</button>
+                                            <EditCommentInPlaceModel commentId={comment?.id} />
                                             {/* <Link to={`/comments/${comment.id}/edit`}>edit</Link> */}
 
                                             

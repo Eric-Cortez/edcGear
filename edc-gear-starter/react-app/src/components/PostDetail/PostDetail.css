@@ -78,6 +78,9 @@ div.username-p {
     height: 350px;
     border-bottom: 0.4px solid rgba(128,128,128,.2);
     overflow-y: scroll;
+    display: flex;
+   flex-direction: column-reverse;
+
 }
 #comment-list-div::-webkit-scrollbar {
   display: none;
@@ -167,7 +170,7 @@ button.like-btn {
 .comment-timestamp-div {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .comment-timestamp-div > * {
@@ -232,21 +235,22 @@ i.fa-edit {
     float: left; */
     display: flex;
     width: 280px;
-    position: absolute;
-    border:1px solid#8e8e8e;
-    border-radius: 4px;
-    background-color: whitesmoke;
-    z-index: 1;
+    /* position: absolute; */
+    /* border:1px solid#8e8e8e; */
+    /* border-radius: 4px; */
+    /* background-color: whitesmoke; */
+    /* z-index: 1; */
     /* top: 100%; */
+    /* bottom: 55%; */
     left: 63%;
-    padding: 8px;
+    /* padding: 8px; */
     /* border: 1px solid rgba(0,0,0,.2);
     border-radius: 6px;
     box-shadow: 0 5px 10px rgb(0 0 0 / 20%); */
 }
 
 .edit-comment-model-text {
-    width: 220px;
+    width: 180px;
     height: 100%;
 }
 
@@ -263,4 +267,8 @@ i.fa-edit {
     height: 20px;
     font-size: 15px;
     font-weight: bolder;
+}
+
+#outer-edit-div {
+    display: flex;
 }

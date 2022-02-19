@@ -91,7 +91,7 @@ const EditCommentInPlaceModel = ({ commentId }) => {
 
 
     return (
-        <div>
+        <div id="outer-edit-div">
             <button className="preview-ellipsis-btn" onClick={handlePreviewClick}><i className="far fa-edit"></i></button>
             { preview &&
             <div id="edit-comment-preview-div">
