@@ -18,3 +18,158 @@
 #post-comment-div {
     width: 45%;
 }
+
+.post-modal-image{
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+}
+
+#post-model-top-content-div {
+    border-bottom: 0.4px solid rgba(128,128,128,.2);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 16px;
+}
+
+#profile-username-model {
+    padding: 2px 15px;
+    margin: 0;
+    font-weight: 900px;
+    
+}
+
+.right-post-model-content {
+    display: flex;
+    border-bottom: 0.4px solid rgba(128,128,128,.2);
+
+}
+
+.post-content-model {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.right-post-div {
+    width: 100%;
+    padding: 5px 14px;
+}
+
+.right-post-div > * {
+    margin: 0;
+    display: inline;
+}
+
+div.username-p {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.right-post-model-content {
+    padding: 16px;
+}
+
+.left-post-div {
+    border-radius: 50%;
+}
+
+#comment-list-div {
+    height: 280px;
+    border-bottom: 0.4px solid rgba(128,128,128,.2);
+    overflow-y: scroll;
+}
+#comment-list-div::-webkit-scrollbar {
+  display: none;
+}
+
+#comment-form-div {
+   border-top: 0.4px solid rgba(128,128,128,.2);
+  
+}
+
+textarea {
+    resize: none;
+}
+
+#model-likes-div {
+    height: 40px;
+    padding: 8px;
+}
+
+#inner-post-modal-comments {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    align-items: center;
+}
+
+textarea.post-detail-textarea {
+    width: 80%;
+    height: 25px;
+    border: none;
+    color: #8e8e8e;
+    align-items: baseline;
+    padding: 7px 0;
+    margin-left: 10px;
+}
+
+.fa-smile {
+    font-size: 25px;
+    padding: 0 5px 5px 5px;
+}
+
+.comment-submit-btn {
+    color: rgb(0,149,246);
+    background-color:transparent;
+    border: none;
+    height: 20px;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.each-comment-div {
+ 
+    display: flex;
+    flex-direction: row;
+    padding: 12px 16px 0 16px;
+}
+
+.left-post-comment-div {
+    padding:0p;
+}
+
+.right-post-comment-div {
+    display: flex; 
+    flex-direction: column;
+    width: 100%;
+}
+
+#each-comment-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7px;
+}
+
+#each-comment-content > * {
+    margin: 0;
+}
+i.new.fa-heart {
+    font-size: 12px;
+    background-color: transparent;
+}
+
+button.like-btn {
+    background-color: transparent;
+}
+
+.comment-timestamp-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.comment-timestamp-div > * {
+    padding: 2px 5px;
+}
