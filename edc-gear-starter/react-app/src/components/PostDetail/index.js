@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { getAllComments, postComment, removeComment } from '../../store/comment';
 import { getAllPosts } from '../../store/post';
 import { Link } from 'react-router-dom';
-import EditCommentForm from '../Forms/EditCommentForm';
+import EditCommentInPlaceModel from '../Forms/EditCommentInPlaceModel';
 
 
 const PostDetails = ({ postId }) => {
@@ -71,14 +71,7 @@ const PostDetails = ({ postId }) => {
 
     return (
         <div >
-            {/* // <div id="modal"> */}
-            {/* <div id="modal-background">
-                <button onClick={() => closeModal(false)}> X </button>      
-               
-               
-                <div id="modal-content">
-               */} 
-\
+    
                 <img src={post?.image_url} alt="post"/>
                 <p>{post?.body}</p>
                 { commentsForPost && commentsForPost.map(comment => (
@@ -87,23 +80,23 @@ const PostDetails = ({ postId }) => {
                         <p>{comment.updated_at}</p>
                         {comment.user_id === user.id &&
                             <>
-
-
-                            <Link to={`/comments/${comment.id}/edit`}>edit</Link>
+     
+                            <EditCommentInPlaceModel commentId={comment.id}/>
+                            {/* <Link to={`/comments/${comment.id}/edit`}>edit</Link> */}
 
 
 
                                 <button onClick={handleDelete} value={comment?.id}>delete</button>
                             </>}
                     </>
-                ))
-                }
-                <form onSubmit={onSubmit}>
+                ))}
+
+
+                 <form onSubmit={onSubmit}>
                     <div className='each-error-div'>
                         {displayErrors && errors?.map((error, ind) => (
                             <div key={ind}>{`* ${error}`}</div>
                         ))}
-
                     </div>
                     <h2 id="form-h2"> Create a comment </h2>
                     <div >
@@ -124,19 +117,12 @@ const PostDetails = ({ postId }) => {
                     <div className='submit-btn-div'>
                         <button className="submit-btn" type='submit'>Submit</button>
                     </div>
-                </form>
-
-
-                {/* </div>
-
-                <div className='footer'>
-                    <button onClick={() => closeModal(false)}>Cancel</button>
-
-                </div>                
-                
-            </div>     */}
-        </div>
+                </form> 
+        </div>        
     )
 }
 
 export default PostDetails;
+
+
+ 

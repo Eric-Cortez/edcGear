@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { getAllComments, postComment, removeComment } from '../../store/comment';
 import { getAllPosts } from '../../store/post';
 import { Link } from 'react-router-dom';
+import EditCommentInPlaceModel from '../Forms/EditCommentInPlaceModel';
 
 const PostDetailPage = () => {
 
@@ -70,7 +71,8 @@ const PostDetailPage = () => {
                     <p>{comment.updated_at}</p>
                     {comment.user_id === user.id &&
                         <>
-                        <Link to={`/comments/${comment.id}/edit`}>edit</Link>
+                        <EditCommentInPlaceModel commentId={comment.id} />
+                        {/* <Link to={`/comments/${comment.id}/edit`}>edit</Link> */}
                             <button onClick={handleDelete} value={comment?.id}>delete</button>
                         </>}
                 </>
