@@ -24,7 +24,7 @@ def validation_errors_to_error_messages(validation_errors):
 def all_comments():
     # GET Route for all commnets
     # sorted in desc order
-    commnets = Comment.query.order_by(Comment.id.asc()).all()
+    commnets = Comment.query.order_by(Comment.id.desc()).all()
     return {'comments': [comment.to_dict() for comment in commnets]}
 
 

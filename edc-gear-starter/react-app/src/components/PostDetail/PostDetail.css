@@ -81,8 +81,8 @@ div.username-p {
     border-bottom: 0.4px solid rgba(128,128,128,.2);
     overflow-y: scroll;
     display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-end;
+    flex-direction: column;
+    /* justify-content: flex-end; */
 }
 #comment-list-div::-webkit-scrollbar {
   display: none;

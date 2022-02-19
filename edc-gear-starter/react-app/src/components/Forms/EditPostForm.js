@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Link, useHistory, useParams } from 'react-router-dom';
 import { getAllPosts, updatePost } from '../../store/post';
-
+import "./GlobalForm.css"
 const EditPostForm = ({ postId, setShowModal, setEditShowModal}) => {
  
     const history = useHistory()
@@ -66,34 +66,43 @@ const EditPostForm = ({ postId, setShowModal, setEditShowModal}) => {
 
 
     return (
-        <div>
+        <div id="create-new-post-div">
 
             <form onSubmit={onSubmit}>
+                <div id="create-new-post-title">
+                    <h2 id="new-post-h2"> Edit form </h2>
+                </div>
+
                 <div className='each-error-div'>
                     {displayErrors && errors?.map((error, ind) => (
                         <div key={ind}>{`* ${error}`}</div>
                     ))}
                 </div>
-                <h2 id="form-h2"> Edit form </h2>
-                <img src={currPost?.image_url} alt={`${currPost?.body}`}/>
-                <div >
+
+                <div className='edit-image-div'>
+                    <img id="edit-post-image" src={currPost?.image_url} alt={`${currPost?.body}`}/>
+                </div>
+
+                <div id="edit-post-caption-items">
                     <label
-                        className='input-label'
-                    >Caption</label>
+                        className='caption-input-label'
+                    > Edit caption</label>
+                    <div id="captions-textarea-div edit-post-text">
                     <textarea
-                        placeholder='Caption'
-                        className='text-area'
+                        placeholder='Add a caption...'
+                        className='text-area-caption'
                         type='text'
                         name='Caption'
                         // required
                         onChange={updateCaption}
                         value={caption}
                     ></textarea>
+                    </div> 
+                    <div className='submit-btn-div'>
+                        <button className="edit post-submit-btn" type='submit'>Submit</button>
+                    </div>
                 </div>
 
-                <div className='submit-btn-div'>
-                    <button className="submit-btn" type='submit'>Submit</button>
-                </div>
                 {/* <Link to="/">Cancel</Link> */}
             </form>
         </div>

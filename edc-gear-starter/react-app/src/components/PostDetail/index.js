@@ -4,14 +4,13 @@ import { useParams } from 'react-router-dom';
 import { getAllComments, postComment, removeComment } from '../../store/comment';
 import { getAllPosts } from '../../store/post';
 import { Link } from 'react-router-dom';
-import EditCommentInPlaceModel from '../Forms/EditCommentInPlaceModel';
+import EditCommentModal from '../../context/EditCommentModal';
 import "./PostDetail.css"
 import { getAllUsers } from "../../store/user"
 
 const PostDetails = ({ postId }) => {
 
     const dispatch = useDispatch();
-    // const { postId } = useParams()
 
     
     const [comment, setComment] = useState('');
@@ -158,8 +157,7 @@ const PostDetails = ({ postId }) => {
                                     {comment.user_id === user.id &&
                                         <div id="comment-control">
                                             <button id="post-modal-del"onClick={handleDelete} value={comment?.id}>x</button>
-                                            <EditCommentInPlaceModel commentId={comment?.id} />
-                                            {/* <Link to={`/comments/${comment.id}/edit`}>edit</Link> */}
+                                            <EditCommentModal commentId={comment?.id} />
 
                                             
                                         </div>} 

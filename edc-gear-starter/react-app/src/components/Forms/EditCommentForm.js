@@ -3,11 +3,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link, useHistory, useParams } from 'react-router-dom';
 import { getAllComments } from '../../store/comment';
 import { updateComment } from '../../store/comment';
-const EditCommentForm = () => {
+const EditCommentForm = ({ commentId, setShowModal }) => {
 
     const history = useHistory()
     const dispatch = useDispatch();
-    const { commentId } = useParams()
+    // const { commentId } = useParams()
     const comments = useSelector(state => state?.comment?.list)
     const currComment = comments.find(comment => comment?.id === +commentId)
     useEffect(()=> {
@@ -62,7 +62,8 @@ const EditCommentForm = () => {
         }
         if (editedComment) {
             await dispatch(getAllComments())
-            history.push(`/posts/${currComment?.post_id}`);
+            setShowModal(false)
+            // history.push(`/posts/${currComment?.post_id}`);
         }
     };
 

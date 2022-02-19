@@ -76,6 +76,7 @@ const AddPostForm = ({ setShowModal }) => {
                         value={imageUrl}
                     ></input>
                 </div>
+                
                 <div id="post-caption-div">
                     <div id="captions-textarea-div">
                         {/* <label
