@@ -52,6 +52,7 @@
 .right-post-div {
     width: 100%;
     padding: 5px 14px;
+    padding-bottom: 0;
 }
 
 .right-post-div > * {
@@ -66,6 +67,7 @@ div.username-p {
 
 .right-post-model-content {
     padding: 16px;
+    padding-bottom: 0;
 }
 
 .left-post-div {
@@ -165,7 +167,7 @@ button.like-btn {
 .comment-timestamp-div {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: space-between;
 }
 
 .comment-timestamp-div > * {
@@ -175,5 +177,90 @@ button.like-btn {
 #post-last-edited {
     font-size: 12px;
     color:#8e8e8e;
-    margin-left: 80px;
+    margin: 3px 0 0 62px;
+}
+
+form#in-place-edit {
+    /* position: absolute;
+    z-index: 1000px;
+    border: 2px solid red;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1; */
+}
+
+#post-modal-del{
+    background-color: transparent;
+    color:#8e8e8e;
+    border: 1px solid #8e8e8e;
+    border-radius: 2px;
+    margin: 0;
+    padding: 0 3px 1px 3px;
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800px;
+    max-height: 17px;
+}
+
+#post-modal-del:hover {
+    color: white;
+    background-color: rgba(226, 4, 4, 0.904);
+    opacity: .7;
+}
+
+i.fa-edit {
+    font-size: 16px;
+}
+.preview-ellipsis-btn {
+    background-color: transparent;
+}
+
+#comment-control {
+    display:flex;
+    justify-content: row;
+    align-items: center;
+}
+
+#edit-comment-preview-div {
+    /* border: 2px solid green; */
+    /* 
+    float: left; */
+    display: flex;
+    width: 280px;
+    position: absolute;
+    border:1px solid#8e8e8e;
+    border-radius: 4px;
+    background-color: whitesmoke;
+    z-index: 1;
+    /* top: 100%; */
+    left: 63%;
+    padding: 8px;
+    /* border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 20%); */
+}
+
+.edit-comment-model-text {
+    width: 220px;
+    height: 100%;
+}
+
+.comment-modal-edit {
+    padding: 0;
+    margin: 0;
+    align-content: center;
+}
+
+.submit-btn-comment-m {
+    color: rgb(0,149,246);
+    background-color:transparent;
+    border: none;
+    height: 20px;
+    font-size: 15px;
+    font-weight: bolder;
 }

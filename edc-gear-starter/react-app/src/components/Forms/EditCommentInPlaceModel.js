@@ -92,35 +92,34 @@ const EditCommentInPlaceModel = ({ commentId }) => {
 
     return (
         <div>
-            <button className="preview-ellipsis-btn"  onClick={handlePreviewClick}>Edit</button>
+            <button className="preview-ellipsis-btn" onClick={handlePreviewClick}><i className="far fa-edit"></i></button>
             { preview &&
-            <div>
+            <div id="edit-comment-preview-div">
           
-            <form onSubmit={onSubmit}>
+            <form id="in-place-edit" onSubmit={onSubmit}>
                 <div className='each-error-div'>
                     {displayErrors && errors?.map((error, ind) => (
                         <div key={ind}>{`* ${error}`}</div>
                     ))}
 
                 </div>
-                <h2 id="form-h2"> Edit comment </h2>
-                <div >
+                
+                <div>
                     <label
                         className='input-label'
-                    >Comment</label>
-                    <textarea
+                    >Edit Comment</label>
+                </div>
+                <div className='comment-modal-edit'>
+                         <textarea
                         placeholder='Comment'
-                        className='text-area'
+                        className='edit-comment-model-text'
                         type='text'
                         name='Comment'
                         required
                         onChange={(e) => setNewComment(e.target.value)}
                         value={newComment}
                     ></textarea>
-                </div>
-
-                <div className='submit-btn-div'>
-                    <button className="submit-btn" type='submit'>Submit</button>
+                    <button className="submit-btn-comment-m" type='submit'>Post</button>
                 </div>
             </form>
 

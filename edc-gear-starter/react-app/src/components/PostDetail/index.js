@@ -156,13 +156,13 @@ const PostDetails = ({ postId }) => {
                                    
                             
                                     {comment.user_id === user.id &&
-                                        <>
+                                        <div id="comment-control">
                                             <EditCommentInPlaceModel commentId={comment?.id} />
+                                            <button id="post-modal-del"onClick={handleDelete} value={comment?.id}>x</button>
                                             {/* <Link to={`/comments/${comment.id}/edit`}>edit</Link> */}
 
-                                            <button onClick={handleDelete} value={comment?.id}>delete</button>
                                             
-                                        </>} 
+                                        </div>} 
                                     </div>
                                 </div>
                             </div>
