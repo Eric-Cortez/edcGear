@@ -87,11 +87,11 @@ const PostDetails = ({ postId }) => {
         const currDay = Math.floor(currHour / 24)
 
 
-        if (type === "comments") {
-            if (currSec <= 60 && currMin === 0 && currHour === 0 && currDay === 0) return `${currSec} s`;
-            if (currMin <= 60 && currHour === 0 && currDay === 0) return `${currMin} m`;
-            if (currHour <= 60 && currDay === 0) return `${currHour} h`;
-            if (currDay >= 2 || currHour > 24) return `${currDay} d`;
+        if (type === "short") {
+            if (currSec <= 60 && currMin === 0 && currHour === 0 && currDay === 0) return `${currSec}s`;
+            if (currMin <= 60 && currHour === 0 && currDay === 0) return `${currMin}m`;
+            if (currHour <= 60 && currDay === 0) return `${currHour}h`;
+            if (currDay >= 2 || currHour > 24) return `${currDay}d`;
         } else {
             if (currSec === 1 && currMin === 0 && currHour === 0 && currDay === 0) return `${currSec} SECOND AGO`;
             if (currSec <= 60 && currMin === 0 && currHour === 0 && currDay === 0) return `${currSec} SECONDS AGO`;
@@ -122,6 +122,7 @@ const PostDetails = ({ postId }) => {
                     <h5 id="profile-username-model">{user?.username}</h5>
                 </div>
 
+                <div id="comment-list-div">
                 <div className='right-post-model-content'>
                     <div className='left-post-div'>
                         <img className="post-modal-image" src={user?.image_url} alt="user-profile" />
@@ -130,10 +131,11 @@ const PostDetails = ({ postId }) => {
                         <h5 className='username-p'>{user?.username}</h5><p className="post-content-model"> {post?.body}</p>
                     </div>
                 </div>
-                <div id="comment-list-div">
+                        <p id="post-last-edited">Edited · {calTimFromMil(Date.parse(new Date().toString()) - Date.parse(post?.updated_at), "short")}</p> 
+
+
                     {commentsForPost && commentsForPost.reverse().map(comment => (
                         <div className='each-comment-div'>
-
                             <div className='left-post-comment-div'>
                                 <img className="post-modal-image" src={allUsers?.find(user => user?.id === comment?.user_id)?.image_url} alt="user-profile" />
                             </div>
@@ -141,7 +143,7 @@ const PostDetails = ({ postId }) => {
                             <div className='right-post-comment-div'>
                                 <div id="each-comment-content">
                                     <div id="each-comment-content">
-                                    <h5 className='username-p'>{allUsers.find(user => user?.id === comment?.user_id).username} </h5><p className="post-content-model"> {comment?.body}</p>
+                                    <h5 className='username-p'>{allUsers.find(user => user?.id === comment?.user_id).username}</h5> <p className="post-content-model"> {comment?.body}</p>
                                     </div>
                                     <button className="like-btn"><i className="fas new fa-heart"></i></button> 
                                 </div>
@@ -149,7 +151,7 @@ const PostDetails = ({ postId }) => {
 
                                     <div className='comment-timestamp-div'>
                                         <p className="display-time-posted" key={post?.updated_at}>
-                                            {calTimFromMil(Date.parse(new Date().toString()) - Date.parse(comment?.updated_at), "comments")}
+                                            {calTimFromMil(Date.parse(new Date().toString()) - Date.parse(comment?.updated_at), "short")}
                                         </p>
                                    
                             
