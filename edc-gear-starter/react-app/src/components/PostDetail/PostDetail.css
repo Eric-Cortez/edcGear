@@ -1,15 +1,17 @@
-.base-model-div  {
+.base-modal-div  {
    
     display: flex;
     justify-content: row;
     height: 100%;
     width: 100%;
+    height: 517px;
+    width: 922px; 
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
 }
 
 
-#post-model-img {
+#post-modal-img {
     /* border-radius: 4px; */
     height: 100%;
     width: 100%;
@@ -42,6 +44,7 @@
 
 .right-post-model-content {
     display: flex;
+    
 }
 
 .post-content-model {
@@ -66,8 +69,7 @@ div.username-p {
 }
 
 .right-post-model-content {
-    padding: 16px;
-    padding-bottom: 0;
+    padding: 5px 16px;
 }
 
 .left-post-div {
@@ -75,7 +77,7 @@ div.username-p {
 }
 
 #comment-list-div {
-    height: 350px;
+    height: 250px;
     border-bottom: 0.4px solid rgba(128,128,128,.2);
     overflow-y: scroll;
     display: flex;
@@ -180,7 +182,7 @@ button.like-btn {
 #post-last-edited {
     font-size: 12px;
     color:#8e8e8e;
-    margin: 3px 0 0 62px;
+    margin: 3px 0 5px 62px;
 }
 
 form#in-place-edit {

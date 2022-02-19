@@ -49,16 +49,20 @@ const AddPostForm = ({setShowModal}) => {
 
 
     return (
-        <div>
+        <div id="create-new-post-div">
+            
             <form onSubmit={onSubmit}>
+                <div id="create-new-post-title">
+                    <h2 id="new-post-h2"> Create new post</h2>
+                </div>
+
                 <div className='each-error-div'>
                     {displayErrors && errors?.map((error, ind) => (
                         <div key={ind}>{`* ${error}`}</div>
                     ))}
-
                 </div>
-                <h2 id="form-h2"> Create a post </h2>
-                <div className='input-div'>
+
+                <div className='image-input-div'>
                     <label
                         className='input-label'
                     >Image Url</label>
@@ -72,7 +76,7 @@ const AddPostForm = ({setShowModal}) => {
                         value={imageUrl}
                     ></input>
                 </div>
-                <div >
+                <div id="post-caption-div">
                     <label
                         className='input-label'
                     >Caption</label>
@@ -84,11 +88,11 @@ const AddPostForm = ({setShowModal}) => {
                         onChange={updateCaption}
                         value={caption}
                     ></textarea>
+                    <div className='submit-btn-div'>
+                        <button className="submit-btn" type='submit'>Submit</button>
+                    </div>
                 </div>
 
-                <div className='submit-btn-div'>
-                    <button className="submit-btn" type='submit'>Submit</button>
-                </div>
             </form>
         </div>
     )

@@ -88,7 +88,7 @@ const PostDetails = ({ postId }) => {
 
 
         if (type === "short") {
-            if (currSec <= 60 && currMin === 0 && currHour === 0 && currDay === 0) return `${currSec}s`;
+            if (currSec <= 60 && currMin === 0 && currHour === 0 && currDay === 0) return `< 1min`;
             if (currMin <= 60 && currHour === 0 && currDay === 0) return `${currMin}m`;
             if (currHour <= 60 && currDay === 0) return `${currHour}h`;
             if (currDay >= 2 || currHour > 24) return `${currDay}d`;
@@ -110,10 +110,10 @@ const PostDetails = ({ postId }) => {
 
 
     return (
-        <div className='base-model-div'>
+        <div className='base-modal-div'>
             <div>
 
-                <img id="post-model-img" src={post?.image_url} alt="post" />
+                <img id="post-modal-img" src={post?.image_url} alt="post" />
             </div>
 
             <div id="post-comment-div">
@@ -122,7 +122,6 @@ const PostDetails = ({ postId }) => {
                     <h5 id="profile-username-model">{user?.username}</h5>
                 </div>
 
-                <div id="comment-list-div">
                 <div className='right-post-model-content'>
                     <div className='left-post-div'>
                         <img className="post-modal-image" src={user?.image_url} alt="user-profile" />
@@ -132,7 +131,8 @@ const PostDetails = ({ postId }) => {
                     </div>
                 </div>
                         <p id="post-last-edited">Edited · {calTimFromMil(Date.parse(new Date().toString()) - Date.parse(post?.updated_at), "short")}</p> 
-
+                
+                <div id="comment-list-div">
 
                     {commentsForPost && commentsForPost.map(comment => (
                         <div className='each-comment-div'>
