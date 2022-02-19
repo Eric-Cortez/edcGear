@@ -5,6 +5,7 @@ import { getAllComments, postComment, removeComment } from '../../store/comment'
 import { getAllPosts } from '../../store/post';
 import { Link } from 'react-router-dom';
 import EditCommentInPlaceModel from '../Forms/EditCommentInPlaceModel';
+import "./PostDetail.css"
 
 
 const PostDetails = ({ postId }) => {
@@ -70,12 +71,30 @@ const PostDetails = ({ postId }) => {
     };
 
     return (
-        <div >
-    
-                <img src={post?.image_url} alt="post"/>
-                <p>{post?.body}</p>
+        <div className='base-model-div'>
+            <div>
+          
+                <img id="post-model-img" src={post?.image_url} alt="post"/>
+            </div>
+
+            <div id="post-comment-div">
+                <div>
+                    --> image and Username go here
+                </div>
+                <div></div>
+                <div>
+                    <div>
+                        --> USERIMAGE
+                    </div>
+                    <div>
+                        USERNAME
+                        <p>body: {post?.body}</p>
+                    </div>
+                </div>
+                
                 { commentsForPost && commentsForPost.map(comment => (
                     <>
+                       <h2>comments</h2>
                         <p>{comment.body}</p>
                         <p>{comment.updated_at}</p>
                         {comment.user_id === user.id &&
@@ -90,34 +109,34 @@ const PostDetails = ({ postId }) => {
                             </>}
                     </>
                 ))}
+                
+                    <form onSubmit={onSubmit}>
+                        <div className='each-error-div'>
+                            {displayErrors && errors?.map((error, ind) => (
+                                <div key={ind}>{`* ${error}`}</div>
+                            ))}
+                        </div>
+                        <h2 id="form-h2"> Create a comment </h2>
+                        <div >
+                            <label
+                                className='input-label'
+                            >Comment</label>
+                            <textarea
+                                placeholder='Comment'
+                                className='text-area'
+                                type='text'
+                                name='Comment'
+                                required
+                                onChange={updateComment}
+                                value={comment}
+                            ></textarea>
+                        </div>
 
-
-                 <form onSubmit={onSubmit}>
-                    <div className='each-error-div'>
-                        {displayErrors && errors?.map((error, ind) => (
-                            <div key={ind}>{`* ${error}`}</div>
-                        ))}
-                    </div>
-                    <h2 id="form-h2"> Create a comment </h2>
-                    <div >
-                        <label
-                            className='input-label'
-                        >Comment</label>
-                        <textarea
-                            placeholder='Comment'
-                            className='text-area'
-                            type='text'
-                            name='Comment'
-                            required
-                            onChange={updateComment}
-                            value={comment}
-                        ></textarea>
-                    </div>
-
-                    <div className='submit-btn-div'>
-                        <button className="submit-btn" type='submit'>Submit</button>
-                    </div>
-                </form> 
+                        <div className='submit-btn-div'>
+                            <button className="submit-btn" type='submit'>Submit</button>
+                        </div>
+                    </form> 
+                   </div>
         </div>        
     )
 }

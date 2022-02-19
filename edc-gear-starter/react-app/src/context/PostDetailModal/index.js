@@ -18,7 +18,7 @@ function PostDetailModal({ postId }) {
     return (
         <>  
          
-          <button onClick={() => setShowModal(true)}><i className="far fa-comment"></i></button> 
+          <button id="thread-comment-btn-model" onClick={() => setShowModal(true)}><i className="far fa-comment"></i></button> 
 
 
 
