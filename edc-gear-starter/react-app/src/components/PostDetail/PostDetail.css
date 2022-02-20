@@ -170,13 +170,25 @@ textarea.post-detail-textarea {
     padding: 0 7px;
 
 }
-#each-comment-content-inner {
+/* #each-comment-content-inner {
     display: flex;
-    /* align-items: center; */
+    align-items: center;
     padding: 0 7px;
     max-width: 290px;
 
+} */
+
+ #each-comment-content-inner {
+    max-width: 300px;
+    padding: 5px 14px;
+    padding-bottom: 0;
 }
+
+ #each-comment-content-inner > * {
+    margin: 0;
+    display: inline;
+}
+
 
 
 .post-content-model {
