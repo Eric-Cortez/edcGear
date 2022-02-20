@@ -81,7 +81,7 @@ const LoginForm = () => {
                 <div id="login-submit-btn-div">
                 <button id="login-submit-btn" type='submit'>Log in</button>
                 </div>
-              <div class="block_1"><div class="h_line"></div><p id="or-p-tag">OR</p> <div class="h_line"></div></div> 
+              <div className="block_1"><div className="h_line"></div><p id="or-p-tag">OR</p> <div className="h_line"></div></div> 
               </div>
           </form>
         </div>

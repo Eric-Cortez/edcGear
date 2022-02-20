@@ -31,7 +31,7 @@ const NavBar = () => {
         {sessionUser && 
         <li>
           <NavLink to='/' exact activeClassName='active'>
-              <i class="fas fa-home"></i>
+              <i className="fas fa-home"></i>
           </NavLink>
         </li>}
         {sessionUser &&
@@ -41,7 +41,7 @@ const NavBar = () => {
         {sessionUser &&
           <li>
             <NavLink className="users-link" to='/users' exact activeClassName='active'>
-              <i class="fas fa-users"></i>
+              <i className="fas fa-users"></i>
             </NavLink>
           </li>}
 

@@ -132,7 +132,7 @@ textarea.post-detail-textarea {
 }
 
 .comment-submit-btn {
-    color: rgb(0,149,246);
+    color: #D27624;
     background-color:transparent;
     border: none;
     height: 30px;
@@ -299,7 +299,7 @@ i.fa-edit {
 }
 
 .submit-btn-comment-m {
-    color: rgb(0,149,246);
+    color: #D27624;;
     background-color:transparent;
     border: none;
     height: 40px;

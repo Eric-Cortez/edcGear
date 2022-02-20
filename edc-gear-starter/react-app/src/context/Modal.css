@@ -39,7 +39,7 @@
   height: 500px;
   border-radius: 15px;
 }
-
+#sign-up-title,
 #create-new-post-title {
   border-bottom: 0.4px solid rgba(128,128,128,.2);
   display: flex;
@@ -47,6 +47,7 @@
   justify-content: center;
 }
 
+#sign-up-h2,
 #new-post-h2 {
     font-size: 16px;
     font-weight: 600;
@@ -64,13 +65,20 @@
   padding: 16px;
 }
 
+.sign-up-image-input {
+  height: 100px;
+  width: 100%;
+  border: 2px dotted blue;
+
+}
+
 .each-error-div {
   height: 30px;
 }
 
 .each-error-div > * {
   padding-top: 5px;
-  color: red;
+  color: #D27624;
   font-size: 12px;
   display: flex;
   justify-content: center;
@@ -86,7 +94,7 @@
 .post-submit-btn {
   margin-top: 10px;
   padding: 10px;
-  color: rgb(0,149,246);
+  color: #D27624;;
   background-color:transparent;
   border: none;
   height: 20px;
@@ -106,4 +114,59 @@
   padding: 0;
   margin: 0;
   border: none;
+}
+
+#signup-modal-div-main {
+  height: 400px;
+  width: 400px;
+  background-color: #D3D2BC;
+  border-radius: 4px;
+  
+}
+
+#sing-up-form-content {
+  margin: 0 40px;
+  align-items: center;
+}
+
+.each-error-div.sign-up-err {
+  height: 50px;
+  margin-top: 3px;
+}
+
+.each-error-div.sign-up-err {
+ 
+   padding: 0;
+}
+
+#err-sing-up {
+  padding: 0;  
+  font-size: 10px;
+}
+
+.login-inputs.sing-up-input {
+  margin-bottom: 3px;
+  height: 4px;
+}
+
+#sing-up-form-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#sing-up-submit-btn {
+   width: 174px;
+   background-color: #D27624;
+   border-radius: 4px;
+   color: whitesmoke;
+   border: none;
+   height: 25px;
+   cursor: pointer;
+}
+
+#sign-up-submit-btn-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

@@ -140,7 +140,7 @@ const PostDetails = ({ postId }) => {
                             <div className='right-post-comment-div'>
                                 <div id="each-comment-content">
                                     <div id="each-comment-content-inner">
-                                    <p className="post-content-model"><h5 className='username-p-comment'>{allUsers.find(user => user?.id === comment?.user_id).username}</h5>  {comment?.body}</p>
+                                    <h5 className='username-p-comment'>{allUsers.find(user => user?.id === comment?.user_id).username}</h5> <p className="post-content-model"> {comment?.body}</p>
                                     </div>
                                     <button className="like-btn"><i className="fas new fa-heart"></i></button> 
                                 </div>
