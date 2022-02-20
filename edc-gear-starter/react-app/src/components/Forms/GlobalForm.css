@@ -80,3 +80,9 @@ button.edit-comment-submit-btn {
 .edit-comment-textarea {
     border-radius: 4px;
 }
+
+
+#login-form-div {
+    border: 1px solid red;
+ 
+}

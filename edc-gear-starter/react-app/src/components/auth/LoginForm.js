@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 import Demo from './Demo';
+import { NavLink, Link } from 'react-router-dom';
+import "../Forms/GlobalForm.css"
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -32,13 +34,16 @@ const LoginForm = () => {
   }
 
   return (
-    <div>
+    <div id="login-form-div">
+
       <form onSubmit={onLogin}>
+
         <div>
           {errors.map((error, ind) => (
             <div key={ind}>{error}</div>
           ))}
         </div>
+
         <div>
           <label htmlFor='email'>Email</label>
           <input
@@ -58,10 +63,24 @@ const LoginForm = () => {
             value={password}
             onChange={updatePassword}
           />
-          <button type='submit'>Login</button>
+          <div>
+            <button type='submit'>Log in</button>
+          </div>
+          <p> OR </p>
         </div>
       </form>
-      <Demo />
+
+      <div>
+        <Demo />
+      </div>
+
+     <div>
+       <p>Do you have an account? </p>
+        <NavLink to='/sign-up' exact activeClassName='active'>
+          Sign Up
+        </NavLink>
+     </div>
+
     </div>
   );
 };

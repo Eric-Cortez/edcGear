@@ -2,16 +2,18 @@
 
 * {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-}
+  }
 
 html, body, #root, #root > div {
   height: auto;
   width: auto;
   padding: 0;
   margin: 0;
+  /* background-color: #2B2E30; */
 }
 
 div#root {
   background-color: whitesmoke;
 }
+
 

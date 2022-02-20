@@ -124,7 +124,7 @@ const PostDetails = ({ postId }) => {
                         <img className="post-modal-image" src={user?.image_url} alt="user-profile" />
                     </div>
                     <div className='right-post-div'>
-                        <h5 className='username-p'>{user?.username}</h5><p className="post-content-model"> {post?.body}</p>
+                        <h5 className='username-p '>{user?.username}</h5><p className="post-content-model"> {post?.body}</p>
                     </div>
                 </div>
                         <p id="post-last-edited">Edited · {calTimFromMil(Date.parse(new Date().toString()) - Date.parse(post?.updated_at), "short")}</p> 
@@ -139,8 +139,8 @@ const PostDetails = ({ postId }) => {
 
                             <div className='right-post-comment-div'>
                                 <div id="each-comment-content">
-                                    <div id="each-comment-content">
-                                    <h5 className='username-p'>{allUsers.find(user => user?.id === comment?.user_id).username}</h5> <p className="post-content-model"> {comment?.body}</p>
+                                    <div id="each-comment-content-inner">
+                                    <p className="post-content-model"><h5 className='username-p-comment'>{allUsers.find(user => user?.id === comment?.user_id).username}</h5>  {comment?.body}</p>
                                     </div>
                                     <button className="like-btn"><i className="fas new fa-heart"></i></button> 
                                 </div>

@@ -36,38 +36,47 @@ function App() {
   return (
     <BrowserRouter>
      
-     {/* {session && } */}
 
       <NavBar />
     
       <Switch>
+
         <Route path='/login' exact>
           <LoginForm />
         </Route>
+
         <Route path='/sign-up' exact>
           <SignUpForm />
         </Route>
+
         <ProtectedRoute path='/users' exact>
           <UsersList/>
         </ProtectedRoute>
+
         <ProtectedRoute path='/users/:userId' exact>
           <User />
         </ProtectedRoute>
+
         <ProtectedRoute path='/' exact>
           <HomePage />
         </ProtectedRoute>
+
         <ProtectedRoute path='/posts/:postId/edit' exact>
           <EditPostForm />
         </ProtectedRoute>
+
         <ProtectedRoute path='/posts' exact>
           <AddPostForm />
         </ProtectedRoute>
+
         <ProtectedRoute path='/posts/:postId' exact>
           <PostDetailPage />
         </ProtectedRoute>
+
         <ProtectedRoute path='/comments/:commentId/edit' exact>
           <EditCommentForm />
         </ProtectedRoute>
+        
       </Switch>
 
       <Footer />  

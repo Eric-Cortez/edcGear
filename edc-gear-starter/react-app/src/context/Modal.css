@@ -100,3 +100,10 @@
   font-size: 30px;
   padding-bottom: 15px;
 }
+
+#add-post-modal-btn {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border: none;
+}

@@ -8,7 +8,7 @@ function AddPostModal() {
 
     return (
         <>
-            <button onClick={() => setShowModal(true)}><i className="far fa-plus-square"></i></button>
+            <button id="add-post-modal-btn" onClick={() => setShowModal(true)}><i className="far fa-plus-square"></i></button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <AddPostForm setShowModal={setShowModal}/>
