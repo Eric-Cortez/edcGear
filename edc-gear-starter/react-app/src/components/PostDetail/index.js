@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { useParams } from 'react-router-dom';
 import { getAllComments, postComment, removeComment } from '../../store/comment';
 import { getAllPosts } from '../../store/post';
-import { Link } from 'react-router-dom';
 import EditCommentModal from '../../context/EditCommentModal';
 import "./PostDetail.css"
 import { getAllUsers } from "../../store/user"
@@ -64,7 +62,7 @@ const PostDetails = ({ postId }) => {
         e.preventDefault()
         const commentId = e.target.value
         const data = await dispatch(removeComment(commentId))
-        if (data.message === "Delete Successful") {
+        if (data && data.message === "Delete Successful") {
             await dispatch(getAllComments())
         }
     }
@@ -78,7 +76,7 @@ const PostDetails = ({ postId }) => {
         const sec = 1000
         const min = 60 * sec
         const hour = 60 * min
-        const day = hour * 24
+        // const day = hour * 24
 
         const currSec = Math.floor((milSec % min) / sec)
         const currMin = Math.floor((milSec % hour) / min)
@@ -134,7 +132,7 @@ const PostDetails = ({ postId }) => {
                 <div id="comment-list-div">
 
                     {commentsForPost && commentsForPost.map(comment => (
-                        <div className='each-comment-div'>
+                        <div key={`${comment.id} 1`} className='each-comment-div'>
                             <div className='left-post-comment-div'>
                                 <img className="post-modal-image" src={allUsers?.find(user => user?.id === comment?.user_id)?.image_url} alt="user-profile" />
                             </div>

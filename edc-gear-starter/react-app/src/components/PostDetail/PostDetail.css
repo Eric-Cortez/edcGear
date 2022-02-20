@@ -50,6 +50,7 @@
 .post-content-model {
     font-weight: 400;
     font-size: 14px;
+    padding-left: 5px;
 }
 
 .right-post-div {
@@ -105,7 +106,7 @@ textarea {
 #inner-post-modal-comments {
     display: flex;
     flex-direction: row;
-    padding: 10px;
+    padding: 0;
     align-items: center;
 }
 
@@ -113,10 +114,11 @@ textarea.post-detail-textarea {
     width: 80%;
     height: 25px;
     border: none;
-    color: #8e8e8e;
+    color: black;
     align-items: baseline;
     padding: 7px 0;
     margin-left: 10px;
+    /* border-bottom: 0.5px solid rgba(128,128,128,.2); */
 }
 
 .fa-smile {
@@ -192,7 +194,7 @@ button.like-btn {
 
 form#in-place-edit {
     /* position: absolute;
-    z-index: 1000px;
+    z-index: 1000px; 
     border: 2px solid red;
     display: none;
     position: absolute;
@@ -215,6 +217,7 @@ form#in-place-edit {
     font-size: 12px;
     font-weight: 800px;
     max-height: 17px;
+    cursor: pointer;
 }
 
 #post-modal-del:hover {
@@ -234,6 +237,7 @@ i.fa-edit {
     display:flex;
     justify-content: row;
     align-items: center;
+
 }
 
 #edit-comment-preview-div {
@@ -281,4 +285,13 @@ i.fa-edit {
 
 #outer-edit-div {
     display: flex;
+}
+
+
+#post-preview-edit {
+    font-size: 12;
+    color: #8e8e8e;
+    background-color: none;
+    border: none;
+    cursor: pointer;
 }

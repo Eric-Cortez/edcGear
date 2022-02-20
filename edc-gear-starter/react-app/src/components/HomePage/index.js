@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
-import { getAllPosts, removePost } from '../../store/post';
+import { Link } from 'react-router-dom';
+import { getAllPosts } from '../../store/post';
 import "./HomePage.css"
 // import AddCommentForm from '../Forms/AddCommentFor';
 import { getAllComments } from '../../store/comment'
@@ -13,9 +13,9 @@ import PostDetailModal from '../../context/PostDetailModal';
 
 function HomePage() {
     const dispatch = useDispatch()
-    const history = useHistory()
+    // const history = useHistory()
     const allPosts = useSelector(state => state?.post?.list)
-    const user = useSelector(state => state?.session?.user);
+    // const user = useSelector(state => state?.session?.user);
     const comments = useSelector(state => state?.comment?.list);
     const users = useSelector(state => state?.user?.list)
 
@@ -38,7 +38,7 @@ function HomePage() {
         const sec = 1000 
         const min = 60 * sec 
         const hour = 60 * min 
-        const day = hour * 24 
+        // const day = hour * 24 
 
         const currSec = Math.floor((milSec % min) / sec)
         const currMin = Math.floor((milSec % hour) / min)

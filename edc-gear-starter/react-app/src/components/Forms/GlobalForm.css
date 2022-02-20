@@ -38,3 +38,45 @@
     height: 100%;
     margin: 0;
 }
+
+.comment-edit-div {
+    height: 150px;
+    width: 300px;
+    padding: 20px;
+}
+
+.comment-modal-inner-div {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+#edit-comment-h2 {
+  margin: 2px;
+  text-align: center;
+  background-color: transparent;
+  padding-bottom: 20px;
+}
+
+#edit-comment-div {
+    width: 100%;
+}
+
+#edit-comment-div > * {
+    width: 100%;
+}
+
+button.edit-comment-submit-btn {
+  height: 35px; 
+  margin-top: 0;
+  cursor: pointer;
+}
+
+.edit-comment-submit-btn-div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.edit-comment-textarea {
+    border-radius: 4px;
+}

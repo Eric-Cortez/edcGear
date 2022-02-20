@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom';
 import { getAllComments, postComment, removeComment } from '../../store/comment';
 import { getAllPosts } from '../../store/post';
-import { Link } from 'react-router-dom';
 import EditCommentModal from '../../context/EditCommentModal';
 
 const PostDetailPage = () => {

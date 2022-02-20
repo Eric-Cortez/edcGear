@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Modal } from '../../context/Modal';
 import PostDetail from "../../components/PostDetail/index.js"
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { getAllComments } from '../../store/comment';
 
 function PostDetailModal({ postId }) {
@@ -11,9 +11,9 @@ function PostDetailModal({ postId }) {
     const dispatch = useDispatch()
     useEffect(()=> {
         dispatch(getAllComments)
-    },[])
+    },[dispatch])
 
-    const comments = useSelector(state => state?.comment?.list  )
+    // const comments = useSelector(state => state?.comment?.list)
 
     return (
         <>  

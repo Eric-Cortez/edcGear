@@ -1,12 +1,8 @@
 
-
-// rafce
-
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { getAllPosts, removePost } from '../../store/post';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import EditPostModal from '../../context/EditPostModal';
 

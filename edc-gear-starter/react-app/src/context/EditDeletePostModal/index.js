@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Modal } from '../Modal';
 import EditDelete from "../../components/HomePage/EditDelete.js"
 import "../Modal.css"
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 function EditDeleteModal({ post }) {
     const [showEditModal, setEditShowModal] = useState(false);

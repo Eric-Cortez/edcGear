@@ -40,7 +40,7 @@ const initialState = {
 }
 
 const userReducer = (state = initialState, action) => {
-    let newState
+    // let newState
     switch (action.type) {
         case LOAD_ALL: {
             return {
