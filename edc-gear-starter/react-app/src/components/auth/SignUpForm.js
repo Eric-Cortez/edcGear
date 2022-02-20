@@ -111,11 +111,11 @@ const SignUpForm = () => {
         </div>
         <button type='submit'>Sign Up</button>
       </form>
-      <Demo />
+      {/* <Demo /> */}
 
-      <NavLink to='/login' exact activeClassName='active'>
+      {/* <NavLink to='/login' exact activeClassName='active'>
         Login
-      </NavLink>
+      </NavLink> */}
     </div>
   );
 };

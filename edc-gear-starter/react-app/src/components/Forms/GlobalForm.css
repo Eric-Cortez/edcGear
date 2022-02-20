@@ -83,7 +83,6 @@ button.edit-comment-submit-btn {
 
 
 #login-form-div {
-    /* border: 1px solid red;  */
     /* height: auto;
     width: auto; */
     height: 100%;
@@ -108,7 +107,7 @@ button.edit-comment-submit-btn {
 }
 
 #lower-signup-div {
-    padding-top: 15px;
+  padding-top: 15px;
   display: flex;
 }
 
@@ -202,6 +201,10 @@ button.edit-comment-submit-btn {
     font-weight: 900;
     color: rgb(86, 97, 87);
     text-decoration: none;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    padding-left: 2px;
 }
 
 #sign-up-link:hover {

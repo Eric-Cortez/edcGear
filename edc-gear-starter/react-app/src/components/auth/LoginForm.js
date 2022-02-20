@@ -7,6 +7,7 @@ import { NavLink, Link } from 'react-router-dom';
 import "../Forms/GlobalForm.css"
 import logo from "./logo.png"
 import camera from "./favicon1.png"
+import SignUpModal from '../../context/SignUpModal';
  
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -92,9 +93,10 @@ const LoginForm = () => {
 
         <div id="lower-signup-div">
           <p id="signup-quest">Do you have an account? </p>
-          <NavLink id="sign-up-link" to='/sign-up' exact activeClassName='active'>
+          <SignUpModal />
+          {/* <NavLink id="sign-up-link" to='/sign-up' exact activeClassName='active'>
             Sign Up
-          </NavLink>
+          </NavLink> */}
         </div>
       </div>
     </div>
