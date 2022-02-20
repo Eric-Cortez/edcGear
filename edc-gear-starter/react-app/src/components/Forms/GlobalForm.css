@@ -83,6 +83,29 @@ button.edit-comment-submit-btn {
 
 
 #login-form-div {
-    border: 1px solid red;
- 
+    /* border: 1px solid red;  */
+    /* height: auto;
+    width: auto; */
+    height: 100%;
+    background-color: 	#353839;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#right-login-div {
+    border: 1px solid #dbdbdb;
+    display: flex;
+    flex-direction: column;
+    height: 422px;
+    width: 348px;
+    background-color:#D3D2BC;
+}
+
+#upper-login-div {
+
+}
+
+#lower-signup-div {
+  border: 0.5px solid #8e8e8e;
 }

@@ -1,19 +1,52 @@
 /* TODO Add site wide styles */
 
 * {
+    /* box-sizing: border-box; */
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   }
+  
+  
 
-html, body, #root, #root > div {
-  height: auto;
-  width: auto;
-  padding: 0;
-  margin: 0;
+  
+  html, body, #root, .App {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+
+    background-color: whitesmoke;
+    /* color: white; */
+}
+
+
+#single-post-div-main,
+#user-list-div,
+#profile {
+  height: 100%;
+  width: 100%;
+
+  /* border: 12px solid green; */
+}
+
+
+
+/* ROOT SIZING  */
+
+  
+  /* div#root {
+  } */
+/* #root { */
+    /* min-height: 100vh; */
+    /* padding: 0;
+    margin: 0; */
+/* } */
+
+/* html, body, #root, #root > div { */
+  /* height: auto;
+  width: auto; */
+  /* padding: 0;
+  margin: 0; */
+  
+  /* height: 100%;
+  width:  100%; */
   /* background-color: #2B2E30; */
-}
-
-div#root {
-  background-color: whitesmoke;
-}
-
-
+/* } */
