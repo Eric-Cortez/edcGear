@@ -3,11 +3,11 @@ from app.models import db, Comment
 
 # Adds a demo user, you can add other users here if you want
 def seed_comments():
-    comment1 = Comment(user_id=1, post_id=1, body="Best EDC1")
+    comment1 = Comment(user_id=5, post_id=1, body="Best EDC1")
     comment2 = Comment(user_id=2, post_id=2, body="Best EDC2")
     comment3 = Comment(user_id=3, post_id=3, body="Best EDC3")
     
-    comment4 = Comment(user_id=1, post_id=9, body="Nice 💀 💀 💀 💀  coin")
+    comment4 = Comment(user_id=7, post_id=9, body="Nice 💀 💀 💀 💀  coin")
     comment5 = Comment(user_id=2, post_id=8, body="#GondekEDC")
     comment6 = Comment(user_id=3, post_id=7, body="Dope scales")
     

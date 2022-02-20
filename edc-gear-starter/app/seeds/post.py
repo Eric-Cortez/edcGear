@@ -11,7 +11,7 @@ def seed_posts():
         user_id=5, image_url="https://cdn.blessthisstuff.com/imagens/stuff/gatura-edc-pocket-pouch.jpg", body="#CarryPouch")
     
     post4 = Post(
-        user_id=1, image_url="https://images.squarespace-cdn.com/content/v1/54ecbbfae4b0a4e937ba1b5c/1634259590567-YFATF2Y339OJIBGYEON0/79E34820-6710-40C4-B9F6-482D0F1875B1+-+Roland+Spitzer.jpeg?format=1000w", body="#CRKT")
+        user_id=3, image_url="https://images.squarespace-cdn.com/content/v1/54ecbbfae4b0a4e937ba1b5c/1634259590567-YFATF2Y339OJIBGYEON0/79E34820-6710-40C4-B9F6-482D0F1875B1+-+Roland+Spitzer.jpeg?format=1000w", body="#CRKT")
     post5 = Post(
         user_id=2, image_url="https://images.squarespace-cdn.com/content/v1/54ecbbfae4b0a4e937ba1b5c/1634577693304-T0O6D97N5NM93HKXLHBB/IMG_E5016+-+joel+kerr.JPG?format=1000w", body="#MightyHanks 🙌🏽 🙌🏽 🙌🏽 !")
     post6 = Post(
