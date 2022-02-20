@@ -212,8 +212,21 @@ i.fa-ellipsis-h {
     background-color: #353839;;
 }
 
+
+
+#post-wrapper {
+   overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 16px;    
+    max-height: 100px; 
+    max-width: 460px;  
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    margin: 0;
+}
+
 .extra-content {
-    /* white-space: nowrap; */
-    max-width: 460px;
- 
+    padding-top: 2px;
+    margin: 0;
 }

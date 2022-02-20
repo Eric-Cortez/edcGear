@@ -100,9 +100,12 @@ function HomePage() {
                         <div className='thread-like-count-div'>
                             <p> count - likes</p>
                         </div>
+                        
                         <div className='post-caption-div'>
-                            <p className='caption-user-name'>{users.find(user => user?.id === post?.user_id)?.username}</p>
-                            <p className='caption-body-thread extra-content' key={post?.body}>{post?.body}</p>
+                                <p className='caption-user-name'>{users.find(user => user?.id === post?.user_id)?.username}</p>
+                            <div id="post-wrapper">
+                                <p className='caption-body-thread extra-content' key={post?.body}>{post?.body}</p>
+                            </div>
                         
 
                         </div>
