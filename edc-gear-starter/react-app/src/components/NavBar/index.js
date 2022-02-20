@@ -58,19 +58,19 @@ const NavBar = () => {
 
 
 
-        {!sessionUser && 
+        {/* {!sessionUser && 
         <>
-          <li>
-            <NavLink to='/login' exact activeClassName='active'>
+          <li> */}
+            {/* <NavLink to='/login' exact activeClassName='active'>
               Login
-            </NavLink>
-          </li>
-          <li>
+            </NavLink> */}
+          {/* </li>
+          <li> */}
             {/* <NavLink to='/sign-up' exact activeClassName='active'>
               Sign Up
             </NavLink> */}
-          </li>
-          </> }
+          {/* </li>
+          </> } */}
 
 
        

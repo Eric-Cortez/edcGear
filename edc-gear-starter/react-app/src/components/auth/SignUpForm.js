@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
+import { NavLink } from 'react-router-dom';
 import Demo from './Demo';
 
 const SignUpForm = () => {
@@ -111,6 +112,10 @@ const SignUpForm = () => {
         <button type='submit'>Sign Up</button>
       </form>
       <Demo />
+
+      <NavLink to='/login' exact activeClassName='active'>
+        Login
+      </NavLink>
     </div>
   );
 };
