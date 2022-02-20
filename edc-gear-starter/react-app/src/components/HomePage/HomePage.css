@@ -1,6 +1,6 @@
 .thread-image {
-    width: 601px;
-    height: 603px;
+    width: 500px;
+    height: 450px;
 }
 
 .thread-div {
@@ -118,6 +118,8 @@ p.top-username-p {
 .caption-body-thread {
     font-weight: 400;
     color: rgb(38,38,38);
+
+
 }
 
 .info-img-name {
@@ -210,3 +212,21 @@ i.fa-ellipsis-h {
     background-color: #353839;;
 }
 
+
+
+#post-wrapper {
+   overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 16px;    
+    max-height: 100px; 
+    max-width: 460px;  
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    margin: 0;
+}
+
+.extra-content {
+    padding-top: 2px;
+    margin: 0;
+}

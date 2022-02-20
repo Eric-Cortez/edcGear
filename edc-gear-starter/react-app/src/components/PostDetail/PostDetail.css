@@ -50,7 +50,7 @@
 
 
 .right-post-div {
-    max-width: 100px;
+    max-width: 300px;
     padding: 5px 14px;
     padding-bottom: 0;
 }
@@ -83,7 +83,7 @@ div.username-p {
 }
 
 #comment-list-div {
-    height: 250px;
+    height: 310px;
     border-bottom: 0.4px solid rgba(128,128,128,.2);
     overflow-y: scroll;
     display: flex;
@@ -170,13 +170,25 @@ textarea.post-detail-textarea {
     padding: 0 7px;
 
 }
-#each-comment-content-inner {
+/* #each-comment-content-inner {
     display: flex;
     align-items: center;
     padding: 0 7px;
     max-width: 290px;
 
+} */
+
+ #each-comment-content-inner {
+    max-width: 300px;
+    padding: 5px 14px;
+    padding-bottom: 0;
 }
+
+ #each-comment-content-inner > * {
+    margin: 0;
+    display: inline;
+}
+
 
 
 .post-content-model {
@@ -185,7 +197,6 @@ textarea.post-detail-textarea {
     padding-left: 5px;
     margin: 0;
     word-break: break-all;
-
 }
 
 

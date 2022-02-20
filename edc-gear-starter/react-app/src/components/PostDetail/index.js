@@ -5,6 +5,7 @@ import { getAllPosts } from '../../store/post';
 import EditCommentModal from '../../context/EditCommentModal';
 import "./PostDetail.css"
 import { getAllUsers } from "../../store/user"
+import { calTimeFromMil } from "../utils/index.js"
 
 const PostDetails = ({ postId }) => {
 
@@ -72,35 +73,35 @@ const PostDetails = ({ postId }) => {
     };
 
 
-    const calTimFromMil = (milSec, type) => {
-        const sec = 1000
-        const min = 60 * sec
-        const hour = 60 * min
-        // const day = hour * 24
+    // const calTimFromMil = (milSec, type) => {
+    //     const sec = 1000
+    //     const min = 60 * sec
+    //     const hour = 60 * min
+    //     // const day = hour * 24
 
-        const currSec = Math.floor((milSec % min) / sec)
-        const currMin = Math.floor((milSec % hour) / min)
-        const currHour = Math.floor((milSec / hour))
-        const currDay = Math.floor(currHour / 24)
+    //     const currSec = Math.floor((milSec % min) / sec)
+    //     const currMin = Math.floor((milSec % hour) / min)
+    //     const currHour = Math.floor((milSec / hour))
+    //     const currDay = Math.floor(currHour / 24)
 
 
-        if (type === "short") {
-            if (currSec <= 60 && currMin === 0 && currHour === 0 && currDay === 0) return `< 1min`;
-            if (currMin <= 60 && currHour === 0 && currDay === 0) return `${currMin}m`;
-            if (currHour <= 60 && currDay === 0) return `${currHour}h`;
-            if (currDay >= 2 || currHour > 24) return `${currDay}d`;
-        } else {
-            if (currSec === 1 && currMin === 0 && currHour === 0 && currDay === 0) return `${currSec} SECOND AGO`;
-            if (currSec <= 60 && currMin === 0 && currHour === 0 && currDay === 0) return `${currSec} SECONDS AGO`;
-            if (currMin === 1 && currHour === 0 && currDay === 0) return `${currMin} MINUTE AGO`;
-            if (currMin <= 60 && currHour === 0 && currDay === 0) return `${currMin} MINUTES AGO`;
-            if (currHour === 1 && currDay === 0) return `${currHour} HOUR AGO`;
-            if (currHour <= 60 && currDay === 0) return `${currHour} HOURS AGO`;
-            if (currHour > 24) return `${currDay} DAY AGO`
-            if (currDay >= 2) return `${currDay} DAYS AGO`;
-        }
-        // return `${currDay}day ${currHour}hour ${currMin}min ${currSec}sec`
-    }   
+    //     if (type === "short") {
+    //         if (currSec <= 60 && currMin === 0 && currHour === 0 && currDay === 0) return `< 1min`;
+    //         if (currMin <= 60 && currHour === 0 && currDay === 0) return `${currMin}m`;
+    //         if (currHour <= 60 && currDay === 0) return `${currHour}h`;
+    //         if (currDay >= 2 || currHour > 24) return `${currDay}d`;
+    //     } else {
+    //         if (currSec === 1 && currMin === 0 && currHour === 0 && currDay === 0) return `${currSec} SECOND AGO`;
+    //         if (currSec <= 60 && currMin === 0 && currHour === 0 && currDay === 0) return `${currSec} SECONDS AGO`;
+    //         if (currMin === 1 && currHour === 0 && currDay === 0) return `${currMin} MINUTE AGO`;
+    //         if (currMin <= 60 && currHour === 0 && currDay === 0) return `${currMin} MINUTES AGO`;
+    //         if (currHour === 1 && currDay === 0) return `${currHour} HOUR AGO`;
+    //         if (currHour <= 60 && currDay === 0) return `${currHour} HOURS AGO`;
+    //         if (currHour > 24) return `${currDay} DAY AGO`
+    //         if (currDay >= 2) return `${currDay} DAYS AGO`;
+    //     }
+    //     // return `${currDay}day ${currHour}hour ${currMin}min ${currSec}sec`
+    // }   
 
 
 
@@ -108,10 +109,11 @@ const PostDetails = ({ postId }) => {
 
     return (
         <div className='base-modal-div'>
+           
             <div>
-
                 <img id="post-modal-img" src={post?.image_url} alt="post" />
             </div>
+
 
             <div id="post-comment-div">
                 <div id="post-model-top-content-div">
@@ -119,17 +121,17 @@ const PostDetails = ({ postId }) => {
                     <h5 id="profile-username-model">{user?.username}</h5>
                 </div>
 
-                <div className='right-post-model-content'>
-                    <div className='left-post-div'>
-                        <img className="post-modal-image" src={user?.image_url} alt="user-profile" />
-                    </div>
-                    <div className='right-post-div'>
-                        <h5 className='username-p '>{user?.username}</h5><p className="post-content-model"> {post?.body}</p>
-                    </div>
-                </div>
-                        <p id="post-last-edited">Edited · {calTimFromMil(Date.parse(new Date().toString()) - Date.parse(post?.updated_at), "short")}</p> 
-                
                 <div id="comment-list-div">
+                    <div className='right-post-model-content'>
+                        <div className='left-post-div'>
+                            <img className="post-modal-image" src={user?.image_url} alt="user-profile" />
+                        </div>
+                        <div className='right-post-div'>
+                            <h5 className='username-p '>{user?.username}</h5><p className="post-content-model"> {post?.body}</p>
+                        </div>
+                    </div>
+                            <p id="post-last-edited">Edited · {calTimeFromMil(Date.parse(new Date().toString()) - Date.parse(post?.updated_at), "short")}</p> 
+                    
 
                     {commentsForPost && commentsForPost.map(comment => (
                         <div key={`${comment.id} 1`} className='each-comment-div'>
@@ -140,7 +142,7 @@ const PostDetails = ({ postId }) => {
                             <div className='right-post-comment-div'>
                                 <div id="each-comment-content">
                                     <div id="each-comment-content-inner">
-                                    <h5 className='username-p-comment'>{allUsers.find(user => user?.id === comment?.user_id).username}</h5> <p className="post-content-model"> {comment?.body}</p>
+                                    <h5 className='username-p-comment'>{allUsers.find(user => user?.id === comment?.user_id)?.username}</h5> <p className="post-content-model"> {comment?.body}</p>
                                     </div>
                                     <button className="like-btn"><i className="fas new fa-heart"></i></button> 
                                 </div>
@@ -148,7 +150,7 @@ const PostDetails = ({ postId }) => {
 
                                     <div className='comment-timestamp-div'>
                                         <p className="display-time-posted" key={post?.updated_at}>
-                                            {calTimFromMil(Date.parse(new Date().toString()) - Date.parse(comment?.updated_at), "short")}
+                                            {calTimeFromMil(Date.parse(new Date().toString()) - Date.parse(comment?.updated_at), "short")}
                                         </p>
                                    
                             
@@ -170,10 +172,11 @@ const PostDetails = ({ postId }) => {
                     -count- likes
                     <div className='post-timestamp-div'>
                         <p className="display-time-posted" key={post?.updated_at}>
-                            {calTimFromMil(Date.parse(new Date().toString()) - Date.parse(post?.updated_at))}
+                            {calTimeFromMil(Date.parse(new Date().toString()) - Date.parse(post?.updated_at))}
                         </p>
                     </div>
                 </div>
+
                 <div id="comment-form-div">
                     <form onSubmit={onSubmit}>
                         <div className='each-error-div'>
@@ -185,9 +188,12 @@ const PostDetails = ({ postId }) => {
 
 
                             <div id="inner-post-modal-comments">
-                                <label
+                                {/* <label
                                     className='input-label'
-                                ><i className="far fa-smile"></i></label>
+                                ><i className="far fa-smile"></i></label> */}
+                                {/* <label
+                                    className='input-label'
+                                >Comment</label> */}
                                 <textarea
                                     className="post-detail-textarea"
                                     placeholder='Add a comment...'
@@ -197,7 +203,11 @@ const PostDetails = ({ postId }) => {
                                     onChange={updateComment}
                                     value={comment}
                                 ></textarea>
-                                <button className="comment-submit-btn" type='submit'>Post</button>
+
+                                <div className='submit-btn-div'>
+                                    <button className="comment-submit-btn" type='submit'>Post</button>
+                                </div>
+                            
                             </div>
                         </div>
                     </form>
