@@ -1,0 +1,36 @@
+#post-page-content {
+    border: 1px solid rgba(142, 142, 142, 0.3);
+    display: flex;
+    justify-content: row;
+    margin: 5% 15%;
+}
+
+
+.inputs {
+        font-size: 16px;
+        height: 100%;
+        background-color: whitesmoke;
+        border: none;
+        margin: 10px 0;
+        width: 200px;
+}
+
+
+#inner-pg-comments {
+    display: flex;
+    flex-direction: row;
+    margin: 0 12px;
+    /* border: 3px solid blue; */
+}
+
+.post-pg {
+    /* border: 2px solid red; */
+    /* padding: 10px 0; */
+    height: 100%;
+    padding-top: 10px;
+}
+
+.error-post-pg {
+    border-bottom: 1px solid rgba(142, 142, 142, .2);
+   
+}

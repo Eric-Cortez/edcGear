@@ -118,6 +118,8 @@ p.top-username-p {
 .caption-body-thread {
     font-weight: 400;
     color: rgb(38,38,38);
+
+
 }
 
 .info-img-name {
@@ -210,3 +212,8 @@ i.fa-ellipsis-h {
     background-color: #353839;;
 }
 
+.extra-content {
+    /* white-space: nowrap; */
+    max-width: 460px;
+ 
+}
