@@ -83,7 +83,7 @@ div.username-p {
 }
 
 #comment-list-div {
-    height: 250px;
+    height: 230px;
     border-bottom: 0.4px solid rgba(128,128,128,.2);
     overflow-y: scroll;
     display: flex;
