@@ -51,7 +51,7 @@ const PostDetailPage = () => {
         e.preventDefault()
         const commentId = e.target.value
         const data = await dispatch(removeComment(commentId))
-        if (data.message === "Delete Successful") {
+        if (data && data.message === "Delete Successful") {
             dispatch(getAllComments())
         }
     }

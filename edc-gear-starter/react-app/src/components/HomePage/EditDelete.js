@@ -15,7 +15,7 @@ const EditDelete = ({ post, setEditShowModal}) => {
         e.preventDefault()
         const postId = e.target.value
         const data = await dispatch(removePost(postId))
-        if (data.message === "Delete Successful") {
+        if (data && data.message === "Delete Successful") {
             await dispatch(getAllPosts())
             history.push("/")
         }
