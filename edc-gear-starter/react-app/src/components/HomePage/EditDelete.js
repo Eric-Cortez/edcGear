@@ -1,12 +1,8 @@
 
-
-// rafce
-
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { getAllPosts, removePost } from '../../store/post';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import EditPostModal from '../../context/EditPostModal';
 
@@ -19,7 +15,7 @@ const EditDelete = ({ post, setEditShowModal}) => {
         e.preventDefault()
         const postId = e.target.value
         const data = await dispatch(removePost(postId))
-        if (data.message === "Delete Successful") {
+        if (data && data.message === "Delete Successful") {
             await dispatch(getAllPosts())
             history.push("/")
         }

@@ -3,9 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom';
 import { getAllComments, postComment, removeComment } from '../../store/comment';
 import { getAllPosts } from '../../store/post';
-import { Link } from 'react-router-dom';
 import EditCommentModal from '../../context/EditCommentModal';
-
+import "../../index.css"
 const PostDetailPage = () => {
 
     const dispatch = useDispatch();
@@ -52,7 +51,7 @@ const PostDetailPage = () => {
         e.preventDefault()
         const commentId = e.target.value
         const data = await dispatch(removeComment(commentId))
-        if (data.message === "Delete Successful") {
+        if (data && data.message === "Delete Successful") {
             dispatch(getAllComments())
         }
     }
@@ -62,7 +61,7 @@ const PostDetailPage = () => {
     };
 
     return (
-        <div>
+        <div id="single-post-div-main">
             <img src={post?.image_url} alt="post"/>
             <p>{post?.body}</p>
             { commentsForPost && commentsForPost.map(comment => (

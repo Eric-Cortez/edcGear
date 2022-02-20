@@ -1,7 +1,7 @@
 nav {
     width: 100%;   
     /* background-color:#1B1B1B ; */
-    background-color: #323436;
+    background-color: #353839;;
     display:flex;
     justify-content: space-between;
     height: 80px;
@@ -26,15 +26,15 @@ nav {
 }
 
 #nav-logo {
- height: 80px;
+ height: 70px;
  width: 150px;
  margin-left: 25px;
 }
 
-.users-link {
+/* .users-link {
     color: #D3D2BC;
     text-decoration: none;
-}
+} */
 
 #nav-search {
     display: flex;
@@ -44,8 +44,21 @@ nav {
     justify-content: center;
     margin: 20px 0;
 }
-
+i.fa-users,
+i.fa-home,
 i.fa-plus-square {
     color: #D3D2BC;
-    font-size: 30px;
+    font-size: 25px;
+    background-color: #353839;;
+}
+
+img#nav-user-img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%; 
+    border: 1.5px solid #D3D2BC;
+}
+
+li.users-link.user-info {
+    border: transparent !important;
 }

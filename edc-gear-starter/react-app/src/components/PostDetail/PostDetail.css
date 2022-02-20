@@ -47,13 +47,10 @@
     
 }
 
-.post-content-model {
-    font-weight: 400;
-    font-size: 14px;
-}
+
 
 .right-post-div {
-    width: 100%;
+    max-width: 100px;
     padding: 5px 14px;
     padding-bottom: 0;
 }
@@ -66,6 +63,15 @@
 div.username-p {
     font-weight: 600;
     font-size: 14px;
+}
+
+.username-p-comment {
+    font-weight: 600;
+    font-size: 14px;
+    /* display: flex; */
+    justify-content: flex-start;
+    padding-top: 8px;
+    margin: 0;
 }
 
 .right-post-model-content {
@@ -105,7 +111,7 @@ textarea {
 #inner-post-modal-comments {
     display: flex;
     flex-direction: row;
-    padding: 10px;
+    padding: 0;
     align-items: center;
 }
 
@@ -113,10 +119,11 @@ textarea.post-detail-textarea {
     width: 80%;
     height: 25px;
     border: none;
-    color: #8e8e8e;
+    color: black;
     align-items: baseline;
     padding: 7px 0;
     margin-left: 10px;
+    /* border-bottom: 0.5px solid rgba(128,128,128,.2); */
 }
 
 .fa-smile {
@@ -125,13 +132,14 @@ textarea.post-detail-textarea {
 }
 
 .comment-submit-btn {
-    color: rgb(0,149,246);
+    color: #D27624;
     background-color:transparent;
     border: none;
     height: 30px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bolder;
     padding-bottom: 20px;
+    margin-right: 8px;
 }
 
 .comment-submit-btn:hover {
@@ -160,7 +168,28 @@ textarea.post-detail-textarea {
     justify-content: space-between;
     align-items: center;
     padding: 0 7px;
+
 }
+#each-comment-content-inner {
+    display: flex;
+    align-items: center;
+    padding: 0 7px;
+    max-width: 290px;
+
+}
+
+
+.post-content-model {
+    font-weight: 400;
+    font-size: 14px;
+    padding-left: 5px;
+    margin: 0;
+    word-break: break-all;
+
+}
+
+
+
 
 #each-comment-content > * {
     margin: 0;
@@ -192,7 +221,7 @@ button.like-btn {
 
 form#in-place-edit {
     /* position: absolute;
-    z-index: 1000px;
+    z-index: 1000px; 
     border: 2px solid red;
     display: none;
     position: absolute;
@@ -215,6 +244,7 @@ form#in-place-edit {
     font-size: 12px;
     font-weight: 800px;
     max-height: 17px;
+    cursor: pointer;
 }
 
 #post-modal-del:hover {
@@ -234,6 +264,7 @@ i.fa-edit {
     display:flex;
     justify-content: row;
     align-items: center;
+
 }
 
 #edit-comment-preview-div {
@@ -268,7 +299,7 @@ i.fa-edit {
 }
 
 .submit-btn-comment-m {
-    color: rgb(0,149,246);
+    color: #D27624;;
     background-color:transparent;
     border: none;
     height: 40px;
@@ -281,4 +312,13 @@ i.fa-edit {
 
 #outer-edit-div {
     display: flex;
+}
+
+
+#post-preview-edit {
+    font-size: 12;
+    color: #8e8e8e;
+    background-color: none;
+    border: none;
+    cursor: pointer;
 }

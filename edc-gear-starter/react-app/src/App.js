@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
 import NavBar from './components/NavBar/index.js';
@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 import HomePage from './components/HomePage';
 import AddPostForm from './components/Forms/AddPostForm';
 import EditPostForm from './components/Forms/EditPostForm';
-import PostDetail from './components/PostDetail/index.js';
+// import PostDetail from './components/PostDetail/index.js';
 import PostDetailPage from './components/PostDetailPage';
 import EditCommentForm from './components/Forms/EditCommentForm';
 
@@ -20,7 +20,7 @@ import EditCommentForm from './components/Forms/EditCommentForm';
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
-  const session = useSelector(state=> state?.user?.session)
+  // const session = useSelector(state=> state?.user?.session)
 
   useEffect(() => {
     (async() => {
@@ -36,38 +36,47 @@ function App() {
   return (
     <BrowserRouter>
      
-     {/* {session && } */}
 
       <NavBar />
     
       <Switch>
+
         <Route path='/login' exact>
           <LoginForm />
         </Route>
-        <Route path='/sign-up' exact>
+
+        {/* <Route path='/sign-up' exact>
           <SignUpForm />
-        </Route>
+        </Route> */}
+
         <ProtectedRoute path='/users' exact>
           <UsersList/>
         </ProtectedRoute>
+
         <ProtectedRoute path='/users/:userId' exact>
           <User />
         </ProtectedRoute>
+
         <ProtectedRoute path='/' exact>
           <HomePage />
         </ProtectedRoute>
+
         <ProtectedRoute path='/posts/:postId/edit' exact>
           <EditPostForm />
         </ProtectedRoute>
+
         <ProtectedRoute path='/posts' exact>
           <AddPostForm />
         </ProtectedRoute>
+
         <ProtectedRoute path='/posts/:postId' exact>
           <PostDetailPage />
         </ProtectedRoute>
+
         <ProtectedRoute path='/comments/:commentId/edit' exact>
           <EditCommentForm />
         </ProtectedRoute>
+        
       </Switch>
 
       <Footer />  

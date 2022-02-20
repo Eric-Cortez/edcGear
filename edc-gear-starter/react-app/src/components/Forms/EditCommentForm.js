@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { Link, useHistory, useParams } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import { getAllComments } from '../../store/comment';
 import { updateComment } from '../../store/comment';
 const EditCommentForm = ({ commentId, setShowModal }) => {
 
-    const history = useHistory()
+    // const history = useHistory()
     const dispatch = useDispatch();
-    // const { commentId } = useParams()
     const comments = useSelector(state => state?.comment?.list)
     const currComment = comments.find(comment => comment?.id === +commentId)
     useEffect(()=> {
@@ -29,7 +28,7 @@ const EditCommentForm = ({ commentId, setShowModal }) => {
 
     useEffect(() => {
         if (newComment) localStorage.setItem("newComment", newComment)
-    }, [dispatch])
+    }, [dispatch, newComment])
 
     useEffect(() => {
         const localStorageCaption = localStorage.getItem("newComment")
@@ -67,31 +66,25 @@ const EditCommentForm = ({ commentId, setShowModal }) => {
         }
     };
 
-    useEffect(() => {
-        const errors = [];
-
-        // if (errors) setErrors(errors)
-
-    }, [newComment])
-
 
     return (
-        <div>
+        <div className='comment-edit-div'>
             <form onSubmit={onSubmit}>
+                <div id="comment-modal-inner-div">
                 <div className='each-error-div'>
                     {displayErrors && errors?.map((error, ind) => (
                         <div key={ind}>{`* ${error}`}</div>
                     ))}
 
                 </div>
-                <h2 id="form-h2"> Edit comment </h2>
-                <div >
-                    <label
+                <h2 id="edit-comment-h2"> Edit comment </h2>
+                <div id="edit-comment-div">
+                    {/* <label
                         className='input-label'
-                    >Comment</label>
+                    >Comment</label> */}
                     <textarea
-                        placeholder='Comment'
-                        className='text-area'
+                        placeholder='Comment...'
+                        className='edit-comment-textarea'
                         type='text'
                         name='Comment'
                         required
@@ -100,8 +93,9 @@ const EditCommentForm = ({ commentId, setShowModal }) => {
                     ></textarea>
                 </div>
 
-                <div className='submit-btn-div'>
-                    <button className="submit-btn" type='submit'>Submit</button>
+                    <div className='edit-comment-submit-btn-div'>
+                    <button className="edit-comment-submit-btn" type='submit'>Post</button>
+                </div>
                 </div>
             </form>
         </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
+import { NavLink } from 'react-router-dom';
 import Demo from './Demo';
 
 const SignUpForm = () => {
@@ -51,66 +52,103 @@ const SignUpForm = () => {
   }
 
   return (
-    <div>
+    <div id="signup-modal-div-main">
       <form onSubmit={onSignUp}>
-        <div>
+
+        <div id="sign-up-title">
+          <h2 id="sign-up-h2">Sign up</h2>
+        </div>
+
+        <div className='each-error-div sign-up-err'>
           {errors.map((error, ind) => (
-            <div key={ind}>{error}</div>
+            <div id="err-sing-up" key={ind}>{`* ${error}`}</div>
           ))}
         </div>
-        <div>
-          <label>User Name</label>
-          <input
-            required
-            type='text'
-            name='username'
-            onChange={updateUsername}
-            value={username}
-          ></input>
+
+        <div id="sing-up-form-content">
+          <div className='login-input-div'>
+            <label
+              className="login-input-label"
+            >User Name</label>
+            <input
+              className='login-inputs sing-up-input'
+              placeholder='User Name'
+              required
+              type='text'
+              name='username'
+              onChange={updateUsername}
+              value={username}
+            ></input>
+          </div>
+          <div className='login-input-div'>
+            <label
+              className="login-input-label"
+            >Email</label>
+            <input
+              className='login-inputs sing-up-input'
+              placeholder='Email'
+              required
+              type='email'
+              name='email'
+              onChange={updateEmail}
+              value={email}
+            ></input>
+          </div>
+
+          <div className='login-input-div'>
+            <label
+              className="login-input-label"
+            >Password</label>
+            <input
+              className='login-inputs sing-up-input'
+              placeholder='Password'
+              required
+              type='password'
+              name='password'
+              onChange={updatePassword}
+              value={password}
+            ></input>
+          </div>
+          <div className='login-input-div'>
+            <label
+              className="login-input-label"
+            >Repeat Password</label>
+            <input
+              className='login-inputs sing-up-input'
+              placeholder='Repeat Password'
+              required
+              type='password'
+              name='repeat_password'
+              onChange={updateRepeatPassword}
+              value={repeatPassword}
+            ></input>
+          </div>
+
+          <div className='login-input-div sign-up-image-input'>
+            <label
+              className="login-input-label"
+            >imageUrl</label>
+            <input
+              className='login-inputs sing-up-input'
+              placeholder='Image Url'
+              required
+              type='text'
+              name='imageUrl'
+              onChange={updateImageUrl}
+              value={imageUrl}
+            ></input>
+          </div>
+
+          <div id="sign-up-submit-btn-div">
+            <button id="sing-up-submit-btn" type='submit'>Sign Up</button>
+          </div>
         </div>
-        <div>
-          <label>Email</label>
-          <input
-            required
-            type='email'
-            name='email'
-            onChange={updateEmail}
-            value={email}
-          ></input>
-        </div>
-        <div>
-          <label>imageUrl</label>
-          <input
-            required
-            type='text'
-            name='imageUrl'
-            onChange={updateImageUrl}
-            value={imageUrl}
-          ></input>
-        </div>
-        <div>
-          <label>Password</label>
-          <input
-            required
-            type='password'
-            name='password'
-            onChange={updatePassword}
-            value={password}
-          ></input>
-        </div>
-        <div>
-          <label>Repeat Password</label>
-          <input
-            required
-            type='password'
-            name='repeat_password'
-            onChange={updateRepeatPassword}
-            value={repeatPassword}
-          ></input>
-        </div>
-        <button type='submit'>Sign Up</button>
       </form>
-      <Demo />
+      {/* <Demo /> */}
+
+      {/* <NavLink to='/login' exact activeClassName='active'>
+        Login
+      </NavLink> */}
     </div>
   );
 };

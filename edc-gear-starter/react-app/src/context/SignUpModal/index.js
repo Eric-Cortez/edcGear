@@ -1,35 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import { Modal } from '../../context/Modal';
-import PostDetail from "../../components/PostDetail/index.js"
 import { useDispatch } from 'react-redux';
 import { getAllComments } from '../../store/comment';
+import SignUpForm from '../../components/auth/SignUpForm';
 
-function PostDetailModal({ postId }) {
+function SignUpModal({ postId }) {
     const [showModal, setShowModal] = useState(false);
-   
+
 
     const dispatch = useDispatch()
-    useEffect(()=> {
+    useEffect(() => {
         dispatch(getAllComments)
-    },[dispatch])
+    }, [dispatch])
 
     // const comments = useSelector(state => state?.comment?.list)
 
     return (
-        <>  
-         
-          <button id="thread-comment-btn-model" onClick={() => setShowModal(true)}><i className="far fa-comment"></i></button> 
+        <>
+
+            <button id="sign-up-link" onClick={() => setShowModal(true)}>Sign up</button>
 
 
 
-           
+
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <PostDetail postId={postId} setShowModal={setShowModal}/>
+                    <SignUpForm setShowModal={setShowModal} />
                 </Modal>
             )}
         </>
     );
 }
 
-export default PostDetailModal;
+export default SignUpModal;
