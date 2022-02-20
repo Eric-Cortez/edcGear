@@ -66,9 +66,9 @@ const NavBar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to='/sign-up' exact activeClassName='active'>
+            {/* <NavLink to='/sign-up' exact activeClassName='active'>
               Sign Up
-            </NavLink>
+            </NavLink> */}
           </li>
           </> }
 

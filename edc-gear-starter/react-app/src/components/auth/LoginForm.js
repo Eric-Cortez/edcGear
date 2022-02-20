@@ -6,7 +6,8 @@ import Demo from './Demo';
 import { NavLink, Link } from 'react-router-dom';
 import "../Forms/GlobalForm.css"
 import logo from "./logo.png"
-
+import camera from "./favicon1.png"
+ 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
@@ -44,16 +45,20 @@ const LoginForm = () => {
 
         <div id="upper-login-div"> 
           <form onSubmit={onLogin}>
+             <div id="camera-image-div">
+                <img id="camera-png"src={camera} alt='logo' />
+             </div>
 
-              <div>
+              <div id="login-form-errors">
                 {errors.map((error, ind) => (
-                  <div key={ind}>{error}</div>
+                  <div key={ind}>{`* ${error}`}</div>
                 ))}
               </div>
 
-              <div>
-                <label htmlFor='email'>Email</label>
+              <div className='login-input-div'>
+                {/* <label className="login-input-label" htmlFor='email'>Email</label> */}
                 <input
+                  className='login-inputs'
                   name='email'
                   type='text'
                   placeholder='Email'
@@ -61,19 +66,21 @@ const LoginForm = () => {
                   onChange={updateEmail}
                 />
               </div>
-              <div>
-                <label htmlFor='password'>Password</label>
+
+            <div className='login-input-div'>
+              {/* <label className="login-input-label" htmlFor='password'>Password</label> */}
                 <input
+                  className='login-inputs'
                   name='password'
                   type='password'
                   placeholder='Password'
                   value={password}
                   onChange={updatePassword}
                 />
-                <div>
-                  <button type='submit'>Log in</button>
+                <div id="login-submit-btn-div">
+                <button id="login-submit-btn" type='submit'>Log in</button>
                 </div>
-                <p> OR </p>
+              <div class="block_1"><div class="h_line"></div><p id="or-p-tag">OR</p> <div class="h_line"></div></div> 
               </div>
           </form>
         </div>
@@ -84,8 +91,8 @@ const LoginForm = () => {
 
 
         <div id="lower-signup-div">
-          <p>Do you have an account? </p>
-          <NavLink to='/sign-up' exact activeClassName='active'>
+          <p id="signup-quest">Do you have an account? </p>
+          <NavLink id="sign-up-link" to='/sign-up' exact activeClassName='active'>
             Sign Up
           </NavLink>
         </div>
