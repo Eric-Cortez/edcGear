@@ -32,8 +32,11 @@ function SearchBar() {
          if(searchQuery) {
             // get all results including users and hash tags
             // users will be de displayed first 
-           
-            if(searchQuery[0] === "#") {
+            if(searchQuery === "#") {
+                history.push(`/search-results/get-all-tags`)
+                setSearch("")
+
+            } else if(searchQuery[0] === "#") {
                 console.log(searchQuery)
                 searchRes = await dispatch(getAllSearch(searchQuery.split("#")[1]))
                 if (searchRes) {
@@ -43,8 +46,7 @@ function SearchBar() {
                     history.push(`/search-results/404-no-res-found`)
                     setSearch("")
                 }
-            } 
-            else {
+            } else {
                 searchRes = await dispatch(getAllSearch(searchQuery))
                 if(searchRes) {
                     history.push(`/search-results/${searchQuery}`)
