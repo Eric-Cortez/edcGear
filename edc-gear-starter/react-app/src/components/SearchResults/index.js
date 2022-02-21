@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 function SearchResults() {
    const { searchQuery } = useParams()
-   console.log("ppppparams",searchQuery === "#")
+  
    const dispatch = useDispatch()
    const postSearchRes = useSelector(state => state?.search?.postsList)
    const userSearchRes = useSelector(state => state?.search?.usersList)
@@ -55,7 +55,7 @@ function SearchResults() {
                 </>
             ))}
 
-            {(userSearchRes.length === 0 && postSearchRes.length === 0) && 
+              {(userSearchRes.length === 0 && postSearchRes.length === 0 || searchQuery === "404-no-res-found") && 
                   <h4 id="no-res-h5">No results found.</h4>
             }
         </div>

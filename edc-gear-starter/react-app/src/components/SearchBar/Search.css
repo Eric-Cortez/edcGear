@@ -1,0 +1,14 @@
+#search-input {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    align-self: center;
+    margin-left: 80px;
+    height: 20px;
+
+}
+
+#nav-search  > *{
+    margin: 0;
+    padding: 0;
+}
