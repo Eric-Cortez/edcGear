@@ -119,22 +119,22 @@ const PostDetails = ({ postId }) => {
             <div id="post-comment-div">
                 <div id="post-model-top-content-div">
                     <Link id="post-link" className="comment-link" to={`/users/${post?.user_id}`}> 
-                        <img className="post-modal-image" src={user?.image_url} alt="user-profile" />
-                        <h5 id="profile-username-model">{user?.username}</h5>
+                        <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile" />
+                        <h5 id="profile-username-model">{allUsers?.find(user => user?.id === post?.user_id)?.username}</h5>
                     </Link>
                 </div>
 
                 <div id="comment-list-div">
                     <div className='right-post-model-content'>
-                        <Link id="profile-link" className="comment-link" to={`/users/${user?.id}`}> 
+                        <Link id="profile-link" className="comment-link" to={`/users/${post?.user_id}`}> 
                             <div className='left-post-div'>
-                                <img className="post-modal-image" src={user?.image_url} alt="user-profile" />
+                                <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile" />
                             </div>
                        </Link>
 
                         <div className='each-comment-content-inner inline-comment'>
-                            <Link id="profile-link-username" className="comment-link" to={`/users/${user?.id}`}>
-                                <h5 className='username-p-comment'>{user?.username}</h5>
+                            <Link id="profile-link-username" className="comment-link" to={`/users/${post?.user_id}`}>
+                                <h5 className='username-p-comment'>{allUsers?.find(user => user?.id === post?.user_id)?.username}</h5>
                             </Link>
                                 <p className="post-content-model"> {post?.body}</p>
                         </div>
