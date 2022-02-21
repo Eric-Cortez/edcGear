@@ -102,10 +102,22 @@ i.fa-comment {
     margin-bottom: 8px;
 }
 
+
 .post-caption-div {
    display: inline;
    border: 2px solid rebeccapurple;
 }
+
+.thread-user-profile-link {
+    text-decoration: none;
+    display: inline;
+    color: black;
+    border: 2px solid red;
+    padding:0;
+    margin: 0;
+}
+
+
 .post-caption-div > * {
     display: inline;
 }
@@ -127,6 +139,7 @@ i.fa-comment {
 .caption-user-name {
     font-weight: 600;
     padding-right: 4px;
+    margin: 0;
    
 }
 
@@ -138,8 +151,6 @@ p.top-username-p {
 .caption-body-thread {
     font-weight: 400;
     color: rgb(38,38,38);
-
-
 }
 
 .info-img-name {
@@ -250,3 +261,4 @@ i.fa-ellipsis-h {
     padding-top: 2px;
     margin: 0;
 }
+

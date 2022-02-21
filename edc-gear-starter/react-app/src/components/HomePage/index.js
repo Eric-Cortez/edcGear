@@ -83,7 +83,9 @@ function HomePage() {
                         </div>
                         
                         <div className='post-caption-div'>
-                                <p className='caption-user-name'>{users.find(user => user?.id === post?.user_id)?.username}</p>
+                              <Link className="thread-user-profile-link" to={`/users/${post?.user_id}`}>
+                                    <p className='caption-user-name'>{users.find(user => user?.id === post?.user_id)?.username}</p>
+                              </Link>
                             <div id="post-wrapper">
                                 <p className='caption-body-thread extra-content' key={post?.body}>{post?.body}</p>
                             </div>

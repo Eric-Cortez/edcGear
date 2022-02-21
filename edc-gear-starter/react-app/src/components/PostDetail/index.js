@@ -60,9 +60,9 @@ const PostDetails = ({ postId }) => {
     }, [comment])
 
 
-    const handleDelete = async (e) => {
+    const handleDelete = (commentId) => async (e) => {
         e.preventDefault()
-        const commentId = e.target.value
+        // const commentId = e.target.value
         const data = await dispatch(removeComment(commentId))
         if (data && data.message === "Delete Successful") {
             await dispatch(getAllComments())
@@ -128,7 +128,7 @@ const PostDetails = ({ postId }) => {
                                         <p className="post-content-model"> {comment?.body}</p>
                                     </div>
 
-                                    <button className="like-btn"><i className="fas new fa-heart"></i></button> 
+                                    <button className="like-btn"><i className="far new fa-heart"></i></button> 
                                 </div>
                                 <div>
 
@@ -140,7 +140,7 @@ const PostDetails = ({ postId }) => {
                             
                                     {comment.user_id === user.id &&
                                         <div id="comment-control">
-                                            <button id="post-modal-del"onClick={handleDelete} value={comment?.id}>X</button>
+                                                <button id="post-modal-del" onClick={handleDelete(comment?.id)}><i class="fa fa-trash"></i></button>
                                             <EditCommentModal commentId={comment?.id} />
 
                                             

@@ -64,9 +64,9 @@ const PostDetailPage = () => {
     }, [comment])
 
 
-    const handleDelete = async (e) => {
+    const handleDelete = commentId => async (e) => {
         e.preventDefault()
-        const commentId = e.target.value
+        // const commentId = e.target.value
         const data = await dispatch(removeComment(commentId))
         if (data && data.message === "Delete Successful") {
             dispatch(getAllComments())
@@ -147,7 +147,7 @@ const PostDetailPage = () => {
 
                                             {comment.user_id === user.id &&
                                                 <div id="comment-control">
-                                                    <button id="post-modal-del" onClick={handleDelete} value={comment?.id}>X</button>
+                                                    <button id="post-modal-del" onClick={handleDelete(comment?.id)}><i class="fa fa-trash"></i></button>
                                                     <EditCommentModal commentId={comment?.id} />
 
 

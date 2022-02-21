@@ -268,22 +268,20 @@ form#in-place-edit {
 #post-modal-del{
     background-color: transparent;
     color:#8e8e8e;
-    border: 1px solid #8e8e8e;
     border-radius: 2px;
+    border: none;
     margin: 0;
     padding: 0 3px 0px 3px;
     display: flex;
     justify-content: center;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 800px;
     max-height: 17px;
     cursor: pointer;
 }
 
 #post-modal-del:hover {
-    color: white;
-    background-color: rgba(226, 4, 4, 0.904);
-    opacity: .7;
+    color: rgba(226, 4, 4, 0.904);
 }
 
 i.fa-edit {
