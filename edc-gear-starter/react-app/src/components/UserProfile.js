@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import "../index.css"
 
-function User() {
+function UserProfile() {
   const [user, setUser] = useState({});
   const { userId }  = useParams();
 
@@ -37,4 +37,4 @@ function User() {
     </div>
   );
 }
-export default User;
+export default UserProfile;

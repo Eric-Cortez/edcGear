@@ -37,9 +37,10 @@ function SearchResults() {
             </div>
             {userSearchRes && userSearchRes?.map(user => (
                 <div key={`1${user?.id}`} id="results-div">
-                    <img id="search-profile-img" src={user?.image_url} alt="profile"/>
-        
-                    <h4 key={`2${user?.id}`}>{user?.username}</h4>
+                    <Link id="post-link" className="comment-link" to={`/users/${user?.id}`}> 
+                        <img id="search-profile-img" src={user?.image_url} alt="profile"/>
+                        <h4 key={`2${user?.id}`}>{user?.username}</h4>
+                  </Link>
                 </div>
             ))}
             
