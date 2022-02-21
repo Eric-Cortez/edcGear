@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import "../index.css"
 import "./UserProfile.css"
 import { getAllPosts } from "../store/post.js"
@@ -69,7 +69,9 @@ function UserProfile() {
         <div id="profile-image-div">
             {usersPosts && usersPosts.map(post => (
               <div>
+                <Link to={`/posts/${post?.id}`}>
                 <img id="each-user-post-img" src={post?.image_url} alt="posts"/>
+                </Link>
               </div>
             ))
             
