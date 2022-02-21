@@ -20,12 +20,23 @@
 }
 
 .each-post-div {
+     width: 500px;
     display: flex;
     flex-direction: column;
     border: 1px solid lightgray;
     margin: 5px;
     padding-bottom: 10px;
     background-color: white;
+}
+
+.inline-comment {
+    display: inline-block;
+    margin: 0 12px;
+
+}
+
+.inline-comment > * {
+    display: inline;
 }
 
 /* .thread-image-content {
@@ -56,6 +67,7 @@ i.fa-comment {
     max-height: 40px;
     border-radius: 50%;
     margin-right: 10px;
+    border: 1px solid rgba(142, 142, 142, 0.2); 
 }
 
 .user-info-div {
@@ -88,6 +100,14 @@ i.fa-comment {
 .thread-like-count-div {
     padding: 0 20px;
     margin-bottom: 8px;
+}
+
+.post-caption-div {
+   display: inline;
+   border: 2px solid rebeccapurple;
+}
+.post-caption-div > * {
+    display: inline;
 }
 
 .post-timestamp-div > *,

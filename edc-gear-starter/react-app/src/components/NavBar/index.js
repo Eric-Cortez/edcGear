@@ -52,7 +52,9 @@ const NavBar = () => {
         {sessionUser &&
           <li className='nav-li user-info users-link'>
             {/* <p id="username">{`Welcome, ${sessionUser?.username}`}</p> */}
-            <img id="nav-user-img" src={sessionUser?.image_url}/>
+            <Link to={`/users/${sessionUser?.id}`}>
+               <img id="nav-user-img" src={sessionUser?.image_url} alt="profile"/>
+            </Link>
           </li>}
 
 

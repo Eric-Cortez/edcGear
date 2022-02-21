@@ -2,10 +2,14 @@
     border: 1px solid rgba(142, 142, 142, 0.3);
     display: flex;
     justify-content: row;
-    margin: 5% 15%;
+    margin: 5% 6%;
     background-color: white;
 }
 
+.post-link-pg {
+    text-decoration: none;
+    align-items: center;
+}
 
 .inputs {
         font-size: 12px;

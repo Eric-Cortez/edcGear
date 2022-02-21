@@ -67,8 +67,10 @@ function HomePage() {
                         {users &&
                             <div key={`2${post.id}`} className='user-info-div'>
                                 <div key={`3${post.id}`} className='info-img-name'>
-                                <img className="user-image" src={users.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile"/>
-                                <p className='top-username-p'>{users.find(user => user?.id === post?.user_id)?.username}</p>
+                                <Link id="post-link" className="comment-link" to={`/users/${post?.user_id}`}> 
+                                    <img className="user-image" src={users.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile"/>
+                                    <p className='top-username-p'>{users.find(user => user?.id === post?.user_id)?.username}</p>
+                                </Link>
                             </div>
 
 

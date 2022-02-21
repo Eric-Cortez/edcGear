@@ -44,21 +44,45 @@ nav {
     justify-content: center;
     margin: 20px 0;
 }
+
+i.fa-sign-out,
 i.fa-users,
 i.fa-home,
 i.fa-plus-square {
     color: #D3D2BC;
     font-size: 25px;
-    background-color: #353839;;
+    background-color: #353839;
+    cursor: pointer;
 }
+
+i.fa-sign-out:hover,
+i.fa-users:hover,
+i.fa-home:hover,
+i.fa-plus-square:hover { 
+    color: #D27624;
+}
+
 
 img#nav-user-img {
     height: 30px;
     width: 30px;
     border-radius: 50%; 
-    border: 1.5px solid #D3D2BC;
+    border: 2px solid #D3D2BC;
 }
+
+img#nav-user-img:hover {
+     border: 2px solid #D27624;
+}
+
 
 li.users-link.user-info {
     border: transparent !important;
+}
+
+#log-out-btn {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+    cursor: pointer;
 }

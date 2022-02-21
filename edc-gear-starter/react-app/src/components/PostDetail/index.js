@@ -6,6 +6,7 @@ import EditCommentModal from '../../context/EditCommentModal';
 import "./PostDetail.css"
 import { getAllUsers } from "../../store/user"
 import { calTimeFromMil } from "../utils/index.js"
+import { Link } from 'react-router-dom';
 
 const PostDetails = ({ postId }) => {
 
@@ -117,17 +118,25 @@ const PostDetails = ({ postId }) => {
 
             <div id="post-comment-div">
                 <div id="post-model-top-content-div">
-                    <img className="post-modal-image" src={user?.image_url} alt="user-profile" />
-                    <h5 id="profile-username-model">{user?.username}</h5>
+                    <Link id="post-link" className="comment-link" to={`/users/${post?.user_id}`}> 
+                        <img className="post-modal-image" src={user?.image_url} alt="user-profile" />
+                        <h5 id="profile-username-model">{user?.username}</h5>
+                    </Link>
                 </div>
 
                 <div id="comment-list-div">
                     <div className='right-post-model-content'>
-                        <div className='left-post-div'>
-                            <img className="post-modal-image" src={user?.image_url} alt="user-profile" />
-                        </div>
-                        <div className='right-post-div'>
-                            <h5 className='username-p '>{user?.username}</h5><p className="post-content-model"> {post?.body}</p>
+                        <Link id="profile-link" className="comment-link" to={`/users/${user?.id}`}> 
+                            <div className='left-post-div'>
+                                <img className="post-modal-image" src={user?.image_url} alt="user-profile" />
+                            </div>
+                       </Link>
+
+                        <div className='each-comment-content-inner inline-comment'>
+                            <Link id="profile-link-username" className="comment-link" to={`/users/${user?.id}`}>
+                                <h5 className='username-p-comment'>{user?.username}</h5>
+                            </Link>
+                                <p className="post-content-model"> {post?.body}</p>
                         </div>
                     </div>
                             <p id="post-last-edited">Edited · {calTimeFromMil(Date.parse(new Date().toString()) - Date.parse(post?.updated_at), "short")}</p> 
@@ -135,15 +144,22 @@ const PostDetails = ({ postId }) => {
 
                     {commentsForPost && commentsForPost.map(comment => (
                         <div key={`${comment.id} 1`} className='each-comment-div'>
-                            <div className='left-post-comment-div'>
-                                <img className="post-modal-image" src={allUsers?.find(user => user?.id === comment?.user_id)?.image_url} alt="user-profile" />
-                            </div>
+                            <Link id="profile-link" className="comment-link" to={`/users/${comment?.user_id}`}> 
+                                <div className='left-post-comment-div'>
+                                    <img className="post-modal-image" src={allUsers?.find(user => user?.id === comment?.user_id)?.image_url} alt="user-profile" />
+                                </div>
+                            </Link>
 
                             <div className='right-post-comment-div'>
                                 <div id="each-comment-content">
+
                                     <div id="each-comment-content-inner">
-                                    <h5 className='username-p-comment'>{allUsers.find(user => user?.id === comment?.user_id)?.username}</h5> <p className="post-content-model"> {comment?.body}</p>
+                                        <Link id="profile-link-username" className="comment-link" to={`/users/${comment?.user_id}`}> 
+                                            <h5 className='username-p-comment'>{allUsers.find(user => user?.id === comment?.user_id)?.username}</h5> 
+                                        </Link>
+                                        <p className="post-content-model"> {comment?.body}</p>
                                     </div>
+
                                     <button className="like-btn"><i className="fas new fa-heart"></i></button> 
                                 </div>
                                 <div>
