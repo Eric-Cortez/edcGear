@@ -1,0 +1,11 @@
+#main-search-res-div {
+    height: 100%;
+    width: 100%;
+    border: 3px solid blue;
+}
+
+#search-profile-img {
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+}

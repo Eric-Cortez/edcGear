@@ -15,6 +15,7 @@ import EditPostForm from './components/Forms/EditPostForm';
 // import PostDetail from './components/PostDetail/index.js';
 import PostDetailPage from './components/PostDetailPage';
 import EditCommentForm from './components/Forms/EditCommentForm';
+import SearchResults from './components/SearchResults/index.js';
 
 
 function App() {
@@ -76,6 +77,11 @@ function App() {
         <ProtectedRoute path='/comments/:commentId/edit' exact>
           <EditCommentForm />
         </ProtectedRoute>
+
+        <ProtectedRoute path='/search-results/:searchQuery' exact >
+          <SearchResults />
+        </ProtectedRoute>
+
         
       </Switch>
 
