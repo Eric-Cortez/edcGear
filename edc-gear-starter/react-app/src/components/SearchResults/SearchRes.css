@@ -1,11 +1,48 @@
 #main-search-res-div {
     height: 100%;
     width: 100%;
-    border: 3px solid blue;
 }
 
 #search-profile-img {
     height: 44px;
     width: 44px;
     border-radius: 50%;
+    border: 1px solid rgba(142, 142, 142, 0.2); 
+    margin-right: 10px;
+}
+
+
+#search-res-content {
+    margin: 5% 20% 0 20%;
+    border: 1px solid rgba(142, 142, 142, 0.2); 
+    background-color: white;
+}
+
+#search-res {
+   font-size: 20px;
+   display: flex;
+   justify-content: center;
+   border-bottom: 1px solid rgba(142, 142, 142, 0.2);
+   padding-bottom: 10px;
+}
+
+#results-div {
+    display: flex;
+    margin: 3px 15px;
+    align-items: center;
+}
+
+#post-link {
+    display: flex;
+    justify-content: row;
+    align-items: center;
+}
+
+#post-res {
+    color: black;
+}
+
+#no-res-h5 {
+    margin-left: 15px;
+    color: #8e8e8e;
 }

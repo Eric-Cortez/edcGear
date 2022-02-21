@@ -196,7 +196,7 @@ textarea.post-detail-textarea {
     font-size: 14px;
     padding-left: 5px;
     margin: 0;
-    word-break: break-all;
+    /* word-break: break-all; */
 }
 
 
