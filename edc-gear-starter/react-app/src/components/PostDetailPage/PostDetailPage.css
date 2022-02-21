@@ -2,14 +2,21 @@
     border: 1px solid rgba(142, 142, 142, 0.3);
     display: flex;
     justify-content: row;
-    margin: 5% 6%;
+    margin: 5% 10%;
     background-color: white;
+    max-width: 900px;
+    max-height: 550px;
 }
 
 .post-link-pg {
     text-decoration: none;
     align-items: center;
 }
+
+#single-post-div-main {
+    padding: 0 10%;
+}
+
 
 .inputs {
         font-size: 12px;

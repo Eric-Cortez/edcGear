@@ -172,7 +172,7 @@ const PostDetails = ({ postId }) => {
                             
                                     {comment.user_id === user.id &&
                                         <div id="comment-control">
-                                            <button id="post-modal-del"onClick={handleDelete} value={comment?.id}>x</button>
+                                            <button id="post-modal-del"onClick={handleDelete} value={comment?.id}>X</button>
                                             <EditCommentModal commentId={comment?.id} />
 
                                             

@@ -271,10 +271,10 @@ form#in-place-edit {
     border: 1px solid #8e8e8e;
     border-radius: 2px;
     margin: 0;
-    padding: 0 3px 1px 3px;
+    padding: 0 3px 0px 3px;
     display: flex;
     justify-content: center;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 800px;
     max-height: 17px;
     cursor: pointer;
