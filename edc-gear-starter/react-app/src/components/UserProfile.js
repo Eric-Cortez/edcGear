@@ -46,27 +46,31 @@ function UserProfile() {
 
       <div id="top-profile-div"> 
         
-        <div>
+        <div id="profile-image-div">
           <img id="profile-image" src={user?.image_url} alt="user-profile"/>
         </div>
 
         <div id="user-profile-info"> 
 
            <div>
-              <h3>username {user?.username}</h3>
-              <h5>email: {user?.email}</h5>
+              <h3 id="profile-username">{user?.username}</h3>
+            <h5 id="profile-email">email: {user?.email}</h5>
            </div>
 
           {usersPosts &&
-              <div>
-                <p>{usersPosts?.length}posts</p>
+              <div id="post-count-div">
+                <p id="post-count-p">{usersPosts?.length}</p>
+                <p id="post-label">posts</p>
               </div>}
         </div>
+      </div>
+      <div className='line-break'>
+        <div className='line-break-inner'></div>
       </div>
 
       <div id="lower-profile-div">
 
-        <div id="profile-image-div">
+        <div id="profile-images-div">
             {usersPosts && usersPosts.map(post => (
               <div>
                 <Link to={`/posts/${post?.id}`}>

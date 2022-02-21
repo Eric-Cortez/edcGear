@@ -84,23 +84,7 @@
   justify-content: center;
 }
 
-#captions-textarea-div {
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-  padding-top: 10px;
-}
-.edit-comment-submit-btn,
-.post-submit-btn {
-  margin-top: 10px;
-  padding: 10px;
-  color: #D27624;;
-  background-color:transparent;
-  border: none;
-  height: 20px;
-  font-size: 15px;
-  font-weight: bolder;
-}
+
 
 #thread-edit-post-btn {
   border: none;
@@ -169,4 +153,55 @@
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+
+
+.edit-submit-btn-div {
+      align-items: center;
+      margin-left: 8px;
+}
+
+.edit.post-submit-btn {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-size: 18px;
+  padding: 15px 10px;
+  padding-top: 18px;
+  cursor: pointer;
+}
+
+
+
+.post-submit-btn-div {
+  height: 50px;
+}
+
+#captions-textarea-div {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding-top: 10px;
+  margin-left: 50px;
+}
+
+.text-area.post-text {
+  width: 270px;
+}
+
+
+.edit-comment-submit-btn,
+.post-submit-btn {
+  margin-top: 10px;
+  padding-top: 8px;
+  padding-bottom: 35px;
+  display: flex;
+  justify-content: center;
+  color: #D27624;;
+  background-color:transparent;
+  border: none;
+  height: 20px;
+  font-size: 18px;
+  font-weight: bolder;
 }

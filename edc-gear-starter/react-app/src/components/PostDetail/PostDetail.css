@@ -25,6 +25,7 @@
     height: 32px;
     width: 32px;
     border-radius: 50%;
+    border: 1px solid lightgray;
 }
 
 #post-model-top-content-div {
@@ -88,7 +89,7 @@ div.username-p {
 }
 
 #comment-list-div {
-    height: 310px;
+    height: 320px;
     border-bottom: 0.4px solid rgba(128,128,128,.2);
     overflow-y: scroll;
     display: flex;
@@ -121,12 +122,15 @@ textarea {
 }
 
 textarea.post-detail-textarea {
+    box-shadow: 0 1px 4px 0 rgb(34 34 34 / 10%) inset;
+    border-radius: 4px;
     width: 80%;
     height: 25px;
-    border: none;
+    border: 0.5px solid rgba(128, 128, 128, 0.5);
     color: black;
-    align-items: baseline;
-    padding: 7px 0;
+    align-items: center;
+    padding-top: 7px;
+    padding-left: 10px;
     margin-left: 10px;
     /* border-bottom: 0.5px solid rgba(128,128,128,.2); */
 }

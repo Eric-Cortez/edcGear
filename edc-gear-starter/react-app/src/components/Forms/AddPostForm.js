@@ -84,7 +84,7 @@ const AddPostForm = ({ setShowModal }) => {
                         >Caption...</label> */}
                         <textarea
                             placeholder='Add a caption...'
-                            className='text-area'
+                            className='text-area post-text'
                             type='text'
                             name='Caption'
                             onChange={updateCaption}
@@ -92,7 +92,7 @@ const AddPostForm = ({ setShowModal }) => {
                         ></textarea>
                     </div>
 
-                    <div >
+                    <div className='post-submit-btn-div'>
                         <button className="post-submit-btn" type='submit'>Submit</button>
                     </div>
                 </div>
