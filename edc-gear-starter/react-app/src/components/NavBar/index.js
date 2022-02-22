@@ -24,7 +24,7 @@ const NavBar = () => {
 
       
         {sessionUser && 
-            <Link exact={true} to='/' >
+            <Link to='/' >
           <img id="nav-logo" alt="logo" src={edcGear} />
         </Link>}
         {sessionUser && 
@@ -32,7 +32,7 @@ const NavBar = () => {
         <ul id="nav-ul">
           {sessionUser && 
           <li>
-                <NavLink to='/' exact={true} activeClassName='active'>
+                <NavLink to='/' activeClassName='active'>
                 <i className="fas fa-home"></i>
             </NavLink>
           </li>}
@@ -41,7 +41,7 @@ const NavBar = () => {
 
           {/* {sessionUser &&
             <li>
-              <NavLink className="users-link" to='/users'  exact={true} activeClassName='active'>
+              <NavLink className="users-link" to='/users' activeClassName='active'>
                 <i className="fas fa-users"></i>
               </NavLink>
             </li>} */}
@@ -52,7 +52,7 @@ const NavBar = () => {
             </li>}
           {sessionUser &&
             <li className='nav-li user-info users-link'>
-              <Link to={`/users/${sessionUser?.id}`}>
+                <Link to={`/users/${sessionUser?.id}`}>
                 <img id="nav-user-img" src={sessionUser?.image_url} alt="profile"/>
               </Link>
             </li>}
