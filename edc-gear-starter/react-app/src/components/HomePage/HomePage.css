@@ -104,15 +104,14 @@ i.fa-comment {
 
 
 .post-caption-div {
-   display: inline;
-   border: 2px solid rebeccapurple;
+   display: flex;
+   flex-direction: column;
 }
 
 .thread-user-profile-link {
     text-decoration: none;
     display: inline;
     color: black;
-    border: 2px solid red;
     padding:0;
     margin: 0;
 }
