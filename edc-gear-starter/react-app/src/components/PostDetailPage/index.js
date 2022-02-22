@@ -10,12 +10,12 @@ import "../PostDetail/PostDetail.css"
 import { calTimeFromMil } from "../utils/index.js"
 import { getAllUsers } from "../../store/user"
 import { Link } from 'react-router-dom';
+import PageNotFound from "../PageNotFound/index.js"
 
 const PostDetailPage = () => {
 
     const dispatch = useDispatch();
     const { postId } = useParams()
-    const history = useHistory()
 
     const [comment, setComment] = useState('');
     const [errors, setErrors] = useState([]);
@@ -73,9 +73,11 @@ const PostDetailPage = () => {
     };
 
 
-    // if (!post) {
-    //         history.push('/PageNotFound')
-    // }
+    if (!post) {
+        return (
+          <PageNotFound />
+        )
+    }
 
 
 

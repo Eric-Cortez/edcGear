@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useHistory, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import "../index.css"
 import "./UserProfile.css"
 import { getAllPosts } from "../store/post.js"
 import { useDispatch, useSelector } from 'react-redux';
+import PageNotFound from "../components/PageNotFound/index.js"
+import { getAllUsers } from "../store/user"
 
 function UserProfile() {
   const [user, setUser] = useState({});
@@ -11,11 +13,15 @@ function UserProfile() {
   const dispatch = useDispatch()
   const allPosts = useSelector(state => state?.post?.list)
   const usersPosts = allPosts.filter(post => post?.user_id === +userId)
-  const history = useHistory()
+  const allUsers = useSelector(state => state?.user?.list)
+  const profileUser = allUsers.find(user => user?.id === +userId)
+
+
   useEffect(() => {
 
     (async () => {
       await dispatch(getAllPosts())
+      await dispatch(getAllUsers())
     })();
 
   }, [dispatch]);
@@ -30,14 +36,14 @@ function UserProfile() {
       if (response.ok) {
         const user = await response.json();
         setUser(user);
-      } else {
-        history.push("/page-not-found")
       }
     })();
   }, [userId]);
 
-  if (!user) {
-    return null;
+  if (!profileUser) {
+    return (
+      <PageNotFound />
+    )
   }
 
   return (
