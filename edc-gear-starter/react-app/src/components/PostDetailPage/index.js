@@ -147,7 +147,7 @@ const PostDetailPage = () => {
 
                                             {comment.user_id === user.id &&
                                                 <div id="comment-control">
-                                                    <button id="post-modal-del" onClick={handleDelete(comment?.id)}><i class="fa fa-trash"></i></button>
+                                                    <button id="post-modal-del" onClick={handleDelete(comment?.id)}><i className="fa fa-trash"></i></button>
                                                     <EditCommentModal commentId={comment?.id} />
 
 
