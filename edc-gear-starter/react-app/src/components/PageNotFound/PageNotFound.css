@@ -1,0 +1,34 @@
+#error-404-div {
+    height: 100%;
+}
+
+
+
+#inner-404-div {
+    margin: 5% 30%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#error-msg {
+    font-size: 100px;
+    margin: 10px 0;
+}
+
+#page-not-found-404 {
+    font-size: 50px;
+    margin: 10px 0;
+}
+
+#sorry-msg {
+    font-size: 16px;
+}
+
+.btn-home-back {
+    font-size: 20px;
+    /* text-decoration: none; */
+    color: #D27624;
+    font-weight: 800;
+}

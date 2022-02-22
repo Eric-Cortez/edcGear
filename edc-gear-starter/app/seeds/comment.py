@@ -22,7 +22,7 @@ def seed_comments():
     comment14 = Comment(user_id=5, post_id=6,
                        body="The pioneer is great for a light carry 🏔️")
     
-    comment15 = Comment(user_id=6, post_id=9, body="Cool brass bead 🔥")
+    comment15 = Comment(user_id=6, post_id=9, body="Cool bead 🔥")
     comment16 = Comment(user_id=6, post_id=8, body="is that a Ti pen?")
     comment17 = Comment(user_id=6, post_id=6, body="nice shot")
     comment18 = Comment(user_id=6, post_id=5, body="Great setup")

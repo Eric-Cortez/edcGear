@@ -70,7 +70,7 @@ function HomePage() {
                         </div> }
                         <img className="thread-image"key={post?.image_url} src={post?.image_url} alt="posts on feed"/> 
                         <div className='post-nav-buttons'>
-                            <button className="like-btn"><i className="fas fa-heart"></i></button> 
+                            {/* <button className="like-btn"><i className="fas fa-heart"></i></button>  */}
                             {/* <button className="un-like-btn"><i className="fas fa-heart"></i></button> */}
                             
                             <PostDetailModal postId={post?.id} commentBubble="commentBubble"/>

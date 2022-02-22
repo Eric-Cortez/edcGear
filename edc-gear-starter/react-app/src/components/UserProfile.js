@@ -46,7 +46,7 @@ function UserProfile() {
 
       <div id="top-profile-div"> 
         
-        <div id="profile-image-div">
+        <div id="profile-user-image-div">
           <img id="profile-image" src={user?.image_url} alt="user-profile"/>
         </div>
 
@@ -69,7 +69,7 @@ function UserProfile() {
       </div>
 
       <div id="lower-profile-div">
-
+        <div className="all-post-img">
         <div id="profile-images-div">
             {usersPosts && usersPosts.map(post => (
               <div>
@@ -82,7 +82,7 @@ function UserProfile() {
             }
         </div>
       </div>
-      
+      </div>
     </div>
   );
 }

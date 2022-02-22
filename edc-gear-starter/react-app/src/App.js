@@ -16,6 +16,7 @@ import EditPostForm from './components/Forms/EditPostForm';
 import PostDetailPage from './components/PostDetailPage';
 import EditCommentForm from './components/Forms/EditCommentForm';
 import SearchResults from './components/SearchResults/index.js';
+import PageNotFound from './components/PageNotFound';
 
 
 function App() {
@@ -45,43 +46,40 @@ function App() {
         <Route path='/login' exact>
           <LoginForm />
         </Route>
-
-        {/* <Route path='/sign-up' exact>
-          <SignUpForm />
-        </Route> */}
-
-        <ProtectedRoute path='/users' exact>
-          <UsersList/>
-        </ProtectedRoute>
-
         <ProtectedRoute path='/users/:userId' exact>
           <UserProfile />
         </ProtectedRoute>
-
         <ProtectedRoute path='/' exact>
           <HomePage />
         </ProtectedRoute>
-
-        <ProtectedRoute path='/posts/:postId/edit' exact>
-          <EditPostForm />
+        <ProtectedRoute path='/search-results/:searchQuery' exact >
+          <SearchResults />
         </ProtectedRoute>
-
-        <ProtectedRoute path='/posts' exact>
-          <AddPostForm />
-        </ProtectedRoute>
-
         <ProtectedRoute path='/posts/:postId' exact>
           <PostDetailPage />
         </ProtectedRoute>
 
-        <ProtectedRoute path='/comments/:commentId/edit' exact>
+        <Route>
+          <PageNotFound />
+        </Route>
+
+
+        {/* <ProtectedRoute path='/posts/:postId/edit' exact>
+          <EditPostForm />
+        </ProtectedRoute> */}
+
+        {/* <ProtectedRoute path='/posts' exact>
+          <AddPostForm />
+        </ProtectedRoute> */}
+        {/* <ProtectedRoute path='/comments/:commentId/edit' exact>
           <EditCommentForm />
-        </ProtectedRoute>
-
-        <ProtectedRoute path='/search-results/:searchQuery' exact >
-          <SearchResults />
-        </ProtectedRoute>
-
+        </ProtectedRoute> */}
+        {/* <Route path='/sign-up' exact>
+                  <SignUpForm />
+                </Route> */}
+        {/* <ProtectedRoute path='/users' exact>
+                  <UsersList/>
+                </ProtectedRoute> */}
         
       </Switch>
 
