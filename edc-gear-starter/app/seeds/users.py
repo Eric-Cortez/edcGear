@@ -5,7 +5,7 @@ from app.models import db, User
 def seed_users():
     demo = User(username='Demo', email='demo@aa.io', password='password', image_url='https://static.vecteezy.com/system/resources/previews/000/573/125/original/sign-of-mountain-icon-vector.jpg')
     marnie = User(username='Marnie', email='marnie@aa.io', password='password',
-                  image_url='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn2.vectorstock.com%2Fi%2F1000x1000%2F57%2F41%2Falphabet-letter-m-logo-icon-design-vector-12535741.jpg&f=1&nofb=1')
+                  image_url='https://cdn5.vectorstock.com/i/1000x1000/73/69/gold-circle-letter-s-logo-vector-14957369.jpg')
     bobbie = User(username='Bobbie', email='bobbie@aa.io', password='password',image_url='https://cdn.shopify.com/s/files/1/0095/0976/5198/products/Best_Damn_EDC_GPT_grande.jpg?v=1562011394')
     serge = User(username='Sergee', email='Sergee@aa.io', password='password', image_url='http://www.sergeknives.com/wpimages/wp725a329f_05_06.jpg')
     bladeHH = User(username='bladeHH', email='bladeHH@aa.io', password='password', image_url='https://www.bladehq.com/images/BHQLogos/BHQ-Shield-LightBG-Color.jpg')
