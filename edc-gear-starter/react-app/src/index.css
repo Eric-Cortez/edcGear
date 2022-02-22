@@ -1,7 +1,6 @@
 /* TODO Add site wide styles */
 
 * {
-    /* box-sizing: border-box; */
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   }
   
@@ -12,9 +11,7 @@
     height: 100%;
     padding: 0;
     margin: 0;
-
     background-color: whitesmoke;
-    /* color: white; */
 }
 
 
@@ -23,15 +20,17 @@
 #profile {
   height: 100%;
   width: 100%;
+}
 
-  /* border: 12px solid green; */
+#footer {
+    position:fixed;
+    bottom: 0;
+    z-index: 1;
+    width: 100vw;
 }
 
 
-
-/* ROOT SIZING  */
-
-  
+/* ROOT SIZING - research */
   /* div#root {
   } */
 /* #root { */
@@ -45,17 +44,9 @@
   width: auto; */
   /* padding: 0;
   margin: 0; */
-  
   /* height: 100%;
   width:  100%; */
   /* background-color: #2B2E30; */
 /* } */
 
 
-
-#footer {
-    position:fixed;
-    bottom: 0;
-    z-index: 1;
-    width: 100vw;
-}

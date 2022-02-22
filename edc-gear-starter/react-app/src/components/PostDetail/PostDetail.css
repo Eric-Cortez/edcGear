@@ -12,7 +12,6 @@
 
 
 #post-modal-img {
-    /* border-radius: 4px; */
     height: 100%;
     width: 100%;
 }
@@ -73,7 +72,6 @@ div.username-p {
 .username-p-comment {
     font-weight: 600;
     font-size: 14px;
-    /* display: flex; */
     justify-content: flex-start;
     padding-top: 8px;
     margin: 0;
@@ -94,7 +92,6 @@ div.username-p {
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
-    /* justify-content: flex-end; */
 }
 #comment-list-div::-webkit-scrollbar {
   display: none;
@@ -132,7 +129,6 @@ textarea.post-detail-textarea {
     padding-top: 7px;
     padding-left: 10px;
     margin-left: 10px;
-    /* border-bottom: 0.5px solid rgba(128,128,128,.2); */
 }
 
 .fa-smile {
@@ -179,13 +175,7 @@ textarea.post-detail-textarea {
     padding: 0 7px;
 
 }
-/* #each-comment-content-inner {
-    display: flex;
-    align-items: center;
-    padding: 0 7px;
-    max-width: 290px;
 
-} */
 
  #each-comment-content-inner {
     max-width: 300px;
@@ -205,7 +195,6 @@ textarea.post-detail-textarea {
     font-size: 14px;
     padding-left: 5px;
     margin: 0;
-    /* word-break: break-all; */
 }
 
 .username-p-top {
@@ -220,8 +209,6 @@ textarea.post-detail-textarea {
 
 #profile-link-username {
     display: inline-flex;
-    /* display: flex;
-    flex-direction: row; */
 }
 
 #each-comment-content > * {
@@ -250,19 +237,6 @@ button.like-btn {
     font-size: 12px;
     color:#8e8e8e;
     margin: 3px 0 5px 62px;
-}
-
-form#in-place-edit {
-    /* position: absolute;
-    z-index: 1000px; 
-    border: 2px solid red;
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1; */
 }
 
 #post-modal-del{
@@ -299,23 +273,9 @@ i.fa-edit {
 }
 
 #edit-comment-preview-div {
-    /* border: 2px solid green; */
-    /* 
-    float: left; */
     display: flex;
     width: 280px;
-    /* position: absolute; */
-    /* border:1px solid#8e8e8e; */
-    /* border-radius: 4px; */
-    /* background-color: whitesmoke; */
-    /* z-index: 1; */
-    /* top: 100%; */
-    /* bottom: 55%; */
     left: 63%;
-    /* padding: 8px; */
-    /* border: 1px solid rgba(0,0,0,.2);
-    border-radius: 6px;
-    box-shadow: 0 5px 10px rgb(0 0 0 / 20%); */
 }
 
 .edit-comment-model-text {

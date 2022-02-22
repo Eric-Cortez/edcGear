@@ -25,5 +25,4 @@ export const calTimeFromMil = (milSec, type) => {
         if (currHour > 24) return `${currDay} DAY AGO`
         if (currDay >= 2) return `${currDay} DAYS AGO`;
     }
-    // return `${currDay}day ${currHour}hour ${currMin}min ${currSec}sec`
 }   

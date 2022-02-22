@@ -7,16 +7,12 @@
     display: flex;
     flex-direction: column;
     padding-top: 20px;
+    margin-bottom: 80px;
 }
 
 #home-page {
-    /* height: auto;
-    width: auto; */
-    /* width: 100%;
-    height: 100%; */
     display: flex;
     justify-content: center;
-    /* padding-top: 500px; */
 }
 
 .each-post-div {
@@ -39,10 +35,6 @@
     display: inline;
 }
 
-/* .thread-image-content {
-    width: 515px;
-    height: 150px;
-} */
 
 i.fa-heart {
     font-size: 26px;
@@ -173,28 +165,6 @@ i.fa-ellipsis-h {
     font-size: 12px;
     font-weight: 300;
 }
-
-/* .preview-div {
-    position: relative;
-    z-index: 1;
-} */
-
-/* .post-btns-preview-div {
-    display: flex;
-    flex-direction: column;
-    background-color: whitesmoke;
-    border: 1px solid lightgray;
-    width: auto;
-    height: auto;
-    position: absolute;
-    padding: 10px;
-    top: 0px;
-    right: .5rem;
-    text-align: center;
-    z-index: 0;
-    user-select: none;
-    border-radius: 12px;
-} */
 
 .post-btns-preview-div {
     display: flex;

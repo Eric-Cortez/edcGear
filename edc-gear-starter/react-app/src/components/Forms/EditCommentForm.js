@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-// import { useHistory } from 'react-router-dom';
 import { getAllComments } from '../../store/comment';
 import { updateComment } from '../../store/comment';
 const EditCommentForm = ({ commentId, setShowModal }) => {
 
-    // const history = useHistory()
     const dispatch = useDispatch();
     const comments = useSelector(state => state?.comment?.list)
     const currComment = comments.find(comment => comment?.id === +commentId)
@@ -22,10 +20,6 @@ const EditCommentForm = ({ commentId, setShowModal }) => {
     const [displayErrors, setDisplayErrors] = useState(false);
     const user = useSelector(state => state?.session?.user);
 
-   
-
-
-
     useEffect(() => {
         if (newComment) localStorage.setItem("newComment", newComment)
     }, [dispatch, newComment])
@@ -34,10 +28,6 @@ const EditCommentForm = ({ commentId, setShowModal }) => {
         const localStorageCaption = localStorage.getItem("newComment")
         setNewComment(localStorageCaption)
     }, [])
-
-
-
-
 
 
     useEffect(() => {
@@ -62,7 +52,6 @@ const EditCommentForm = ({ commentId, setShowModal }) => {
         if (editedComment) {
             await dispatch(getAllComments())
             setShowModal(false)
-            // history.push(`/posts/${currComment?.post_id}`);
         }
     };
 
@@ -79,9 +68,6 @@ const EditCommentForm = ({ commentId, setShowModal }) => {
                 </div>
                 <h2 id="edit-comment-h2"> Edit comment </h2>
                 <div id="edit-comment-div">
-                    {/* <label
-                        className='input-label'
-                    >Comment</label> */}
                     <textarea
                         placeholder='Comment...'
                         className='edit-comment-textarea'

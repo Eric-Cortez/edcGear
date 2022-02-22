@@ -2,19 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import LoginForm from './components/auth/LoginForm';
-import SignUpForm from './components/auth/SignUpForm';
 import NavBar from './components/NavBar/index.js';
 import ProtectedRoute from './components/auth/ProtectedRoute';
-import UsersList from './components/UsersList';
+// import UsersList from './components/UsersList';
 import UserProfile from './components/UserProfile';
 import { authenticate } from './store/session';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
-import AddPostForm from './components/Forms/AddPostForm';
-import EditPostForm from './components/Forms/EditPostForm';
-// import PostDetail from './components/PostDetail/index.js';
 import PostDetailPage from './components/PostDetailPage';
-import EditCommentForm from './components/Forms/EditCommentForm';
 import SearchResults from './components/SearchResults/index.js';
 import PageNotFound from './components/PageNotFound';
 
@@ -22,7 +17,6 @@ import PageNotFound from './components/PageNotFound';
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
-  // const session = useSelector(state=> state?.user?.session)
 
   useEffect(() => {
     (async() => {
@@ -38,49 +32,32 @@ function App() {
   return (
     <BrowserRouter>
      
-
       <NavBar />
     
       <Switch>
 
-        <Route path='/login' exact>
+        <Route path='/login' exact={true}>
           <LoginForm />
         </Route>
-        <ProtectedRoute path='/users/:userId' exact>
+        <ProtectedRoute path='/users/:userId' exact={true}>
           <UserProfile />
         </ProtectedRoute>
-        <ProtectedRoute path='/' exact>
+        <ProtectedRoute path='/' exact={true}>
           <HomePage />
         </ProtectedRoute>
-        <ProtectedRoute path='/search-results/:searchQuery' exact >
+        <ProtectedRoute path='/search-results/:searchQuery' exact={true} >
           <SearchResults />
         </ProtectedRoute>
-        <ProtectedRoute path='/posts/:postId' exact>
+        <ProtectedRoute path='/posts/:postId' exact={true}>
           <PostDetailPage />
         </ProtectedRoute>
 
-        <Route>
+        <ProtectedRoute>
           <PageNotFound />
-        </Route>
-
-
-        {/* <ProtectedRoute path='/posts/:postId/edit' exact>
-          <EditPostForm />
-        </ProtectedRoute> */}
-
-        {/* <ProtectedRoute path='/posts' exact>
-          <AddPostForm />
-        </ProtectedRoute> */}
-        {/* <ProtectedRoute path='/comments/:commentId/edit' exact>
-          <EditCommentForm />
-        </ProtectedRoute> */}
-        {/* <Route path='/sign-up' exact>
-                  <SignUpForm />
-                </Route> */}
-        {/* <ProtectedRoute path='/users' exact>
+        </ProtectedRoute>
+        {/* <ProtectedRoute path='/users'  exact={true}>
                   <UsersList/>
                 </ProtectedRoute> */}
-        
       </Switch>
 
       <Footer />  

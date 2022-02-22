@@ -16,15 +16,12 @@
   left: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  /* border-radius: 15px; */
 }
 
 #modal-content {
   position: absolute;
   background-color:white;
   border-radius: 15px;
-  /* height: 517px;
-  width: 922px; */
   height: auto;
   width: auto;
 }
@@ -207,6 +204,5 @@
 }
 
 i.fas.fa-edit {
- 
   font-size: 13px;
 }

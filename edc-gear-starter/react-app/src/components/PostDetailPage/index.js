@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { getAllComments, postComment, removeComment } from '../../store/comment';
 import { getAllPosts } from '../../store/post';
 import EditCommentModal from '../../context/EditCommentModal';
@@ -10,6 +10,7 @@ import "../PostDetail/PostDetail.css"
 import { calTimeFromMil } from "../utils/index.js"
 import { getAllUsers } from "../../store/user"
 import { Link } from 'react-router-dom';
+import PageNotFound from "../PageNotFound/index.js"
 
 const PostDetailPage = () => {
 
@@ -27,25 +28,19 @@ const PostDetailPage = () => {
     const allUsers = useSelector(state => state?.user?.list)
    
     useEffect(() => {
-       
-
         (async () => {
             await dispatch(getAllComments())
             await dispatch(getAllPosts())
             await dispatch(getAllUsers())
 
         })();
-
-        
-        // dispatch(getAllComments())
-        // dispatch(getAllPosts())
     }, [dispatch])
 
     const onSubmit = async (e) => {
         e.preventDefault();
         let newComment;
         if (user && errors.length === 0) {
-            newComment = await dispatch(postComment({ userId: user.id, body: comment, postId }));
+            newComment = await dispatch(postComment({ userId: user?.id, body: comment, postId }));
             setDisplayErrors(false)
         } else {
             setDisplayErrors(true);
@@ -66,7 +61,7 @@ const PostDetailPage = () => {
 
     const handleDelete = commentId => async (e) => {
         e.preventDefault()
-        // const commentId = e.target.value
+
         const data = await dispatch(removeComment(commentId))
         if (data && data.message === "Delete Successful") {
             dispatch(getAllComments())
@@ -76,6 +71,15 @@ const PostDetailPage = () => {
     const updateComment = (e) => {
         setComment(e.target.value);
     };
+
+
+    if (!post) {
+        return (
+          <PageNotFound />
+        )
+    }
+
+
 
     return (
         <div id="single-post-div-main">
@@ -135,7 +139,6 @@ const PostDetailPage = () => {
                                             <p className="post-content-model"> {comment?.body}</p>
                                         </div>
 
-                                        {/* <button className="like-btn"><i className="fas new fa-heart"></i></button> */}
                                     </div>
                                     <div>
 
@@ -178,7 +181,7 @@ const PostDetailPage = () => {
                     </div>
 
                     <div id="model-likes-div">
-                        -count- likes
+                        
                         <div className='post-timestamp-div'>
                             <p className="display-time-posted" key={post?.updated_at}>
                                 {calTimeFromMil(Date.parse(new Date().toString()) - Date.parse(post?.updated_at))}

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-// import { Link } from 'react-router-dom';
 import { getAllSearch } from "../../store/search"
 import "./Search.css"
 
@@ -26,7 +25,6 @@ function SearchBar() {
         if (searchQuery === " " || searchQuery === "" ) {
         //     //return no result found 
             setSearch("")
-            // console.log("404 page")
          }
         
          if(searchQuery) {
@@ -71,7 +69,6 @@ function SearchBar() {
                             value={search}
                             onChange={e => setSearch(e.target.value)}
                         />
-                        {/* <button id="search-btn"><i className="fas fa-search">Search</i></button> */}
                 </div>
             </form>
         </div>

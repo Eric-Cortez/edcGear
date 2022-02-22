@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { Link, useHistory, useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { getAllPosts, updatePost } from '../../store/post';
 import "./GlobalForm.css"
 const EditPostForm = ({ postId, setShowModal, setEditShowModal}) => {
  
     const history = useHistory()
     const dispatch = useDispatch();
-    // const { postId } = useParams()
     
     const posts = useSelector(state => state?.post?.list)
     const currPost = posts.find(post => post?.id === +postId)
@@ -25,7 +24,7 @@ const EditPostForm = ({ postId, setShowModal, setEditShowModal}) => {
         })();
         if(caption) localStorage.setItem("caption", caption)
 
-    }, [dispatch])
+    }, [dispatch, caption])
 
     useEffect(()=> {
         const localStorageCaption = localStorage.getItem("caption")
@@ -85,16 +84,12 @@ const EditPostForm = ({ postId, setShowModal, setEditShowModal}) => {
 
                 <div id="edit-post-caption-items">
                     <div>
-                        {/* <label
-                            className='caption-input-label'
-                        > Edit caption</label> */}
                         <div id="captions-textarea-div edit-post-text">
                         <textarea
                             placeholder='Add a caption...'
                             className='text-area-caption'
                             type='text'
                             name='Caption'
-                            // required
                             onChange={updateCaption}
                             value={caption}
                         ></textarea>
@@ -105,8 +100,6 @@ const EditPostForm = ({ postId, setShowModal, setEditShowModal}) => {
                         <button className="edit post-submit-btn" type='submit'>Submit</button>
                     </div>
                 </div>
-
-                {/* <Link to="/">Cancel</Link> */}
             </form>
         </div>
     )

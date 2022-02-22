@@ -5,8 +5,8 @@ const Footer = () => {
 
     return (
         <footer id="footer">
-            <a target="_blank" rel="noreferrer" className="footer-links" href="https://github.com/Eric-Cortez">Developer Eric Cortez gitHub </a>
-            <a  target="_blank"  rel="noreferrer" className="footer-links" href="https://www.linkedin.com/in/eric-cortez-0101/">linkedin</a>
+            <a target="_blank" rel="noreferrer" className="footer-links" href="https://www.linkedin.com/in/eric-cortez-0101/">Developer Eric Cortez <i className="fa fa-linkedin"></i></a>
+            <a target="_blank" rel="noreferrer" className="footer-links" href="https://github.com/Eric-Cortez"><i className="fa fa-github"></i> </a>
         </footer>
     );
 }

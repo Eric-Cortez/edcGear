@@ -62,7 +62,6 @@ const PostDetails = ({ postId }) => {
 
     const handleDelete = (commentId) => async (e) => {
         e.preventDefault()
-        // const commentId = e.target.value
         const data = await dispatch(removeComment(commentId))
         if (data && data.message === "Delete Successful") {
             await dispatch(getAllComments())
@@ -127,8 +126,6 @@ const PostDetails = ({ postId }) => {
                                         </Link>
                                         <p className="post-content-model"> {comment?.body}</p>
                                     </div>
-
-                                    {/* <button className="like-btn"><i className="far new fa-heart"></i></button>  */}
                                 </div>
                                 <div>
 
@@ -153,7 +150,6 @@ const PostDetails = ({ postId }) => {
                 </div>
 
                 <div id="model-likes-div">
-                    -count- likes
                     <div className='post-timestamp-div'>
                         <p className="display-time-posted" key={post?.updated_at}>
                             {calTimeFromMil(Date.parse(new Date().toString()) - Date.parse(post?.updated_at))}
@@ -172,12 +168,6 @@ const PostDetails = ({ postId }) => {
 
 
                             <div id="inner-post-modal-comments">
-                                {/* <label
-                                    className='input-label'
-                                ><i className="far fa-smile"></i></label> */}
-                                {/* <label
-                                    className='input-label'
-                                >Comment</label> */}
                                 <textarea
                                     className="post-detail-textarea"
                                     placeholder='Add a comment...'

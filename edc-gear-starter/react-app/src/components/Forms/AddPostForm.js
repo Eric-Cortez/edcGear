@@ -79,9 +79,6 @@ const AddPostForm = ({ setShowModal }) => {
                 
                 <div id="post-caption-div">
                     <div id="captions-textarea-div">
-                        {/* <label
-                            className='input-label'
-                        >Caption...</label> */}
                         <textarea
                             placeholder='Add a caption...'
                             className='text-area post-text'
