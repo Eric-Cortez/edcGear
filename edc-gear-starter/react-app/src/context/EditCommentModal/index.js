@@ -8,7 +8,7 @@ function EditCommentModal({ commentId }) {
 
     return (
         <>
-            <button id="post-preview-edit" onClick={() => setShowModal(true)}>...</button>
+            <button id="post-preview-edit" onClick={() => setShowModal(true)}><i class="fas fa-edit"></i></button>
             {showModal && (
                 <Modal onClose={() => {
                     setShowModal(false)

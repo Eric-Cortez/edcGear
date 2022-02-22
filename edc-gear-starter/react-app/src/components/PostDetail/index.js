@@ -6,6 +6,7 @@ import EditCommentModal from '../../context/EditCommentModal';
 import "./PostDetail.css"
 import { getAllUsers } from "../../store/user"
 import { calTimeFromMil } from "../utils/index.js"
+import { Link } from 'react-router-dom';
 
 const PostDetails = ({ postId }) => {
 
@@ -59,9 +60,9 @@ const PostDetails = ({ postId }) => {
     }, [comment])
 
 
-    const handleDelete = async (e) => {
+    const handleDelete = (commentId) => async (e) => {
         e.preventDefault()
-        const commentId = e.target.value
+        // const commentId = e.target.value
         const data = await dispatch(removeComment(commentId))
         if (data && data.message === "Delete Successful") {
             await dispatch(getAllComments())
@@ -71,38 +72,6 @@ const PostDetails = ({ postId }) => {
     const updateComment = (e) => {
         setComment(e.target.value);
     };
-
-
-    // const calTimFromMil = (milSec, type) => {
-    //     const sec = 1000
-    //     const min = 60 * sec
-    //     const hour = 60 * min
-    //     // const day = hour * 24
-
-    //     const currSec = Math.floor((milSec % min) / sec)
-    //     const currMin = Math.floor((milSec % hour) / min)
-    //     const currHour = Math.floor((milSec / hour))
-    //     const currDay = Math.floor(currHour / 24)
-
-
-    //     if (type === "short") {
-    //         if (currSec <= 60 && currMin === 0 && currHour === 0 && currDay === 0) return `< 1min`;
-    //         if (currMin <= 60 && currHour === 0 && currDay === 0) return `${currMin}m`;
-    //         if (currHour <= 60 && currDay === 0) return `${currHour}h`;
-    //         if (currDay >= 2 || currHour > 24) return `${currDay}d`;
-    //     } else {
-    //         if (currSec === 1 && currMin === 0 && currHour === 0 && currDay === 0) return `${currSec} SECOND AGO`;
-    //         if (currSec <= 60 && currMin === 0 && currHour === 0 && currDay === 0) return `${currSec} SECONDS AGO`;
-    //         if (currMin === 1 && currHour === 0 && currDay === 0) return `${currMin} MINUTE AGO`;
-    //         if (currMin <= 60 && currHour === 0 && currDay === 0) return `${currMin} MINUTES AGO`;
-    //         if (currHour === 1 && currDay === 0) return `${currHour} HOUR AGO`;
-    //         if (currHour <= 60 && currDay === 0) return `${currHour} HOURS AGO`;
-    //         if (currHour > 24) return `${currDay} DAY AGO`
-    //         if (currDay >= 2) return `${currDay} DAYS AGO`;
-    //     }
-    //     // return `${currDay}day ${currHour}hour ${currMin}min ${currSec}sec`
-    // }   
-
 
 
 
@@ -117,17 +86,25 @@ const PostDetails = ({ postId }) => {
 
             <div id="post-comment-div">
                 <div id="post-model-top-content-div">
-                    <img className="post-modal-image" src={user?.image_url} alt="user-profile" />
-                    <h5 id="profile-username-model">{user?.username}</h5>
+                    <Link id="post-link" className="comment-link" to={`/users/${post?.user_id}`}> 
+                        <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile" />
+                        <h5 id="profile-username-model">{allUsers?.find(user => user?.id === post?.user_id)?.username}</h5>
+                    </Link>
                 </div>
 
                 <div id="comment-list-div">
                     <div className='right-post-model-content'>
-                        <div className='left-post-div'>
-                            <img className="post-modal-image" src={user?.image_url} alt="user-profile" />
-                        </div>
-                        <div className='right-post-div'>
-                            <h5 className='username-p '>{user?.username}</h5><p className="post-content-model"> {post?.body}</p>
+                        <Link id="profile-link" className="comment-link" to={`/users/${post?.user_id}`}> 
+                            <div className='left-post-div'>
+                                <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile" />
+                            </div>
+                       </Link>
+
+                        <div className='each-comment-content-inner inline-comment'>
+                            <Link id="profile-link-username" className="comment-link" to={`/users/${post?.user_id}`}>
+                                <h5 className='username-p-comment'>{allUsers?.find(user => user?.id === post?.user_id)?.username}</h5>
+                            </Link>
+                                <p className="post-content-model"> {post?.body}</p>
                         </div>
                     </div>
                             <p id="post-last-edited">Edited · {calTimeFromMil(Date.parse(new Date().toString()) - Date.parse(post?.updated_at), "short")}</p> 
@@ -135,16 +112,23 @@ const PostDetails = ({ postId }) => {
 
                     {commentsForPost && commentsForPost.map(comment => (
                         <div key={`${comment.id} 1`} className='each-comment-div'>
-                            <div className='left-post-comment-div'>
-                                <img className="post-modal-image" src={allUsers?.find(user => user?.id === comment?.user_id)?.image_url} alt="user-profile" />
-                            </div>
+                            <Link id="profile-link" className="comment-link" to={`/users/${comment?.user_id}`}> 
+                                <div className='left-post-comment-div'>
+                                    <img className="post-modal-image" src={allUsers?.find(user => user?.id === comment?.user_id)?.image_url} alt="user-profile" />
+                                </div>
+                            </Link>
 
                             <div className='right-post-comment-div'>
                                 <div id="each-comment-content">
+
                                     <div id="each-comment-content-inner">
-                                    <h5 className='username-p-comment'>{allUsers.find(user => user?.id === comment?.user_id)?.username}</h5> <p className="post-content-model"> {comment?.body}</p>
+                                        <Link id="profile-link-username" className="comment-link" to={`/users/${comment?.user_id}`}> 
+                                            <h5 className='username-p-comment'>{allUsers.find(user => user?.id === comment?.user_id)?.username}</h5> 
+                                        </Link>
+                                        <p className="post-content-model"> {comment?.body}</p>
                                     </div>
-                                    <button className="like-btn"><i className="fas new fa-heart"></i></button> 
+
+                                    <button className="like-btn"><i className="far new fa-heart"></i></button> 
                                 </div>
                                 <div>
 
@@ -156,7 +140,7 @@ const PostDetails = ({ postId }) => {
                             
                                     {comment.user_id === user.id &&
                                         <div id="comment-control">
-                                            <button id="post-modal-del"onClick={handleDelete} value={comment?.id}>x</button>
+                                                <button id="post-modal-del" onClick={handleDelete(comment?.id)}><i class="fa fa-trash"></i></button>
                                             <EditCommentModal commentId={comment?.id} />
 
                                             

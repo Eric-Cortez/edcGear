@@ -1,0 +1,100 @@
+#profile-image {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin: 50px 75px;  
+    border: 1px solid lightgray;  
+}
+
+.line-break {
+    background-color: white;
+    margin: 0 10%;
+}
+
+.line-break-inner {
+    border: .5px solid rgba(211, 211, 211, 0.3);
+    
+    margin: 0 1.8%;
+}
+
+#top-profile-div {
+    background-color: white;
+}
+
+#user-profile-info {
+    width: 100%;
+    margin: 50px 20px;
+    align-items: center;
+}
+
+#top-profile-div {
+    display: flex;
+    margin: 0 10%;
+}
+
+#each-user-post-img {
+    height: 200px;
+    width: 200px;
+}
+
+#lower-profile-div {
+    background-color: white;
+    display: flex;
+    margin: 0 10%;
+    padding: 15px;
+   
+}
+
+#profile-image-div {
+    align-items: center;
+    
+}
+
+#profile-images-div {
+    /* align-items: center; */
+    display: flex; 
+    flex-direction: row;
+    /* border: 2px solid rebeccapurple; */
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 10px;
+    
+    
+    /*
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+     */
+}
+
+
+#profile-username {
+    font-size: 24px;
+    font-weight:300;
+    margin: 8px;
+}
+
+#profile-email {
+    font-size: 12px;
+    font-weight:200;
+    margin: 6px;
+}
+
+#post-count-div {
+    display: flex;
+    flex-direction: row;
+    margin: 6px;
+}
+
+#post-count-p {
+    margin: 0 5px;
+    font-weight: 300;
+    font-size: 17px;
+
+}
+
+#post-label {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 200;
+}

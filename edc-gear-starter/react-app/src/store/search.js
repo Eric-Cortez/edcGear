@@ -1,61 +1,50 @@
 
-// const LOAD_ALL = "users/LOAD_ALL"
-// // const LOAD_ONE_USER = "users/LOAD_ONE_USER";
+const LOAD_ALL = "search/LOAD_ALL"
 
-// const load = list => ({
-//     type: LOAD_ALL,
-//     list
-// })
 
-// const loadOne = (user) => ({
-//     type: LOAD_ONE_SEARCH,
-//     user
-// })
+const load = (users, posts) => ({
+    type: LOAD_ALL,
+    users,
+    posts
+})
 
 
 
-// export const getAllUsers = () => async dispatch => {
-//     const response = await fetch(`/api/search/posts ?????`)
 
-//     if (response.ok) {
-//         const list = await response.json()
-//         dispatch(load(list.users))
-//     }
-// }
+export const getAllSearch = (searchQuery) => async dispatch => {
 
 
-// export const getOneUser = (userId) => async dispatch => {
-//     const response = await fetch(`/api/search/comments ???`)
+    const response = await fetch(`/api/search/content/${searchQuery}`)
+    
+    
+    if (response.ok) {
+        const res = await response.json()
+        console.log(res)
 
-//     if (response.ok) {
-//         const user = await response.json()
-//         dispatch(loadOne(user))
-//         }
-//     }
+       await dispatch(load(res.users, res.posts))
+       return { users: res.users, posts: res.posts}
+    }
+}
 
 
 
 const initialState = {
-    list: []
+    usersList: [],
+    postsList: [],
 }
 
 const searchReducer = (state = initialState, action) => {
-    let newState
+
     switch (action.type) {
-        // case LOAD_ALL: {
-        //     return {
-        //         ...state,
-        //         list: [...action.list]
-        //     }
-        // }
+        case LOAD_ALL: {
+            return {
+                ...state,
+                usersList: [...action.users],
+                postsList: [...action.posts]
+            }
+        }
 
-        // case LOAD_ONE_SEARCH: {
-        //     return {
-        //         ...state,
-        //         [action.payload]: action.id
-        //     }
-        // }
-
+  
 
         default: return state
     }

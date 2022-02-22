@@ -35,27 +35,6 @@ function HomePage() {
 
     }, [dispatch])
 
-//    const calTimFromMil = (milSec) => {
-//         const sec = 1000 
-//         const min = 60 * sec 
-//         const hour = 60 * min 
-//         // const day = hour * 24 
-
-//         const currSec = Math.floor((milSec % min) / sec)
-//         const currMin = Math.floor((milSec % hour) / min)
-//         const currHour = Math.floor((milSec / hour ))
-//         const currDay = Math.floor(currHour / 24)
-
-//         if (currSec === 1 && currMin === 0 && currHour === 0 && currDay === 0) return `${currSec} SECOND AGO`;
-//         if (currSec <= 60 && currMin === 0 && currHour === 0 && currDay === 0) return `${currSec} SECONDS AGO`;
-//         if (currMin === 1 && currHour === 0 && currDay === 0) return `${currMin} MINUTE AGO`;
-//         if (currMin <= 60 && currHour === 0 && currDay === 0) return `${currMin} MINUTES AGO`;
-//         if (currHour === 1 && currDay === 0) return `${currHour} HOUR AGO`;
-//         if (currHour <= 60 && currDay === 0) return `${currHour} HOURS AGO`;
-//         if (currHour > 24) return `${currDay} DAY AGO`
-//         if (currDay >= 2) return `${currDay} DAYS AGO`;
-//         // return `${currDay}day ${currHour}hour ${currMin}min ${currSec}sec`
-//     }   
 
 
     return (
@@ -67,8 +46,10 @@ function HomePage() {
                         {users &&
                             <div key={`2${post.id}`} className='user-info-div'>
                                 <div key={`3${post.id}`} className='info-img-name'>
-                                <img className="user-image" src={users.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile"/>
-                                <p className='top-username-p'>{users.find(user => user?.id === post?.user_id)?.username}</p>
+                                <Link id="post-link" className="comment-link" to={`/users/${post?.user_id}`}> 
+                                    <img className="user-image" src={users.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile"/>
+                                    <p className='top-username-p'>{users.find(user => user?.id === post?.user_id)?.username}</p>
+                                </Link>
                             </div>
 
 
@@ -102,7 +83,9 @@ function HomePage() {
                         </div>
                         
                         <div className='post-caption-div'>
-                                <p className='caption-user-name'>{users.find(user => user?.id === post?.user_id)?.username}</p>
+                              <Link className="thread-user-profile-link" to={`/users/${post?.user_id}`}>
+                                    <p className='caption-user-name'>{users.find(user => user?.id === post?.user_id)?.username}</p>
+                              </Link>
                             <div id="post-wrapper">
                                 <p className='caption-body-thread extra-content' key={post?.body}>{post?.body}</p>
                             </div>

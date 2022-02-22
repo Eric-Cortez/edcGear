@@ -70,7 +70,7 @@ const EditPostForm = ({ postId, setShowModal, setEditShowModal}) => {
 
             <form onSubmit={onSubmit}>
                 <div id="create-new-post-title">
-                    <h2 id="new-post-h2"> Edit form </h2>
+                    <h2 id="new-post-h2"> Edit post</h2>
                 </div>
 
                 <div className='each-error-div'>
@@ -84,21 +84,24 @@ const EditPostForm = ({ postId, setShowModal, setEditShowModal}) => {
                 </div>
 
                 <div id="edit-post-caption-items">
-                    <label
-                        className='caption-input-label'
-                    > Edit caption</label>
-                    <div id="captions-textarea-div edit-post-text">
-                    <textarea
-                        placeholder='Add a caption...'
-                        className='text-area-caption'
-                        type='text'
-                        name='Caption'
-                        // required
-                        onChange={updateCaption}
-                        value={caption}
-                    ></textarea>
-                    </div> 
-                    <div className='submit-btn-div'>
+                    <div>
+                        {/* <label
+                            className='caption-input-label'
+                        > Edit caption</label> */}
+                        <div id="captions-textarea-div edit-post-text">
+                        <textarea
+                            placeholder='Add a caption...'
+                            className='text-area-caption'
+                            type='text'
+                            name='Caption'
+                            // required
+                            onChange={updateCaption}
+                            value={caption}
+                        ></textarea>
+                        </div> 
+                    </div>
+
+                    <div className='edit-submit-btn-div'>
                         <button className="edit post-submit-btn" type='submit'>Submit</button>
                     </div>
                 </div>

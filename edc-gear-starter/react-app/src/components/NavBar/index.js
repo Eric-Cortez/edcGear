@@ -18,63 +18,68 @@ const NavBar = () => {
   }, [])
 
   return (
-    <nav id="nav-div">
-
-
+    <nav>
       {sessionUser && 
-      <Link exact to='/' >
-        <img id="nav-logo" alt="logo" src={edcGear} />
-      </Link>}
-      {sessionUser && 
-      <SearchBar />}
-      <ul id="nav-ul">
+      <div id="nav-div">
+
+      
         {sessionUser && 
-        <li>
-          <NavLink to='/' exact activeClassName='active'>
-              <i className="fas fa-home"></i>
-          </NavLink>
-        </li>}
-        {sessionUser &&
-          <AddPostModal />
-          // <NavLink to='/posts'><i className="far fa-plus-square"></i></NavLink>
-        }
-        {sessionUser &&
+        <Link exact to='/' >
+          <img id="nav-logo" alt="logo" src={edcGear} />
+        </Link>}
+        {sessionUser && 
+        <SearchBar />}
+        <ul id="nav-ul">
+          {sessionUser && 
           <li>
-            <NavLink className="users-link" to='/users' exact activeClassName='active'>
-              <i className="fas fa-users"></i>
+            <NavLink to='/' exact activeClassName='active'>
+                <i className="fas fa-home"></i>
             </NavLink>
           </li>}
+          {sessionUser &&
+            <AddPostModal />
+            // <NavLink to='/posts'><i className="far fa-plus-square"></i></NavLink>
+          }
+          {sessionUser &&
+            <li>
+              <NavLink className="users-link" to='/users' exact activeClassName='active'>
+                <i className="fas fa-users"></i>
+              </NavLink>
+            </li>}
 
-        {sessionUser &&
-          <li>
-            <LogoutButton />
-          </li>}
-        {sessionUser &&
-          <li className='nav-li user-info users-link'>
-            {/* <p id="username">{`Welcome, ${sessionUser?.username}`}</p> */}
-            <img id="nav-user-img" src={sessionUser?.image_url}/>
-          </li>}
-
-
-
-
-        {/* {!sessionUser && 
-        <>
-          <li> */}
-            {/* <NavLink to='/login' exact activeClassName='active'>
-              Login
-            </NavLink> */}
-          {/* </li>
-          <li> */}
-            {/* <NavLink to='/sign-up' exact activeClassName='active'>
-              Sign Up
-            </NavLink> */}
-          {/* </li>
-          </> } */}
+          {sessionUser &&
+            <li>
+              <LogoutButton />
+            </li>}
+          {sessionUser &&
+            <li className='nav-li user-info users-link'>
+              {/* <p id="username">{`Welcome, ${sessionUser?.username}`}</p> */}
+              <Link to={`/users/${sessionUser?.id}`}>
+                <img id="nav-user-img" src={sessionUser?.image_url} alt="profile"/>
+              </Link>
+            </li>}
 
 
-       
-      </ul>
+
+
+          {/* {!sessionUser && 
+          <>
+            <li> */}
+              {/* <NavLink to='/login' exact activeClassName='active'>
+                Login
+              </NavLink> */}
+            {/* </li>
+            <li> */}
+              {/* <NavLink to='/sign-up' exact activeClassName='active'>
+                Sign Up
+              </NavLink> */}
+            {/* </li>
+            </> } */}
+
+
+        
+        </ul>
+      </div>}
     </nav>
   );
 }

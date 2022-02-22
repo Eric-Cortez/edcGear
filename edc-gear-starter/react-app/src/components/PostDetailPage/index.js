@@ -9,6 +9,7 @@ import "./PostDetailPage.css"
 import "../PostDetail/PostDetail.css"
 import { calTimeFromMil } from "../utils/index.js"
 import { getAllUsers } from "../../store/user"
+import { Link } from 'react-router-dom';
 
 const PostDetailPage = () => {
 
@@ -63,9 +64,9 @@ const PostDetailPage = () => {
     }, [comment])
 
 
-    const handleDelete = async (e) => {
+    const handleDelete = commentId => async (e) => {
         e.preventDefault()
-        const commentId = e.target.value
+        // const commentId = e.target.value
         const data = await dispatch(removeComment(commentId))
         if (data && data.message === "Delete Successful") {
             dispatch(getAllComments())
@@ -89,36 +90,51 @@ const PostDetailPage = () => {
                 <div id="post-comment-div">
 
                     <div id="post-model-top-content-div">
-                        <img className="post-modal-image" src={user?.image_url} alt="user-profile" />
-                        <h5 id="profile-username-model">{user?.username}</h5>
+                        <Link id="profile-link-username" className="post-link-pg" to={`/users/${allUsers?.find(user => user?.id === post?.user_id)?.id}`}>
+                            <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile" />
+                            <h5 id="profile-username-model">{allUsers?.find(user => user?.id === post?.user_id)?.username}</h5>
+                        </Link>
                     </div>
 
 
                     <div id="comment-list-div">
                         <div className='right-post-model-content'>
-                            <div className='left-post-div'>
-                                <img className="post-modal-image" src={user?.image_url} alt="user-profile" />
+                            <Link id="profile-link" className="comment-link" to={`/users/${allUsers?.find(user => user?.id === post?.user_id)?.id}`}> 
+                                <div className='left-post-div'>
+                                    <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile" />
+                                </div>
+                            </Link>
+
+                            <div className='each-comment-content-inner inline-comment'>
+                                <Link id="profile-link-username" className="comment-link" to={`/users/${allUsers?.find(user => user?.id === post?.user_id)?.id}`}>
+                                    <h5 className='username-p-comment'>{allUsers?.find(user => user?.id === post?.user_id)?.username}</h5>
+                                </Link>
+                                <p className="post-content-model"> {post?.body}</p>
                             </div>
 
-                            <div className='right-post-div'>
-                                <h5 className='username-p '>{user?.username}</h5><p className="post-content-model"> {post?.body}</p>
-                            </div>
                         </div>
-                        <p id="post-last-edited">Edited · {calTimeFromMil(Date.parse(new Date().toString()) - Date.parse(post?.updated_at), "short")}</p> 
+                            <p id="post-last-edited">Edited · {calTimeFromMil(Date.parse(new Date().toString()) - Date.parse(post?.updated_at), "short")}</p> 
 
                         {commentsForPost && commentsForPost.map(comment => (
                             <div key={`${comment.id} 1`} className='each-comment-div'>
-                                <div className='left-post-comment-div'>
-                                    <img className="post-modal-image" src={allUsers?.find(user => user?.id === comment?.user_id)?.image_url} alt="user-profile" />
-                                </div>
+                                
+                                <Link id="profile-link" className="comment-link" to={`/users/${comment?.user_id}`}>
+                                    <div className='left-post-comment-div'>
+                                        <img className="post-modal-image" src={allUsers?.find(user => user?.id === comment?.user_id)?.image_url} alt="user-profile" />
+                                    </div>
+                                </Link>
 
+                              
                                 <div className='right-post-comment-div'>
                                     <div id="each-comment-content">
 
                                         <div id="each-comment-content-inner">
-                                            <h5 className='username-p-comment'>{allUsers.find(user => user?.id === comment?.user_id)?.username}</h5> <p className="post-content-model"> {comment?.body}</p>
+                                            <Link id="profile-link-username" className="comment-link" to={`/users/${comment?.user_id}`}>
+                                                <h5 className='username-p-comment'>{allUsers.find(user => user?.id === comment?.user_id)?.username}</h5>
+                                            </Link>
+                                            <p className="post-content-model"> {comment?.body}</p>
                                         </div>
-                                        
+
                                         <button className="like-btn"><i className="fas new fa-heart"></i></button>
                                     </div>
                                     <div>
@@ -131,7 +147,7 @@ const PostDetailPage = () => {
 
                                             {comment.user_id === user.id &&
                                                 <div id="comment-control">
-                                                    <button id="post-modal-del" onClick={handleDelete} value={comment?.id}>x</button>
+                                                    <button id="post-modal-del" onClick={handleDelete(comment?.id)}><i class="fa fa-trash"></i></button>
                                                     <EditCommentModal commentId={comment?.id} />
 
 

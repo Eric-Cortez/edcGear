@@ -1,29 +1,34 @@
-# from nis import cat
-# from typing import List
-# from flask import Blueprint
-# from sqlalchemy import func
-# from app.models import Product, Category
+from nis import cat
+from typing import List
+from flask import Blueprint
+from sqlalchemy import func
+from app.models import User, Post
 
-# search_routes = Blueprint('search', __name__)
+search_routes = Blueprint('search', __name__)
 
+
+#  returns result if user name maches exactly case insensitive 
+@search_routes.route('/content/<search_query>')
+def users_search(search_query):
+    
+    #  query for exact match   
+    # users = User.query.filter(func.lower(User.username) == func.lower(search_query)).all()
+    users = User.query.filter(func.lower(User.username).like(f'%{search_query.lower()}%'))
+    posts = Post.query.filter(func.lower(Post.body).like(f'%{search_query.lower()}%'))
+    
+    return {'users': [user.to_dict() for user in users], 'posts': [post.to_dict() for post in posts]}
 
 # @search_routes.route('/posts/<search_query>')
-# def category_search(search_query):
-#     categories = Category.query.filter(func.lower(
-#         Category.name) == func.lower(search_query))
-#     return {'categories': [category.to_dict() for category in categories]}
-
-
-# @search_routes.route('/comments/<search_query>')
-# def product_search(search_query):
-#     products = Product.query.filter(func.lower(
-#         Product.name).like(f'%{search_query.lower()}%'))
-#     return {'products': [product.to_dict() for product in products]}
+# def post_search(search_query):
+#     posts = Post.query.filter(func.lower(Post.body).like(f'%{search_query.lower()}%'))
+#     return {'posts': [post.to_dict() for post in posts]}
 
 
 
-# for future use in case we implement user detail page
-# @search_routes.route('/users/<search_query>')
-# def user_search(search_query):
-#     users = User.query.filter(func.lower(User.username) == func.lower(search_query) or func.lower(User.username).like(f'%{search_query.lower()}%'))
-#     return {'users': [user.to_dict() for user in users]}
+
+
+
+
+
+
+

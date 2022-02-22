@@ -1,0 +1,25 @@
+#search-input {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    align-self: center;
+    margin-left: 20.5%;
+    height: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: whitesmoke;
+    opacity: .7;
+    padding: 3px;
+    padding-left: 8px;
+    margin-right: 50px;
+}
+
+#search-input:focus {
+    background-color: white;
+    opacity: .9;
+}
+
+#nav-search  > *{
+    margin: 0;
+    padding: 0;
+}

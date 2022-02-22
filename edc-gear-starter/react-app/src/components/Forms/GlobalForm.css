@@ -11,8 +11,22 @@
     width: 500;
 }
 
+
+.text-area-caption,
+.text-area {
+    box-shadow: 0 1px 4px 0 rgb(34 34 34 / 10%) inset;
+    border-radius: 4px;
+    width: 80%;
+    height: 25px;
+    border: 0.5px solid rgba(128, 128, 128, 0.5);
+    color: black;
+    align-items: center;
+    padding-top: 7px;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
 .text-area-caption {
-    color: #8e8e8e;
     width: 300px;
 }
 
@@ -29,9 +43,9 @@
 
 .caption-input-label {
     margin: 12px 5px 0 0;
-    font-size: 15px;
+    font-size: 10px;
     font-weight: 600;
-    color: #8e8e8e;
+    color: black;
 }
 
 .edit {
@@ -75,6 +89,7 @@ button.edit-comment-submit-btn {
 .edit-comment-submit-btn-div {
     display: flex;
     justify-content: flex-end;
+
 }
 
 .edit-comment-textarea {
