@@ -7,19 +7,13 @@ footer {
 
 .footer-links {
     font-size: 15px;
-       color: #D3D2BC;
+    color: #D3D2BC;
     font-weight: 300;
     padding-top: 20px;
     margin: 0 10px;
     text-decoration: none;
 }
-/* 
-#footer {
-    position:fixed;
-    bottom: 0;
-    z-index: 1;
-    width: 100vw;
-} */
+
 
 .input-label {
     font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;

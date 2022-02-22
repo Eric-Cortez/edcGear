@@ -2,11 +2,8 @@
     height: 100%;
 }
 
-
-
 #inner-404-div {
     margin: 5% 30%;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,7 +25,6 @@
 
 .btn-home-back {
     font-size: 20px;
-    /* text-decoration: none; */
     color: #D27624;
     font-weight: 800;
 }

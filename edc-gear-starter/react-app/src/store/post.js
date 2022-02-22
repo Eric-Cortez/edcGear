@@ -1,7 +1,6 @@
 
 const LOAD_ALL = "posts/LOAD_ALL"
 const ADD_POST = "posts/ADD_POST"
-// const LOAD_ONE_POST = "posts/LOAD_ONE_POST";
 const EDIT_POST = "posts/EDIT_POST"
 const DELETE_POST = "posts/DELETE_POST"
 
@@ -10,11 +9,6 @@ const load = list => ({
     type: LOAD_ALL,
     list
 })
-
-// const loadOne = (post) => ({
-//     type: LOAD_ONE_POST,
-//     post
-// })
 
 const addPost = post => ({
     type: ADD_POST,
@@ -39,16 +33,6 @@ export const getAllPosts = () => async dispatch => {
         await dispatch(load(list.posts))
     }
 }
-
-
-// export const getOnePost = (postId) => async dispatch => {
-//     const response = await fetch(`/api/posts/${postId}`)
-
-//     if (response.ok) {
-//         const post = await response.json()
-//         dispatch(loadOne(post))
-//         }
-//     }
 
 export const postPost = (payload) => async dispatch => {
     const { userId, imageUrl, body } = payload
@@ -127,12 +111,6 @@ const postReducer = (state = initialState, action) => {
                 [action.payload]: action.id
             }
         }
-        // case LOAD_ONE_POST: {
-        //     return {
-        //         ...state,
-        //         [action.payload]: action.id
-        //     }
-        // }
         case DELETE_POST: {
             newState = { ...state }
             delete newState[action.post]

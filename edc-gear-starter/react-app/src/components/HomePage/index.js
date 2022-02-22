@@ -3,27 +3,17 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getAllPosts } from '../../store/post';
 import "./HomePage.css"
-// import AddCommentForm from '../Forms/AddCommentFor';
 import { getAllComments } from '../../store/comment'
 import { getAllUsers } from "../../store/user"
-// import EditDelete from './EditDelete';
 import EditDeleteModal from '../../context/EditDeletePostModal';
-// import CommentCount from '../CommentCount';
 import PostDetailModal from '../../context/PostDetailModal';
 import { calTimeFromMil } from "../utils/index.js"
 
 function HomePage() {
     const dispatch = useDispatch()
-    // const history = useHistory()
     const allPosts = useSelector(state => state?.post?.list)
-    // const user = useSelector(state => state?.session?.user);
     const comments = useSelector(state => state?.comment?.list);
     const users = useSelector(state => state?.user?.list)
-
-  
- 
-
-
 
     useEffect(() => {
 
@@ -34,7 +24,6 @@ function HomePage() {
         })();
 
     }, [dispatch])
-
 
 
     return (
@@ -51,37 +40,15 @@ function HomePage() {
                                     <p className='top-username-p'>{users.find(user => user?.id === post?.user_id)?.username}</p>
                                 </Link>
                             </div>
-
-
-                          
-                                {/* <EditDelete post={post}  /> */}
-                                   
                                         <EditDeleteModal post={post} />
 
-                                        {/* // <div className='preview-div'>  
-                                        //     <div className='post-btns-preview-div'>
-                                        //         <Link className="post-preview-edit" to={`/posts/${post?.id}/edit`}>edit</Link>
-                                        //         <button className="post-preview-del" onClick={handleDelete} value={post?.id}>delete</button>
-                                        //     </div>
-                                        // </div>
-                                  */}
-                        
-                           
                         </div> }
                         <img className="thread-image"key={post?.image_url} src={post?.image_url} alt="posts on feed"/> 
                         <div className='post-nav-buttons'>
-                            {/* <button className="like-btn"><i className="fas fa-heart"></i></button>  */}
-                            {/* <button className="un-like-btn"><i className="fas fa-heart"></i></button> */}
                             
                             <PostDetailModal postId={post?.id} commentBubble="commentBubble"/>
-                            {/* <Link to={`/posts/${post?.id}`} className="comment-on-post-btn open-modal-btn"><i className="far fa-comment"></i></Link> */}
-                       
                        
                         </div>
-                        <div className='thread-like-count-div'>
-                            <p> count - likes</p>
-                        </div>
-                        
                         <div className='post-caption-div'>
                               <Link className="thread-user-profile-link" to={`/users/${post?.user_id}`}>
                                     <p className='caption-user-name'>{users.find(user => user?.id === post?.user_id)?.username}</p>
@@ -106,9 +73,6 @@ function HomePage() {
                             </p>
                         </div>
                       
-                            {/* <AddCommentForm post={post}/> */} 
-                      
-                       
                     </div>
                 ))}
             </div>

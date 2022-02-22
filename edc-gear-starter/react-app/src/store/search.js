@@ -8,9 +8,6 @@ const load = (users, posts) => ({
     posts
 })
 
-
-
-
 export const getAllSearch = (searchQuery) => async dispatch => {
 
 
@@ -25,8 +22,6 @@ export const getAllSearch = (searchQuery) => async dispatch => {
        return { users: res.users, posts: res.posts}
     }
 }
-
-
 
 const initialState = {
     usersList: [],
@@ -43,9 +38,6 @@ const searchReducer = (state = initialState, action) => {
                 postsList: [...action.posts]
             }
         }
-
-  
-
         default: return state
     }
 }

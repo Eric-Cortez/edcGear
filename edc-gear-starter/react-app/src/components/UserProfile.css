@@ -3,7 +3,6 @@
     width: 100px;
     border-radius: 50%;
     margin: 50px 75px;
-  
     border: 1px solid lightgray;  
 }
 
@@ -16,7 +15,6 @@
 
 .line-break-inner {
     border: .5px solid rgba(211, 211, 211, 0.3);
-    
     margin: 0 1.8%;
 }
 
@@ -46,22 +44,16 @@
     margin: 0 10%;
     padding: 15px;
     padding-bottom: 8%;
-   
 }
 
 
 #profile-images-div {
-
     display: flex;
     flex-wrap: wrap !important;
     justify-content: center;
     row-gap: 25px;
     column-gap: 25px;
     align-items: center;
-    /* margin: 2% 6%;
-    padding: 0;
-    flex-direction: row !important;
-     */
 }
 
 
@@ -99,5 +91,17 @@
 .all-post-img {
     display: flex;
     justify-content: center;
-    
+}
+
+#profile-not-found {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+#div-upper {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    margin: 0 10%;
 }

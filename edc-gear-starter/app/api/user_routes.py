@@ -16,4 +16,7 @@ def users():
 @login_required
 def user(id):
     user = User.query.get(id)
-    return user.to_dict()
+    if user:
+        return user.to_dict()
+    return { "message": "User not found "}, 404
+

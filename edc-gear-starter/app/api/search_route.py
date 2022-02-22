@@ -18,10 +18,6 @@ def users_search(search_query):
     
     return {'users': [user.to_dict() for user in users], 'posts': [post.to_dict() for post in posts]}
 
-# @search_routes.route('/posts/<search_query>')
-# def post_search(search_query):
-#     posts = Post.query.filter(func.lower(Post.body).like(f'%{search_query.lower()}%'))
-#     return {'posts': [post.to_dict() for post in posts]}
 
 
 

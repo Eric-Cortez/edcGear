@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 import Demo from './Demo';
-import { NavLink, Link } from 'react-router-dom';
 import "../Forms/GlobalForm.css"
 import logo from "./logo.png"
 import camera from "./favicon1.png"
@@ -94,9 +93,6 @@ const LoginForm = () => {
         <div id="lower-signup-div">
           <p id="signup-quest">Do you have an account? </p>
           <SignUpModal />
-          {/* <NavLink id="sign-up-link" to='/sign-up' exact activeClassName='active'>
-            Sign Up
-          </NavLink> */}
         </div>
       </div>
     </div>

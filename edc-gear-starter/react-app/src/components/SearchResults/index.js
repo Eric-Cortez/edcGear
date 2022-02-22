@@ -1,7 +1,7 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getAllSearch } from "../../store/search"
 import { getAllPosts } from "../../store/post"
 import "./SearchRes.css"
@@ -22,14 +22,11 @@ function SearchResults() {
 
         (async () => {
             await dispatch(getAllSearch(searchQuery))
-            // await dispatch(getAllComments())
             await dispatch(getAllPosts())
-            // await dispatch(getAllUsers())
-
         })();
 
 
-    }, [searchQuery])
+    }, [searchQuery, dispatch])
 
 
   return (
@@ -70,7 +67,7 @@ function SearchResults() {
                 </>
             ))}
 
-              {searchQuery !== "get-all-tags" && (userSearchRes.length === 0 && postSearchRes.length === 0 || searchQuery === "404-no-res-found") && 
+              {searchQuery !== "get-all-tags" && ((userSearchRes.length === 0 && postSearchRes.length === 0) || searchQuery === "404-no-res-found") && 
                   <h4 id="no-res-h5">No results found.</h4>
             }
         </div>
