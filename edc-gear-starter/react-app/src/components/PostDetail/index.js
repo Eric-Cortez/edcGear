@@ -128,7 +128,7 @@ const PostDetails = ({ postId }) => {
                                         <p className="post-content-model"> {comment?.body}</p>
                                     </div>
 
-                                    <button className="like-btn"><i className="far new fa-heart"></i></button> 
+                                    {/* <button className="like-btn"><i className="far new fa-heart"></i></button>  */}
                                 </div>
                                 <div>
 

@@ -135,7 +135,7 @@ const PostDetailPage = () => {
                                             <p className="post-content-model"> {comment?.body}</p>
                                         </div>
 
-                                        <button className="like-btn"><i className="fas new fa-heart"></i></button>
+                                        {/* <button className="like-btn"><i className="fas new fa-heart"></i></button> */}
                                     </div>
                                     <div>
 
