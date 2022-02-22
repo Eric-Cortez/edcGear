@@ -27,10 +27,12 @@ function UserProfile() {
     }
     (async () => {
       const response = await fetch(`/api/users/${userId}`);
-      const user = await response.json();
-      if(user) {
+      if (response.ok) {
+        const user = await response.json();
         setUser(user);
-      } 
+      } else {
+        history.push("/page-not-found")
+      }
     })();
   }, [userId]);
 
@@ -67,9 +69,9 @@ function UserProfile() {
         <div className="all-post-img">
         <div id="profile-images-div">
             {usersPosts && usersPosts.map(post => (
-              <div>
-                <Link to={`/posts/${post?.id}`}>
-                <img id="each-user-post-img" src={post?.image_url} alt="posts"/>
+              <div key={`1${post?.id}`}>
+                <Link key={`2${post?.id}`} to={`/posts/${post?.id}`}>
+                  <img key={`3${post?.id}`} id="each-user-post-img" src={post?.image_url} alt="posts"/>
                 </Link>
               </div>
             ))} 
