@@ -40,12 +40,12 @@ const NavBar = () => {
             <AddPostModal />
             // <NavLink to='/posts'><i className="far fa-plus-square"></i></NavLink>
           }
-          {sessionUser &&
+          {/* {sessionUser &&
             <li>
               <NavLink className="users-link" to='/users' exact activeClassName='active'>
                 <i className="fas fa-users"></i>
               </NavLink>
-            </li>}
+            </li>} */}
 
           {sessionUser &&
             <li>
