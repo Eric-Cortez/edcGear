@@ -267,8 +267,9 @@ i.fa-edit {
 
 #comment-control {
     display:flex;
-    justify-content: row;
+    justify-content: center;
     align-items: center;
+    flex-direction: row;
 
 }
 
