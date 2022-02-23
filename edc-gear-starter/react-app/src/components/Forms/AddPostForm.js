@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 import { getAllPosts, postPost } from '../../store/post';
+import "./GlobalForm.css"
+
 
 const AddPostForm = ({ setShowModal }) => {
     const history = useHistory()
@@ -62,12 +64,23 @@ const AddPostForm = ({ setShowModal }) => {
                     ))}
                 </div>
 
-                <div className='image-input-div'>
-                    <label
+                <div className='image-input-div new'>
+                    <h6 className='sign-up-image-preview-title'>Profile Image Preview</h6>
+                    {!imageUrl || !imageUrl?.includes("http" || "https")?
+                        <img className="post-image-preview" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" />
+                        :<img className="post-image-preview" src={imageUrl} /> 
+                    }
+                </div>
+                
+                <div id="post-caption-div" className='new-add-post'>
+                    {/* <label
                         className='input-label'
-                    >Image Url</label>
+                    >Image Url</label> */}
+                    <div id="left-post-div-new">
+
+              
                     <input
-                        className='title-input'
+                        className='image-url-input post-new'
                         placeholder='Image Url'
                         type='text'
                         name='image_url'
@@ -75,13 +88,9 @@ const AddPostForm = ({ setShowModal }) => {
                         onChange={updateImageUrl}
                         value={imageUrl}
                     ></input>
-                </div>
-                
-                <div id="post-caption-div">
-                    <div id="captions-textarea-div">
                         <textarea
-                            placeholder='Add a caption...'
-                            className='text-area post-text'
+                            placeholder='Add an optional caption...'
+                            className='image-url-input post-new'
                             type='text'
                             name='Caption'
                             onChange={updateCaption}
@@ -90,7 +99,7 @@ const AddPostForm = ({ setShowModal }) => {
                     </div>
 
                     <div className='post-submit-btn-div'>
-                        <button className="post-submit-btn" type='submit'>Submit</button>
+                        <button className="post-submit-btn org-btn" type='submit'>Submit</button>
                     </div>
                 </div>
 

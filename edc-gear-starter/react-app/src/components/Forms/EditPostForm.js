@@ -79,14 +79,17 @@ const EditPostForm = ({ postId, setShowModal, setEditShowModal}) => {
                 </div>
 
                 <div className='edit-image-div'>
+                    {!currPost?.image_url ?
+                    <img id="edit-post-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
                     <img id="edit-post-image" src={currPost?.image_url} alt={`${currPost?.body}`}/>
+                    }
                 </div>
 
                 <div id="edit-post-caption-items">
                     <div>
                         <div id="captions-textarea-div edit-post-text">
                         <textarea
-                            placeholder='Add a caption...'
+                                placeholder='Add an optional caption...'
                             className='text-area-caption'
                             type='text'
                             name='Caption'

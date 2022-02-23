@@ -36,14 +36,20 @@ function HomePage() {
                             <div key={`2${post.id}`} className='user-info-div'>
                                 <div key={`3${post.id}`} className='info-img-name'>
                                 <Link id="post-link" className="comment-link" to={`/users/${post?.user_id}`}> 
+                                  {!users.find(user => user?.id === post?.user_id)?.image_url ?
+                                    <img className="user-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :       
                                     <img className="user-image" src={users.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile"/>
+                                  }
                                     <p className='top-username-p'>{users.find(user => user?.id === post?.user_id)?.username}</p>
                                 </Link>
                             </div>
                                         <EditDeleteModal post={post} />
 
                         </div> }
-                        <img className="thread-image"key={post?.image_url} src={post?.image_url} alt="posts on feed"/> 
+                        {!post?.image_url ?
+                            <img className="thread-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
+                        <img className="thread-image" key={post?.image_url} src={post?.image_url} alt="posts on feed"/> 
+                        }
                         <div className='post-nav-buttons'>
                             
                             <PostDetailModal postId={post?.id} commentBubble="commentBubble"/>
