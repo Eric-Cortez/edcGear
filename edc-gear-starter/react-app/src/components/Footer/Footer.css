@@ -27,3 +27,12 @@ footer {
     display: flex;
     flex-direction: column;
 }
+
+.fa-linkedin, 
+.fa-github {
+   font-size: 16px;
+}
+
+.fa-linkedin {
+    padding-left: 11px;
+}
