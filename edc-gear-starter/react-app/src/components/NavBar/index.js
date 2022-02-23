@@ -53,7 +53,10 @@ const NavBar = () => {
           {sessionUser &&
             <li className='nav-li user-info users-link'>
                 <Link to={`/users/${sessionUser?.id}`}>
-                <img id="nav-user-img" src={sessionUser?.image_url} alt="profile"/>
+                {!sessionUser?.image_url ?
+              <img id="nav-user-img" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
+              <img id="nav-user-img" src={sessionUser?.image_url} alt="profile"/>
+                }
               </Link>
             </li>}
         

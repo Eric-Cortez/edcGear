@@ -79,13 +79,17 @@ const PostDetails = ({ postId }) => {
         <div className='base-modal-div'>
            
             <div>
-                <img id="post-modal-img" src={post?.image_url} alt="post" />
+                {!post?.image_url ?
+                 <img id="post-modal-img" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
+                 <img id="post-modal-img" src={post?.image_url} alt="post" />
+                }
             </div>
 
 
             <div id="post-comment-div">
                 <div id="post-model-top-content-div">
                     <Link id="post-link" className="comment-link" to={`/users/${post?.user_id}`}> 
+                       
                         <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile" />
                         <h5 id="profile-username-model">{allUsers?.find(user => user?.id === post?.user_id)?.username}</h5>
                     </Link>
