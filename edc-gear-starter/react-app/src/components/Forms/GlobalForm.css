@@ -239,3 +239,50 @@ button.edit-comment-submit-btn {
     color: rgb(39, 73, 39);
 }
 
+#post-caption-div.new-add-post {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100px;
+    padding: 0 20px;
+    padding-left: 100px;
+}
+
+#post-caption-div.new-add-post > * {
+ margin: 0;
+ padding: 0;
+}
+
+.image-url-input.post-new {
+    border: 3px solid rebeccapurple;
+    margin: 0;
+    padding: 0;
+    margin: 5px 0;
+    align-self: center;
+    box-shadow: 0 1px 4px 0 rgb(34 34 34 / 10%) inset;
+    border-radius: 4px;
+    width: 300px !important;
+    height: 25px;
+    border: 0.5px solid rgba(128, 128, 128, 0.5);
+    padding: 3px 5px !important;
+    color: black;
+    margin-bottom: 5px !important;
+}
+
+.post-submit-btn-div {
+    align-self: flex-end;
+}
+
+#left-post-div-new {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.post-submit-btn.org-btn{
+    padding-top: 25px;
+    margin-top: 0 !important;
+    margin-left: 3px;
+   font-size: 15px;
+   cursor: pointer;
+}

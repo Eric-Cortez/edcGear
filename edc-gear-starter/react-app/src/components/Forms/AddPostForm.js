@@ -72,10 +72,13 @@ const AddPostForm = ({ setShowModal }) => {
                     }
                 </div>
                 
-                <div id="post-caption-div">
+                <div id="post-caption-div" className='new-add-post'>
                     {/* <label
                         className='input-label'
                     >Image Url</label> */}
+                    <div id="left-post-div-new">
+
+              
                     <input
                         className='image-url-input post-new'
                         placeholder='Image Url'
@@ -85,10 +88,9 @@ const AddPostForm = ({ setShowModal }) => {
                         onChange={updateImageUrl}
                         value={imageUrl}
                     ></input>
-                    <div id="captions-textarea-div">
                         <textarea
                             placeholder='Add an optional caption...'
-                            className='text-area post-text'
+                            className='image-url-input post-new'
                             type='text'
                             name='Caption'
                             onChange={updateCaption}
@@ -97,7 +99,7 @@ const AddPostForm = ({ setShowModal }) => {
                     </div>
 
                     <div className='post-submit-btn-div'>
-                        <button className="post-submit-btn" type='submit'>Submit</button>
+                        <button className="post-submit-btn org-btn" type='submit'>Submit</button>
                     </div>
                 </div>
 
