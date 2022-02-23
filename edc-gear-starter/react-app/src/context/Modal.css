@@ -114,7 +114,7 @@
 }
 
 .each-error-div.sign-up-err {
-  height: 50px;
+  height: 70px;
   margin-top: 3px;
 }
 
@@ -125,6 +125,7 @@
 
 #err-sing-up {
   padding: 0;  
+  margin: 0;
   font-size: 10px;
 }
 

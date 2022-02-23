@@ -25,6 +25,16 @@ const SignUpForm = () => {
     }
   };
 
+
+    // useEffect(() => {
+  //   const errors = [];
+  //   if (username?.length > 40) errors.push("Username must be less than 40 characters.")
+  //   if (!imageUrl?.includes("http" || "https")) errors.push("Please provide a valid image Url")
+  //   if (imageUrl?.length > 255 || imageUrl?.length <= 0) errors.push("Image Url must be less 255 characters")
+  //   if (errors) setErrors(errors)
+
+  // }, [imageUrl, username])
+
   const updateUsername = (e) => {
     setUsername(e.target.value);
   };
