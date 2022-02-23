@@ -77,9 +77,9 @@ const SignUpForm = () => {
 
         <div className='sign-up-image-div'>
           <h6 className='sign-up-image-preview-title'>Profile Image Preview</h6>
-          {imageUrl ?
-            <img className="profile-image-preview" src={imageUrl} /> :
+          {!imageUrl || !imageUrl?.includes("http" || "https")?
             <img className="profile-image-preview" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" />
+            : <img className="profile-image-preview" src={imageUrl} /> 
           }
         </div>
 
