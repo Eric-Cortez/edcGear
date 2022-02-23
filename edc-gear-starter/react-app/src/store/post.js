@@ -52,6 +52,13 @@ export const postPost = (payload) => async dispatch => {
         const newPost = await response.json()
         await dispatch(addPost(newPost))
         return newPost
+    } else {
+        const data = await response.json()
+        if (data.errors) {
+            return { "errors": data.errors };
+        } else {
+            return { "errors": "Something went wrong. Please try again."}
+        }
     }
 }
 

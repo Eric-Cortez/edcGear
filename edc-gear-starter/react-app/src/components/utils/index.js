@@ -16,6 +16,7 @@ export const calTimeFromMil = (milSec, type) => {
         if (currHour <= 60 && currDay === 0) return `${currHour}h`;
         if (currDay >= 2 || currHour > 24) return `${currDay}d`;
     } else {
+        if (currSec === 0 && currMin === 0 && currHour === 0 && currDay === 0) return `1 SECOND AGO`;
         if (currSec === 1 && currMin === 0 && currHour === 0 && currDay === 0) return `${currSec} SECOND AGO`;
         if (currSec <= 60 && currMin === 0 && currHour === 0 && currDay === 0) return `${currSec} SECONDS AGO`;
         if (currMin === 1 && currHour === 0 && currDay === 0) return `${currMin} MINUTE AGO`;

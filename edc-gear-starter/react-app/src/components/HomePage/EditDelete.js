@@ -10,7 +10,7 @@ const EditDelete = ({ post, setEditShowModal}) => {
     const dispatch = useDispatch()
     const history = useHistory()
     const { postId } = useParams()
-    console.log(postId, "delete params ")
+
     const user = useSelector(state => state?.session?.user);
     const handleDelete = async (e) => {
         e.preventDefault()
@@ -31,7 +31,7 @@ const EditDelete = ({ post, setEditShowModal}) => {
       <div className='preview-div'>
           <div className='post-btns-preview-div'>
                           <EditPostModal modalPostId={post.id} setEditShowModal={setEditShowModal}/>
-              <button className="post-preview-del" onClick={handleDelete} value={post.id}>Delete</button>
+              <button className="post-preview-del" onClick={handleDelete} value={post?.id}>Delete</button>
           </div>
       </div>
                   

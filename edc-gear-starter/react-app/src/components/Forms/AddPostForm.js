@@ -30,7 +30,7 @@ const AddPostForm = ({ setShowModal }) => {
             setShowModal(false)
         }
     };
-
+ 
 
     useEffect(() => {
         const errors = [];

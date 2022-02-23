@@ -6,7 +6,6 @@ import "../Modal.css"
 
 function EditPostModal({ modalPostId, setEditShowModal}) {
     const [showModal, setShowModal] = useState(false);
-    console.log(modalPostId)
  
     return (
         <>

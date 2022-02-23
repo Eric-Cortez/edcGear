@@ -94,7 +94,7 @@ const PostDetailPage = () => {
 
                 <div id="post-comment-div">
 
-                    <div id="post-model-top-content-div">
+                    <div id="post-model-top-content-div" className='new-post-page'>
                         <Link id="profile-link-username" className="post-link-pg" to={`/users/${allUsers?.find(user => user?.id === post?.user_id)?.id}`}>
                             <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile" />
                             <h5 id="profile-username-model">{allUsers?.find(user => user?.id === post?.user_id)?.username}</h5>
