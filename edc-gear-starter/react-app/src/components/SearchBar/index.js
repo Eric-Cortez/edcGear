@@ -35,7 +35,6 @@ function SearchBar() {
                 setSearch("")
 
             } else if(searchQuery[0] === "#") {
-                console.log(searchQuery)
                 searchRes = await dispatch(getAllSearch(searchQuery.split("#")[1]))
                 if (searchRes) {
                     history.push(`/search-results/${searchQuery.split("#")[1]}`) 

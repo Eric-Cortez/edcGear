@@ -20,9 +20,15 @@ def username_exists(form, field):
         raise ValidationError('Username is already in use.')
 
 
+def validate_url(form, field):
+    image_url = field.data
+    if "http" not in image_url or "." not in image_url:
+        raise ValidationError('Please enter a valid url.')
+
+
 class SignUpForm(FlaskForm):
     username = StringField(
         'username', validators=[DataRequired(), username_exists])
     email = StringField('email', validators=[DataRequired(), user_exists])
     password = StringField('password', validators=[DataRequired()])
-    image_url = StringField('image_url', validators=[DataRequired()])
+    image_url = StringField('image_url', validators=[DataRequired(), validate_url])

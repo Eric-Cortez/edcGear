@@ -88,7 +88,6 @@ i.fa-comment {
 .thread-post-edit-delete-div,
 .thread-comment-count-div,
 .post-timestamp-div,
-.post-caption-div,
 .thread-like-count-div {
     padding: 0 20px;
     margin-bottom: 8px;
@@ -97,8 +96,14 @@ i.fa-comment {
 
 .post-caption-div {
    display: flex;
-   flex-direction: column;
+   flex-direction: row;
+   margin: 10px 14px;
 }
+
+/* .post-caption-div > * {
+    display: inline !important;
+    margin: 0;
+} */
 
 .thread-user-profile-link {
     text-decoration: none;
@@ -109,12 +114,7 @@ i.fa-comment {
 }
 
 
-.post-caption-div > * {
-    display: inline;
-}
-
 .post-timestamp-div > *,
-.post-caption-div > *,
 .thread-like-count-div > * {
     margin: 0;
 }
@@ -123,9 +123,6 @@ i.fa-comment {
     font-weight: 600;
 }
 
-.post-caption-div {
-    display: flex;
-}
 
 .caption-user-name {
     font-weight: 600;
@@ -142,6 +139,7 @@ p.top-username-p {
 .caption-body-thread {
     font-weight: 400;
     color: rgb(38,38,38);
+
 }
 
 .info-img-name {
@@ -182,7 +180,7 @@ i.fa-ellipsis-h {
 
 #post-preview-edit {
     text-decoration: none;
-    font-size: 10px; 
+    font-size: 20px; 
     margin: 3px;
     font-weight: 700;
     color:black;
@@ -190,6 +188,8 @@ i.fa-ellipsis-h {
     background-color: transparent;
     height: 100%;
     border-bottom: 0.4px solid rgba(128,128,128,.2);
+    margin: 0;
+    margin-bottom: 6px;
 }
 
 

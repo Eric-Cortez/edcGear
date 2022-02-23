@@ -36,7 +36,7 @@ def all_posts():
 def one_posts(postId):
     # GET Route for one post
     post = Post.query.get(postId)
-    
+
     return post.to_dict()
 
 

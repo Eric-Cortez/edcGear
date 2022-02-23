@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { getAllPosts, updatePost } from '../../store/post';
 import "./GlobalForm.css"
-const EditPostForm = ({ postId, setShowModal, setEditShowModal}) => {
+const EditPostForm = ({ modalPostId, setShowModal, setEditShowModal}) => {
  
     const history = useHistory()
     const dispatch = useDispatch();
-    
+    const { postId } = useParams()
     const posts = useSelector(state => state?.post?.list)
-    const currPost = posts.find(post => post?.id === +postId)
-
+    const currPost = posts.find(post => post?.id === +modalPostId)
 
     const [caption, setCaption] = useState(currPost?.body);
-    const [errors, setErrors] = useState([]);
-    const [displayErrors, setDisplayErrors] = useState(false);
+    // const [errors, setErrors] = useState([]);
+    // const [displayErrors, setDisplayErrors] = useState(false);
     const user = useSelector(state => state?.session?.user);
 
     useEffect(()=> {
@@ -22,40 +21,51 @@ const EditPostForm = ({ postId, setShowModal, setEditShowModal}) => {
             await  dispatch(getAllPosts())
           
         })();
-        if(caption) localStorage.setItem("caption", caption)
+        // if(caption) localStorage.setItem("caption", caption)
 
     }, [dispatch, caption])
 
-    useEffect(()=> {
-        const localStorageCaption = localStorage.getItem("caption")
-        setCaption(localStorageCaption)
-    },[])
+    // useEffect(()=> {
+        // const localStorageCaption = localStorage.getItem("caption")
+        // setCaption(localStorageCaption)
+    // },[])
 
     const onSubmit = async (e) => {
         e.preventDefault();
         let post;
-        if (user && errors.length === 0) {
-            post = await dispatch(updatePost({ postId: +postId, body: caption }));
-        } else {
-            setDisplayErrors(true);
+        if (user) {
+            if(modalPostId) {
+                post = await dispatch(updatePost({ postId: +modalPostId, body: caption }));
+            } 
+            if(postId) {
+                post = await dispatch(updatePost({ postId: +postId, body: caption }));
+            }
         }
+        // else {
+        //     setDisplayErrors(true);
+        // }
         if (post) {
             await dispatch(getAllPosts())
             setShowModal(false)
             setEditShowModal(false)
-            history.push(`/`);
+            if (modalPostId) {
+                history.push(`/`);
+            }
+            if (postId) {
+                history.push(`/posts/${postId}`)
+            }
         }
     };
  
 
-    useEffect(() => {
-        const errors = [];
+    // useEffect(() => {
+    //     const errors = [];
 
-        // if (imageUrl?.length > 255 || imageUrl?.length <= 0) errors.push("Image Url is must be less 255 characters")
-        // if (!imageUrl?.includes("http" || "https")) errors.push("Please provide a valid image Url")
-        // if (errors) setErrors(errors)
+    //     // if (imageUrl?.length > 255 || imageUrl?.length <= 0) errors.push("Image Url is must be less 255 characters")
+    //     // if (!imageUrl?.includes("http" || "https")) errors.push("Please provide a valid image Url")
+    //     // if (errors) setErrors(errors)
 
-    }, [caption])
+    // }, [caption])
 
 
 
@@ -73,9 +83,10 @@ const EditPostForm = ({ postId, setShowModal, setEditShowModal}) => {
                 </div>
 
                 <div className='each-error-div'>
-                    {displayErrors && errors?.map((error, ind) => (
+                    <h4>Edit or add and optional post caption...</h4>
+                    {/* {displayErrors && errors?.map((error, ind) => (
                         <div key={ind}>{`* ${error}`}</div>
-                    ))}
+                    ))} */}
                 </div>
 
                 <div className='edit-image-div'>

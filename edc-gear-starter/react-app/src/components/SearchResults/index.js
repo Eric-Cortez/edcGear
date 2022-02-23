@@ -9,13 +9,13 @@ import { Link } from 'react-router-dom';
 
 function SearchResults() {
    const { searchQuery } = useParams()
-     console.log(searchQuery)
+  
    const dispatch = useDispatch()
    const postSearchRes = useSelector(state => state?.search?.postsList)
    const userSearchRes = useSelector(state => state?.search?.usersList)
    const allPosts = useSelector(state => state?.post?.list)
    const tagPost = allPosts.filter(post =>post.body.includes("#"))
-   console.log(tagPost)
+
    
 
     useEffect(() => {

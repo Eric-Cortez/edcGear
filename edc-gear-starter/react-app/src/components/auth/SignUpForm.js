@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
@@ -12,11 +12,12 @@ const SignUpForm = () => {
   const [repeatPassword, setRepeatPassword] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
-
+   console.log(errors, "frontendddddd")
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
       const data = await dispatch(signUp(username, email, password, imageUrl));
+     console.log(data, "backendddddddd")
       if (data) {
         setErrors(data)
       }
@@ -26,14 +27,14 @@ const SignUpForm = () => {
   };
 
 
-    // useEffect(() => {
-  //   const errors = [];
-  //   if (username?.length > 40) errors.push("Username must be less than 40 characters.")
-  //   if (!imageUrl?.includes("http" || "https")) errors.push("Please provide a valid image Url")
-  //   if (imageUrl?.length > 255 || imageUrl?.length <= 0) errors.push("Image Url must be less 255 characters")
-  //   if (errors) setErrors(errors)
+    useEffect(() => {
+    const errors = [];
+    if (username?.length > 40) errors.push("Username must be less than 40 characters.")
+    if (!imageUrl?.includes("http" || "https")) errors.push("Please provide a valid image Url")
+    if (imageUrl?.length > 255 || imageUrl?.length <= 0) errors.push("Image Url must be less 255 characters")
+    if (errors) setErrors(errors)
 
-  // }, [imageUrl, username])
+  }, [imageUrl,username])
 
   const updateUsername = (e) => {
     setUsername(e.target.value);
@@ -52,7 +53,11 @@ const SignUpForm = () => {
   };
 
   const updateImageUrl = (e) => {
+
+    
     setImageUrl(e.target.value);
+
+
   };
 
   if (user) {

@@ -16,7 +16,6 @@ export const getAllSearch = (searchQuery) => async dispatch => {
     
     if (response.ok) {
         const res = await response.json()
-        console.log(res)
 
        await dispatch(load(res.users, res.posts))
        return { users: res.users, posts: res.posts}

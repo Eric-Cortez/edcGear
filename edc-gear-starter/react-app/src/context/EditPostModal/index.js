@@ -4,7 +4,7 @@ import EditPostForm from '../../components/Forms/EditPostForm.js'
 import "../Modal.css"
 
 
-function EditPostModal({ postId, setEditShowModal}) {
+function EditPostModal({ modalPostId, setEditShowModal}) {
     const [showModal, setShowModal] = useState(false);
  
     return (
@@ -15,7 +15,7 @@ function EditPostModal({ postId, setEditShowModal}) {
                     setEditShowModal(false)
                     setShowModal(false)
                 }}>
-                    <EditPostForm postId={postId} setShowModal={setShowModal} setEditShowModal={setEditShowModal}/>
+                    <EditPostForm modalPostId={modalPostId} setShowModal={setShowModal} setEditShowModal={setEditShowModal}/>
                 </Modal>
             )}
         </>
