@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { getAllPosts, updatePost } from '../../store/post';
 import "./GlobalForm.css"
-const EditPostForm = ({ postId, setShowModal, setEditShowModal}) => {
- 
+const EditPostForm = ({ modalPostId, setShowModal, setEditShowModal}) => {
+    console.log("edit form",modalPostId)
     const history = useHistory()
     const dispatch = useDispatch();
-    
+    const { postId } = useParams()
     const posts = useSelector(state => state?.post?.list)
-    const currPost = posts.find(post => post?.id === +postId)
+    const currPost = posts.find(post => post?.id === +modalPostId)
 
-
+    console.log(postId, "params ") 
     const [caption, setCaption] = useState(currPost?.body);
     const [errors, setErrors] = useState([]);
     const [displayErrors, setDisplayErrors] = useState(false);
@@ -35,7 +35,12 @@ const EditPostForm = ({ postId, setShowModal, setEditShowModal}) => {
         e.preventDefault();
         let post;
         if (user && errors.length === 0) {
-            post = await dispatch(updatePost({ postId: +postId, body: caption }));
+            if(modalPostId) {
+                post = await dispatch(updatePost({ postId: +modalPostId, body: caption }));
+            } 
+            if(postId) {
+                post = await dispatch(updatePost({ postId: +postId, body: caption }));
+            }
         } else {
             setDisplayErrors(true);
         }
@@ -43,7 +48,12 @@ const EditPostForm = ({ postId, setShowModal, setEditShowModal}) => {
             await dispatch(getAllPosts())
             setShowModal(false)
             setEditShowModal(false)
-            history.push(`/`);
+            if (modalPostId) {
+                history.push(`/`);
+            }
+            if (postId) {
+                history.push(`/posts/${postId}`)
+            }
         }
     };
  

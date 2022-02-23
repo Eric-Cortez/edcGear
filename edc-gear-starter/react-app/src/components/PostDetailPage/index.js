@@ -11,6 +11,7 @@ import { calTimeFromMil } from "../utils/index.js"
 import { getAllUsers } from "../../store/user"
 import { Link } from 'react-router-dom';
 import PageNotFound from "../PageNotFound/index.js"
+import EditDeleteModal from '../../context/EditDeletePostModal';
 
 const PostDetailPage = () => {
 
@@ -98,6 +99,7 @@ const PostDetailPage = () => {
                             <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile" />
                             <h5 id="profile-username-model">{allUsers?.find(user => user?.id === post?.user_id)?.username}</h5>
                         </Link>
+                        <EditDeleteModal post={post}/>
                     </div>
 
 

@@ -67,10 +67,15 @@ function HomePage() {
                         </div>
                         <div className='thread-comment-count-div'>
                            
-                             {comments && comments?.filter(comments => comments?.post_id === post?.id).length > 0 ?
+                             {comments && comments?.filter(comments => comments?.post_id === post?.id).length === 1 ?
                             <Link className="comment-link" to={`/posts/${post?.id}`}> 
                             View all {comments?.filter(comments => comments?.post_id === post?.id).length} comment
                             </Link>: ""} 
+                            {comments && comments?.filter(comments => comments?.post_id === post?.id).length > 1 ?
+                                <Link className="comment-link" to={`/posts/${post?.id}`}>
+                                    View all {comments?.filter(comments => comments?.post_id === post?.id).length} comments
+                                </Link> : ""} 
+
 
                         </div>
                         <div className='post-timestamp-div'>
