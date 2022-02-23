@@ -86,7 +86,7 @@ const EditPostForm = ({ postId, setShowModal, setEditShowModal}) => {
                     <div>
                         <div id="captions-textarea-div edit-post-text">
                         <textarea
-                            placeholder='Add a caption...'
+                                placeholder='Add an optional caption...'
                             className='text-area-caption'
                             type='text'
                             name='Caption'

@@ -25,6 +25,22 @@
     padding-left: 10px;
     margin-left: 10px;
 }
+.image-input-div.new {
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.image-input-div.new > * {
+    align-self: center;
+}
+
+
+.post-image-preview {
+   height: 95%;
+   width:  75%;
+}
 
 .text-area-caption {
     width: 300px;
