@@ -1,0 +1,2 @@
+# edcGear
+Capstone-solo-project 
