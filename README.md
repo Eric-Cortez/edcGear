@@ -10,7 +10,6 @@ This is a clone of [Instagram](https://www.instagram.com/).
 3. [Technologies](#technologies)
 4. [Installation](#installation)
 5. [Development](#development)
-6. [Challenges Highlights](#challenges-highlights)
 
 
 
