@@ -50,7 +50,10 @@ function SearchResults() {
             {userSearchRes && userSearchRes?.map(user => (
                 <div key={`1${user?.id}`} id="results-div">
                     <Link id="post-link" className="comment-link" to={`/users/${user?.id}`}> 
-                        <img id="search-profile-img" src={user?.image_url} alt="profile"/>
+                        {!user?.image_url ?
+                            <img id="search-profile-img" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
+                            <img id="search-profile-img" src={user?.image_url} alt="profile"/>
+                       }
                         <h4 key={`2${user?.id}`}>{user?.username}</h4>
                   </Link>
                 </div>

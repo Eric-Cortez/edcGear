@@ -87,7 +87,10 @@ const PostDetailPage = () => {
             <div id="post-page-content">
                 
                 <div>
-                    <img id="post-modal-img" src={post?.image_url} alt="post"/>
+                    {!post?.image_url ?
+                        <img id="post-modal-img" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
+                        <img id="post-modal-img" src={post?.image_url} alt="post"/>
+                    }
                 </div>
                
              
@@ -96,7 +99,11 @@ const PostDetailPage = () => {
 
                     <div id="post-model-top-content-div" className='new-post-page'>
                         <Link id="profile-link-username" className="post-link-pg" to={`/users/${allUsers?.find(user => user?.id === post?.user_id)?.id}`}>
-                            <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile" />
+                            {!allUsers?.find(user => user?.id === post?.user_id)?.image_url ?
+                                <img className="post-modal-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
+                                <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile" />
+                            }
+                            
                             <h5 id="profile-username-model">{allUsers?.find(user => user?.id === post?.user_id)?.username}</h5>
                         </Link>
                         <EditDeleteModal post={post}/>
@@ -107,7 +114,11 @@ const PostDetailPage = () => {
                         <div className='right-post-model-content'>
                             <Link id="profile-link" className="comment-link" to={`/users/${allUsers?.find(user => user?.id === post?.user_id)?.id}`}> 
                                 <div className='left-post-div'>
-                                    <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile" />
+                                    {!allUsers?.find(user => user?.id === post?.user_id)?.image_url ?
+                                        <img className="post-modal-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
+                                        <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile" />
+                                    }
+
                                 </div>
                             </Link>
 
@@ -126,7 +137,11 @@ const PostDetailPage = () => {
                                 
                                 <Link id="profile-link" className="comment-link" to={`/users/${comment?.user_id}`}>
                                     <div className='left-post-comment-div'>
-                                        <img className="post-modal-image" src={allUsers?.find(user => user?.id === comment?.user_id)?.image_url} alt="user-profile" />
+                                        {!allUsers?.find(user => user?.id === comment?.user_id)?.image_url ?
+                                            <img className="post-modal-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
+                                            <img className="post-modal-image" src={allUsers?.find(user => user?.id === comment?.user_id)?.image_url} alt="user-profile" />
+                                        }
+
                                     </div>
                                 </Link>
 
