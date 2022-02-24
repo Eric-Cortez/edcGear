@@ -36,7 +36,7 @@ const AddPostForm = ({ setShowModal }) => {
         const errors = [];
 
         if (imageUrl?.length > 255 || imageUrl?.length <= 0) errors.push("Image Url is must be less 255 characters")
-        if (!imageUrl?.includes("http" || "https")) errors.push("Please provide a valid image Url")
+        if (!imageUrl?.includes("http" || "https") || !imageUrl?.includes(".")) errors.push("Please provide a valid image Url")
         if (errors) setErrors(errors)
 
     }, [imageUrl])
