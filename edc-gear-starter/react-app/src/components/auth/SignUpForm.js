@@ -12,12 +12,11 @@ const SignUpForm = () => {
   const [repeatPassword, setRepeatPassword] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
-   console.log(errors, "frontendddddd")
+
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
       const data = await dispatch(signUp(username, email, password, imageUrl));
-     console.log(data, "backendddddddd")
       if (data) {
         setErrors(data)
       }
@@ -30,7 +29,7 @@ const SignUpForm = () => {
     useEffect(() => {
     const errors = [];
     if (username?.length > 40) errors.push("Username must be less than 40 characters.")
-    if (!imageUrl?.includes("http" || "https")) errors.push("Please provide a valid image Url")
+      if (!imageUrl?.includes("http" || "https") || !imageUrl?.includes(".")) errors.push("Please provide a valid image Url")
     if (imageUrl?.length > 255 || imageUrl?.length <= 0) errors.push("Image Url must be less 255 characters")
     if (errors) setErrors(errors)
 
@@ -83,8 +82,8 @@ const SignUpForm = () => {
         <div className='sign-up-image-div'>
           <h6 className='sign-up-image-preview-title'>Profile Image Preview</h6>
           {!imageUrl || !imageUrl?.includes("http" || "https")?
-            <img className="profile-image-preview" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" />
-            : <img className="profile-image-preview" src={imageUrl} /> 
+            <img className="profile-image-preview" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='placeholder'/>
+            : <img className="profile-image-preview" src={imageUrl} alt="profile-preview"/> 
           }
         </div>
 

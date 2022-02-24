@@ -20,7 +20,7 @@ def seed_posts():
     post8 = Post(
         user_id=5, image_url="https://images.squarespace-cdn.com/content/v1/54ecbbfae4b0a4e937ba1b5c/1634223426196-IDH8IE3X1AZECHVNC54Y/23713EE7-C63D-4B22-AFCD-0721093957DA+-+Kin+Dioquino.jpeg?format=1000w", body="new carry 🔥🔥🔥🔥 ")
     post9 = Post(
-        user_id=5, image_url="http://atomic811.com/wp-content/uploads/2016/07/Luminox-3051-Navy-Seals-Best-EDC-Watch-1.jpg", body="#Serge#EDC")
+        user_id=5, image_url="https://www.watchgecko.com/wp/wp-content/uploads/2020/12/Luminox-Lifestyle-1200.jpg", body="#Serge#EDC")
     
     post10 = Post(
         user_id=7, image_url="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi1.wp.com%2Frainydaymagazine.com%2Fwp%2Fwp-content%2Fuploads%2F2017%2F10%2FEDC_UpdateAll.jpg&f=1&nofb=1", body="#favCarry")

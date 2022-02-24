@@ -100,10 +100,6 @@ i.fa-comment {
    margin: 10px 14px;
 }
 
-/* .post-caption-div > * {
-    display: inline !important;
-    margin: 0;
-} */
 
 .thread-user-profile-link {
     text-decoration: none;
@@ -139,7 +135,7 @@ p.top-username-p {
 .caption-body-thread {
     font-weight: 400;
     color: rgb(38,38,38);
-
+    padding-bottom: 1.2px;
 }
 
 .info-img-name {
@@ -191,7 +187,6 @@ i.fa-ellipsis-h {
     margin: 0;
     margin-bottom: 6px;
 }
-
 
 .post-preview-del {
     font-size: 20px;

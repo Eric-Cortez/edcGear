@@ -11,7 +11,7 @@ export const calTimeFromMil = (milSec, type) => {
 
 
     if (type === "short") {
-        if (currSec <= 60 && currMin === 0 && currHour === 0 && currDay === 0) return `< 1min`;
+        if (currSec <= 60 && currMin === 0 && currHour === 0 && currDay === 0) return `< 1m`;
         if (currMin <= 60 && currHour === 0 && currDay === 0) return `${currMin}m`;
         if (currHour <= 60 && currDay === 0) return `${currHour}h`;
         if (currDay >= 2 || currHour > 24) return `${currDay}d`;
