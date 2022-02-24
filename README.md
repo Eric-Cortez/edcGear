@@ -99,7 +99,7 @@ To install EDC Gear on your local machine please clone the project repository.
    
    enter the pipenv shell, migrate your database, seed your database, and run the flask application 
      
-  •  `cd edc-gear-starter/` change into the edc-gear-starter/ directory 
+  •  `cd edc-gear-starter/` 
 
   •  `pipenv shell` to enter the pipenv shell 
 
