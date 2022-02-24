@@ -139,7 +139,7 @@ p.top-username-p {
 .caption-body-thread {
     font-weight: 400;
     color: rgb(38,38,38);
-
+    padding-bottom: 1.2px;
 }
 
 .info-img-name {
