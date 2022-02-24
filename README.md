@@ -23,12 +23,12 @@ Such as, watches, wallets, flashlights, pocket knives etc.
 
 ## Key Functionalities 
 
-Posts, Coments, and Search 
+Posts, Comments, and Search 
 EDC Gear allows users to create posts to share images of there favorite everyday carry items. Users can also 
-comment on posts. In additon, users can search for post captions and users to view specific posts and users profiles. 
+comment on posts. In additon, users can search for post captions and user profiles. 
 
-  • Posts: Users can create, read, update, and delete posts.
-  • Comment: Users can create, read, update, and delete comments.
+  * Posts: Users can create, read, update, and delete posts.
+  * Comment: Users can create, read, update, and delete comments.
    * Users can only edit/update and delete posts and comments that they have created. 
    
 ### EDC Gear Login page 
@@ -37,7 +37,7 @@ comment on posts. In additon, users can search for post captions and users to vi
 ### EDC Gear Sign up page
 ![sign-up](https://user-images.githubusercontent.com/80999718/155440847-988ba0e5-2bdd-4c01-ad34-e375981472da.png)
 
-### EDC Gear
+### EDC Gear Profile page
 ![home](https://user-images.githubusercontent.com/80999718/155441041-efa61d88-89b9-4308-a880-5911487ebb68.png)
 
 ### Post Detail Page / Post Comments (Modal)
@@ -46,7 +46,7 @@ comment on posts. In additon, users can search for post captions and users to vi
 ### Create Post Form (Modal)
 ![post-form](https://user-images.githubusercontent.com/80999718/155441200-03936408-1ddb-4a05-bd71-1a06da8e5107.png)
 
-### User Profile page
+### Main Feed
 ![profile](https://user-images.githubusercontent.com/80999718/155441292-cf182a9a-acbc-4750-8e65-26740c2331a0.png)
 
 
@@ -86,17 +86,19 @@ To install EDC Gear on your local machine please clone the project repository.
 
 3 )  Create a .env file based on the example with proper settings for your development environment
 
-4 )  Setup your PostgreSQL user, password and database and make sure it matches your .env file
+4 )  Setup your PostgreSQL user, password, and database and make sure it matches your .env file
 
 5 ) To run the frontend react application...
 
-  •  Change into the fonrend directory `cd edc-gear-starter/react-app/`
+  •  Change into the frontend directory `cd edc-gear-starter/react-app/`
 
   •  Run `npm install` to install all dependencies from the package.json within the frontend directory 
-
+  
+  •  `npm start` within the frontend directory(edc-gear-starter/react-app) under localhost:3000
+  
 6 ) To setup the backend application enter the pipenv shell, migrate your database, seed your database, and run the flask application 
      
-  •  `cd edc-gear-starter/` change into the edc-gear-starter directory 
+  •  `cd edc-gear-starter/` change into the edc-gear-starter/ directory 
 
   •  `pipenv shell` to enter the pipenv shell 
 
@@ -105,24 +107,22 @@ To install EDC Gear on your local machine please clone the project repository.
   •  `flask db seed all`
 
   •  `flask run` while in the shell and within the backend (edc-gear-starter/) directory under localhost:5000
-
-  •  `npm start` within the frontend directory(edc-gear-starter/react-app) under localhost:3000
-
+  
 
 ## Development 
-This project was developed by a single developer Eric Cortez. Below is a description of the top features of the project and a brief description of challenges faced during the two week development cycle. 
+This project was developed by a single developer (Eric Cortez). Below is a description of the top features of the project and a brief description of challenges faced during the two week development cycle. 
 
 #### Highlight features: 
 
-* Design: EDC Gear was designed to be an interactive website that focuses on user experience and incorporates modern design elements. This is accomplished through the use of modals to limit the need to redirect the user to a new page.  This functionality also gives the application a modern design. 
+* Design: EDC Gear was designed to be an interactive website that focuses on user experience and incorporates modern design elements. This is accomplished through the use of modals to limit the need to redirect users to a new page. This functionality also gives the application a modern design. 
 
 
-* Post Details: Each post on the post feed page displays the comment count if there is at least one comment. In addition, posts and comments have a custom timestamp that displays the time that has passed since the post of comment was created. 
+* Post Details: Each post on the post feed page displays the comment count if there is at least one comment. In addition, posts and comments have a custom timestamp that displays the time that has passed since the post or comment was created. 
 
 
 #### Challenges:   
 
-*  Modals: When I began this project my goal was to incorporate modals for all of my forms although I did not have any experience working with modals in the past. During this project, I encountered challenges while incorporating modals. When I faced these challenges I use the same problem-solving methods of breaking down the problem and following the flow of data to identify bugs. This was extremely helpful and allowed me to utilize prop threading to incorporate a layered modal for my edit post form which closes both the edit form and edit delete model if you click off of it. Although the use of modals was challenging at first I am happy to have implemented them in this project as I have become very comfortable with using them to display components and I am excited to implement them again in future projects. 
+*  Modals: When I began this project my goal was to incorporate modals for all of my forms although I did not have any experience working with modals in the past. During this project, I encountered challenges while incorporating modals. When I faced these challenges, I used my problem solving skills to break down the problem by following the flow of data to identify bugs. This was extremely helpful and allowed me to utilize prop threading to incorporate a layered modal for my edit post form which closes both the edit form and edit delete model if you click off of it. Although the use of modals was challenging at first, I am happy to have implemented them in this project as I have become very comfortable with using them to display components. I am excited to implement them again in future projects. 
 
 *  Timestamps: To mirror Instagram's timestamps I created a function to convert the created_at  time for both posts and comments into a custom timestamp. This was challenging as I  had to create a new date object and use conversion methods.  I was able to make the timestamp dynamic by converting them from UTC  to milliseconds along with the use of conditional statements so that the time elapsed for a post would be displayed as `1 HOUR AGO` and comments would be displayed as `1 h`.
 
