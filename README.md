@@ -129,10 +129,10 @@ This project was developed by a single developer (Eric Cortez). Below is a descr
 *  Timestamps: To mirror Instagram's timestamps, I created a function to convert the created_at  time for both posts and comments into a custom timestamp. This was challenging as I  had to create a new date object and use conversion methods. I was able to make the timestamp dynamic by converting them from UTC  to milliseconds along with the use of conditional statements so that the time elapsed for a post would be displayed as `1 HOUR AGO` and comments would be displayed as `1 h`.
 
 
-#### Layerd modals : 
+#### Layered modals : 
 ![code2](https://user-images.githubusercontent.com/80999718/155443072-990382e1-096b-4867-931f-2a29b1275bee.png)
 
-#### Time custome elipsed calculator function for posts amd comments. 
+#### Time custom elapsed calculator function for posts and comments. 
 ![code1](https://user-images.githubusercontent.com/80999718/155443033-bf620c04-5d7f-4d9b-8fe1-5032043dd5c3.png)
 
 
@@ -140,5 +140,5 @@ This project was developed by a single developer (Eric Cortez). Below is a descr
 
 • Like that will allow users to like posts and comments. 
 
-• Followers whta will allow users to follow other users on EDC Gear. 
+• Followers that will allow users to follow other users on EDC Gear. 
 
