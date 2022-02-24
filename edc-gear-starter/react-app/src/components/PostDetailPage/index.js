@@ -110,7 +110,7 @@ const PostDetailPage = () => {
                     </div>
 
 
-                    <div id="comment-list-div">
+                    <div id="comment-list-div" className='detail-pg-div'>
                         <div className='right-post-model-content'>
                             <Link id="profile-link" className="comment-link" to={`/users/${allUsers?.find(user => user?.id === post?.user_id)?.id}`}> 
                                 <div className='left-post-div'>
@@ -220,8 +220,8 @@ const PostDetailPage = () => {
                                     className='input-label'
                                 ><i className="far fa-smile"></i></label> */}
                                 <textarea
-                                    className=" inputs"
-                                    placeholder='Comment'
+                                    className="pg-detail-input inputs"
+                                    placeholder='Add a comment...'
                                     type='text'
                                     name='Comment'
                                     required

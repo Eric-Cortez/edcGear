@@ -49,3 +49,13 @@
     display: flex;
     justify-content: space-between;
 }
+
+.pg-detail-input {
+    width: 85%;
+    padding-top: 6px;
+    padding-left: 10px;
+}
+
+#comment-list-div.detail-pg-div {
+    height: 340px;
+}
