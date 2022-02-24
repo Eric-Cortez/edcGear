@@ -65,10 +65,23 @@ comment on posts. In additon, users can search for post captions and user profil
 ***
 EDC Gear was developed using the following Technologies: 
 
- Node.js | NPM | Flask | SQLAlchemy | Alembic | Git | HTML / JSX | CSS | React | Redux | Heroku
+<img 
+src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height=40/><img 
+src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" height=40/><img 
+src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" height=40/><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"  height=40/><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original.svg"  height=40/><img  
+src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"  height=40/><img  
+src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"  height=40/><img  
+src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"  height=40/><img  
+src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"  height=40/>
+
+
+ React | Redux | Flask | Postgres |SQLAlchemy | Alembic | CSS | Git | Node.js | NPM | HTML / JSX | Heroku
 
 ## Languages 
 ***
+
+<img  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"  height=40/><img
+src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height=50/>
 * JavaScript (frontend)
 * Python (backend)
 
@@ -79,15 +92,19 @@ To install EDC Gear on your local machine please clone the project repository.
 
 1 )  `git clone https://github.com/Eric-Cortez/edcGear.git`
 
-2 )  Install dependencies
+2 ) cd into edcGear and cd into edc-gear-starter
+    `cd edcGear/`
+    `cd edc-gear-starter/`
 
+3 )  Install dependencies
+     
      `pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt`
 
-3 )  Create a .env file based on the example with proper settings for your development environment
+4 )  Create a .env file based on the example with proper settings for your development environment
 
-4 )  Setup your PostgreSQL user, password, database, and make sure it matches your .env file
+5 )  Setup your PostgreSQL user, password, database, and make sure it matches your .env file
 
-5 ) To run the frontend react application...
+6 ) To run the frontend react application...
 
   •  Change into the frontend directory `cd edc-gear-starter/react-app/`
 
@@ -95,7 +112,7 @@ To install EDC Gear on your local machine please clone the project repository.
   
   •  `npm start` within the frontend directory(edc-gear-starter/react-app) under localhost:3000
   
-6 ) To setup the backend application...
+7 ) To setup the backend application...
    
    enter the pipenv shell, migrate your database, seed your database, and run the flask application 
      
