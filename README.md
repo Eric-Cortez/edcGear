@@ -86,7 +86,7 @@ To install EDC Gear on your local machine please clone the project repository.
 
 3 )  Create a .env file based on the example with proper settings for your development environment
 
-4 )  Setup your PostgreSQL user, password, and database and make sure it matches your .env file
+4 )  Setup your PostgreSQL user, password, database, and make sure it matches your .env file
 
 5 ) To run the frontend react application...
 
@@ -96,7 +96,9 @@ To install EDC Gear on your local machine please clone the project repository.
   
   •  `npm start` within the frontend directory(edc-gear-starter/react-app) under localhost:3000
   
-6 ) To setup the backend application enter the pipenv shell, migrate your database, seed your database, and run the flask application 
+6 ) To setup the backend application...
+   
+   enter the pipenv shell, migrate your database, seed your database, and run the flask application 
      
   •  `cd edc-gear-starter/` change into the edc-gear-starter/ directory 
 
@@ -114,7 +116,7 @@ This project was developed by a single developer (Eric Cortez). Below is a descr
 
 #### Highlight features: 
 
-* Design: EDC Gear was designed to be an interactive website that focuses on user experience and incorporates modern design elements. This is accomplished through the use of modals to limit the need to redirect users to a new page. This functionality also gives the application a modern design. 
+* Design: EDC Gear was designed to be an interactive website that focuses on user experience and incorporates modern design elements. This is accomplished through the use of modals to limit the need to redirect users to a new page. This functionality also gives the application a sleak design. 
 
 
 * Post Details: Each post on the post feed page displays the comment count if there is at least one comment. In addition, posts and comments have a custom timestamp that displays the time that has passed since the post or comment was created. 
@@ -122,9 +124,9 @@ This project was developed by a single developer (Eric Cortez). Below is a descr
 
 #### Challenges:   
 
-*  Modals: When I began this project my goal was to incorporate modals for all of my forms although I did not have any experience working with modals in the past. During this project, I encountered challenges while incorporating modals. When I faced these challenges, I used my problem solving skills to break down the problem by following the flow of data to identify bugs. This was extremely helpful and allowed me to utilize prop threading to incorporate a layered modal for my edit post form which closes both the edit form and edit delete model if you click off of it. Although the use of modals was challenging at first, I am happy to have implemented them in this project as I have become very comfortable with using them to display components. I am excited to implement them again in future projects. 
+*  Modals: When I began this project my goal was to incorporate modals for all of my forms although I did not have any experience working with modals in the past. During this project, I encountered challenges while incorporating modals. When I faced these challenges, I used my problem solving skills to break down the problem by following the flow of data to identify bugs. This was extremely helpful and allowed me to utilize prop threading to incorporate a layered modal for my edit post form which closes both the edit form and edit delete model if you click off of it. Although the use of modals was challenging at first, I am happy to have implemented them in this project as I have become very comfortable with using them to display components. I look forward to implementing them again in future projects. 
 
-*  Timestamps: To mirror Instagram's timestamps I created a function to convert the created_at  time for both posts and comments into a custom timestamp. This was challenging as I  had to create a new date object and use conversion methods.  I was able to make the timestamp dynamic by converting them from UTC  to milliseconds along with the use of conditional statements so that the time elapsed for a post would be displayed as `1 HOUR AGO` and comments would be displayed as `1 h`.
+*  Timestamps: To mirror Instagram's timestamps, I created a function to convert the created_at  time for both posts and comments into a custom timestamp. This was challenging as I  had to create a new date object and use conversion methods. I was able to make the timestamp dynamic by converting them from UTC  to milliseconds along with the use of conditional statements so that the time elapsed for a post would be displayed as `1 HOUR AGO` and comments would be displayed as `1 h`.
 
 
 #### Layerd modals : 
