@@ -7,29 +7,45 @@ def seed_comments():
     comment2 = Comment(user_id=2, post_id=2, body="Best EDC2")
     comment3 = Comment(user_id=3, post_id=3, body="Best EDC3")
     
-    comment4 = Comment(user_id=7, post_id=9, body="Nice 💀 💀 💀 💀  coin")
+    comment4 = Comment(user_id=7, post_id=2, body="Nice 💀 💀 💀 💀  coin")
     comment5 = Comment(user_id=2, post_id=8, body="#GondekEDC")
     comment6 = Comment(user_id=3, post_id=7, body="Dope scales")
     
-    comment7 = Comment(user_id=4, post_id=9, body="#PM 👍")
+    comment7 = Comment(user_id=4, post_id=2, body="#PM 👍")
     comment8 = Comment(user_id=4, post_id=8, body="Nice wallet 🔥")
     comment9 = Comment(user_id=4, post_id=7, body="Is that an exclusive?😎")
     comment10 = Comment(user_id=4, post_id=5, body="😎")
     
-    comment11 = Comment(user_id=5, post_id=9, body="#ODgreen 🔥")
+    comment11 = Comment(user_id=5, post_id=2, body="#ODgreen 🔥")
     comment12 = Comment(user_id=5, post_id=8, body="#leather")
     comment13 = Comment(user_id=5, post_id=7, body="What type of blade steel?")
     comment14 = Comment(user_id=5, post_id=6,
                        body="The pioneer is great for a light carry 🏔️")
     
-    comment15 = Comment(user_id=6, post_id=9, body="Cool bead 🔥")
+    comment15 = Comment(user_id=6, post_id=2, body="Cool bead 🔥")
     comment16 = Comment(user_id=6, post_id=8, body="is that a Ti pen?")
     comment17 = Comment(user_id=6, post_id=6, body="nice shot")
     comment18 = Comment(user_id=6, post_id=5, body="Great setup")
     
-    comment19 = Comment(user_id=7, post_id=9, body="EDC and morning coffee😎")
+    comment19 = Comment(user_id=7, post_id=2, body="EDC and morning coffee😎")
     comment20 = Comment(user_id=7, post_id=8, body="Always good to have a carry flashlight")
     comment21 = Comment(user_id=7, post_id=4, body="All gray 🙌")
+    
+    
+    comment22 = Comment(user_id=3, post_id=35, body="What kind of pen is that?")
+    
+    comment23 = Comment(user_id=2, post_id=36, body="Those mini lights are the best")
+    comment24 = Comment(user_id=4, post_id=36, body="G2 pens 🔥🔥")
+    comment25 = Comment(user_id=7, post_id=36, body="Nice setup")
+    
+    
+    comment26 = Comment(user_id=1, post_id=37, body="Nice watch")
+    comment27 = Comment(user_id=7, post_id=37, body="Thanks man")
+    
+    comment28 = Comment(user_id=2, post_id=38, body="Cool carry")
+    comment29 = Comment(user_id=1, post_id=38, body="Happy Birthday 🎉🎉 ")
+    comment30 = Comment(user_id=7, post_id=38, body="How is the lume on that watch?")
+    comment31 = Comment(user_id=6, post_id=38, body="All gray 🙌")
 
 
     
@@ -54,6 +70,16 @@ def seed_comments():
     db.session.add(comment19)
     db.session.add(comment20)
     db.session.add(comment21)
+    db.session.add(comment22)
+    db.session.add(comment23)
+    db.session.add(comment24)
+    db.session.add(comment25)
+    db.session.add(comment26)
+    db.session.add(comment27)
+    db.session.add(comment28)
+    db.session.add(comment29)
+    db.session.add(comment30)
+    db.session.add(comment31)
 
     db.session.commit()
 
