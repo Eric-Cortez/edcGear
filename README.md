@@ -46,7 +46,7 @@ comment on posts. In additon, users can search for post captions and user profil
 ![post-form](https://user-images.githubusercontent.com/80999718/155441200-03936408-1ddb-4a05-bd71-1a06da8e5107.png)
 
 ### Main Feed
-![profile](https://user-images.githubusercontent.com/80999718/155441292-cf182a9a-acbc-4750-8e65-26740c2331a0.png)
+![profile](https://user-images.githubusercontent.com/80999718/155471285-a99f2d09-018a-413d-b1ce-34be9373b0f7.png)
 
 
 
