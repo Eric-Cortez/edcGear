@@ -1,7 +1,7 @@
 
 # EDC Gear 
 
-This is a clone of [Instagram](https://www.instagram.com/) project. 
+This is a clone of [Instagram](https://www.instagram.com/). 
 
 ## Table of Contents 
 
@@ -18,40 +18,40 @@ This is a clone of [Instagram](https://www.instagram.com/) project.
 ***
 # EDC Gear
 EDC Gear is an application where users can capture and share their favorite everyday carry gear.
-Such as, watches, wallets, pocket knives ect. 
+Such as, watches, wallets, pocket knives etc. 
 * Link to live  [EDCGear](https://edc-gear.herokuapp.com/) project. 
 
 
-### EDC Gear Login page
-![login]()
+### EDC Gear Login page 
+![login](https://user-images.githubusercontent.com/80999718/155440810-5e345679-ba7a-4767-a893-611e9848c6d5.png)
 
 ### EDC Gear Sign up page
-![signup]()
+![sign-up](https://user-images.githubusercontent.com/80999718/155440847-988ba0e5-2bdd-4c01-ad34-e375981472da.png)
 
-### EDC Gear Home page
-![home]()
+### EDC Gear
+![home](https://user-images.githubusercontent.com/80999718/155441041-efa61d88-89b9-4308-a880-5911487ebb68.png)
 
+### Post Detail Page / Post Comments (Modal)
+![post-modal](https://user-images.githubusercontent.com/80999718/155440966-b0b60ae6-9ffa-4e96-80be-2fe239d9a555.png)
 
-### Post Detail Page / Post Comments
-![postDetail]()
+### Create Post Form (Modal)
+![post-form](https://user-images.githubusercontent.com/80999718/155441200-03936408-1ddb-4a05-bd71-1a06da8e5107.png)
 
-### Post Form
-![postForm]()
-
-### Profile page
-![profile]()
+### User Profile page
+![profile](https://user-images.githubusercontent.com/80999718/155441292-cf182a9a-acbc-4750-8e65-26740c2331a0.png)
 
 
 
 ## Wiki Documentation: 
 ***
-* [Home](link)
-* [Backend Routes](link)
-* [Database Schema](link)
-* [MVP Feature List](link)
-* [Fronend Routes](link)
-* [User Stories](link)
-* [Redux State Shape](link)
+* [Home](https://github.com/Eric-Cortez/edcGear/wiki)
+* [Backend Routes](https://github.com/Eric-Cortez/edcGear/wiki/Backend-Routes)
+* [Database Schema](https://github.com/Eric-Cortez/edcGear/wiki/Database-Schema)
+* [MVP Feature List](https://github.com/Eric-Cortez/edcGear/wiki/Feature-List)
+* [Frontend Routes](https://github.com/Eric-Cortez/edcGear/wiki/Frontend-Routes)
+* [Redux State Shape](https://github.com/Eric-Cortez/edcGear/wiki/Redux-State-Shape)
+* [User Stories](https://github.com/Eric-Cortez/edcGear/wiki/User-Stories)
+* [Wireframes](https://github.com/Eric-Cortez/edcGear/wiki/Wireframes)
 
 ## Technologies 
 ***
