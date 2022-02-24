@@ -10,7 +10,7 @@ This is a clone of [Instagram](https://www.instagram.com/).
 3. [Technologies](#technologies)
 4. [Installation](#installation)
 5. [Development](#development)
-6. [Images](#images)
+6. [Challenges & Highlights](#challenges-highlights)
 
 
 
@@ -99,12 +99,6 @@ To install EDC Gear on your local machine please clone the project repository.
 
   •  `npm start` within the frontend directory(edc-gear-starter/react-app) under localhost:3000
 
-## Future Features:
-
-• Like that will allow users to like posts and comments. 
-
-• Followers whta will allow users to follow other users on EDC Gear. 
-
 
 ## Development 
 This project was developed by a single developer Eric Cortez. Below is a description of the top features of the project and a brief description of challenges faced during the two week development cycle. 
@@ -123,11 +117,17 @@ This project was developed by a single developer Eric Cortez. Below is a descrip
 
 
 
-#### Time elipsed calculator function for posts amd comments. 
-![code1]()
+#### Time custome elipsed calculator function for posts amd comments. 
+![code1](https://user-images.githubusercontent.com/80999718/155443033-bf620c04-5d7f-4d9b-8fe1-5032043dd5c3.png)
 
-#### : 
-![code2]()
+#### Layerd modals : 
+![code2](https://user-images.githubusercontent.com/80999718/155443072-990382e1-096b-4867-931f-2a29b1275bee.png)
 
-#### Local Storage 
-![code3]()
+
+
+## Future Features:
+
+• Like that will allow users to like posts and comments. 
+
+• Followers whta will allow users to follow other users on EDC Gear. 
+
