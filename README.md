@@ -141,3 +141,5 @@ This project was developed by a single developer (Eric Cortez). Below is a descr
 
 • Followers that will allow users to follow other users on EDC Gear. 
 
+• Emoji button that will allow users to add emojis to their posts.
+
