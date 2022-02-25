@@ -24,11 +24,25 @@ def validate_url(form, field):
     image_url = field.data
     if "http" not in image_url or "." not in image_url:
         raise ValidationError('Please enter a valid url.')
-
+    
+def email_length(form, field): 
+    new_email = field.data
+    if len(new_email) > 255:
+        raise ValidationError("Email must be less than 255 characters.")
+    
+def username_length(form, field):
+    new_username = field.data
+    if len(new_username) > 40: 
+        raise ValidationError("Username must be less than 40 characters.")
+    
+def image_url_length(form,field):
+    new_image_url = field.data
+    if (len(new_image_url) > 255):
+        raise ValidationError("Image url must be less than 255 characters")
 
 class SignUpForm(FlaskForm):
     username = StringField(
-        'username', validators=[DataRequired(), username_exists])
-    email = StringField('email', validators=[DataRequired(), user_exists])
+        'username', validators=[DataRequired(), username_exists, username_length])
+    email = StringField('email', validators=[DataRequired(), user_exists, email_length])
     password = StringField('password', validators=[DataRequired()])
-    image_url = StringField('image_url', validators=[DataRequired(), validate_url])
+    image_url = StringField('image_url', validators=[DataRequired(), validate_url, image_url_length])
