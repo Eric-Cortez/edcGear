@@ -55,6 +55,7 @@ const PostDetails = ({ postId }) => {
     useEffect(() => {
         const errors = [];
         if (!comment || comment === " " || comment === "  ") errors.push("please provide a comment")
+        if (comment?.length > 255) errors.push("Comment must be less than 255 characters")
         if (errors) setErrors(errors)
 
     }, [comment])
@@ -174,7 +175,7 @@ const PostDetails = ({ postId }) => {
 
                 <div id="comment-form-div">
                     <form onSubmit={onSubmit}>
-                        <div className='each-error-div'>
+                        <div className='each-error-div post-modal-error-div-new'>
                             {displayErrors && errors?.map((error, ind) => (
                                 <div key={ind}>{`* ${error}`}</div>
                             ))}

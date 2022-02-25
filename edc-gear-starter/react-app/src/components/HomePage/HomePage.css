@@ -50,6 +50,7 @@ i.fa-comment {
   padding: 0;
   margin: 8px;
   color: rgb(38,38,38);
+  cursor: pointer;
 }
 
 .user-image {

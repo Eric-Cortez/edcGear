@@ -291,3 +291,23 @@ button.edit-comment-submit-btn {
    font-size: 15px;
    cursor: pointer;
 }
+
+.each-error-div.edit-error-div {
+    height: 50px;
+}
+
+#optional-message {
+    margin: 0;
+}
+
+#each-post-error-div {
+    padding: 0;
+}
+
+#each-post-error-div {
+ font-size: 10px;
+}
+
+.each-error-div.post-modal-error-div-new {
+    height: 50px;
+}

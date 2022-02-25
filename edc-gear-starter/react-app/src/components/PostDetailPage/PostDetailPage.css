@@ -41,8 +41,9 @@
 }
 
 .error-post-pg {
-    border-bottom: 1px solid rgba(142, 142, 142, .2);
-   
+   border-bottom: 1px solid rgba(142, 142, 142, .2);
+   padding: 0 10px;
+   height: 40px;
 }
 
 #post-model-top-content-div.new-post-page {
@@ -57,6 +58,3 @@
     padding-top: 4px;
 }
 
-#comment-list-div.detail-pg-div {
-    height: 340px;
-}

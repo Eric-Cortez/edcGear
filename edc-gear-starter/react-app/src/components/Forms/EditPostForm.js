@@ -12,8 +12,8 @@ const EditPostForm = ({ modalPostId, setShowModal, setEditShowModal}) => {
     const currPost = posts.find(post => post?.id === +modalPostId)
 
     const [caption, setCaption] = useState(currPost?.body);
-    // const [errors, setErrors] = useState([]);
-    // const [displayErrors, setDisplayErrors] = useState(false);
+    const [errors, setErrors] = useState([]);
+    const [displayErrors, setDisplayErrors] = useState(false);
     const user = useSelector(state => state?.session?.user);
 
     useEffect(()=> {
@@ -21,29 +21,23 @@ const EditPostForm = ({ modalPostId, setShowModal, setEditShowModal}) => {
             await  dispatch(getAllPosts())
           
         })();
-        // if(caption) localStorage.setItem("caption", caption)
-
+       
     }, [dispatch, caption])
 
-    // useEffect(()=> {
-        // const localStorageCaption = localStorage.getItem("caption")
-        // setCaption(localStorageCaption)
-    // },[])
 
     const onSubmit = async (e) => {
         e.preventDefault();
         let post;
-        if (user) {
+        if (user && errors.length === 0) {
             if(modalPostId) {
                 post = await dispatch(updatePost({ postId: +modalPostId, body: caption }));
             } 
             if(postId) {
                 post = await dispatch(updatePost({ postId: +postId, body: caption }));
             }
+        }else {
+            setDisplayErrors(true);
         }
-        // else {
-        //     setDisplayErrors(true);
-        // }
         if (post) {
             await dispatch(getAllPosts())
             setShowModal(false)
@@ -58,14 +52,12 @@ const EditPostForm = ({ modalPostId, setShowModal, setEditShowModal}) => {
     };
  
 
-    // useEffect(() => {
-    //     const errors = [];
+    useEffect(() => {
+        const errors = [];
+        if (caption?.length > 255) errors.push("Caption must be less than 255 characters.")
+        if (errors) setErrors(errors)
 
-    //     // if (imageUrl?.length > 255 || imageUrl?.length <= 0) errors.push("Image Url is must be less 255 characters")
-    //     // if (!imageUrl?.includes("http" || "https")) errors.push("Please provide a valid image Url")
-    //     // if (errors) setErrors(errors)
-
-    // }, [caption])
+    }, [caption])
 
 
 
@@ -81,13 +73,13 @@ const EditPostForm = ({ modalPostId, setShowModal, setEditShowModal}) => {
                 <div id="create-new-post-title">
                     <h2 id="new-post-h2"> Edit post</h2>
                 </div>
-
-                <div className='each-error-div'>
-                    <h4>Edit or add and optional post caption...</h4>
-                    {/* {displayErrors && errors?.map((error, ind) => (
+                <div className='each-error-div edit-error-div'>
+                    <h4 id="optional-message">Edit or add and optional post caption...</h4>
+                    {displayErrors && errors?.map((error, ind) => (
                         <div key={ind}>{`* ${error}`}</div>
-                    ))} */}
+                    ))}
                 </div>
+
 
                 <div className='edit-image-div'>
                     {!currPost?.image_url ?

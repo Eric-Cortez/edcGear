@@ -33,6 +33,7 @@ const EditCommentForm = ({ commentId, setShowModal }) => {
     useEffect(() => {
         const errors = [];
         if (!newComment || newComment === " " || newComment === "  ") errors.push("please provide a comment")
+        if (newComment?.length > 255) errors.push("Comment must be less than 255 characters")
         if (errors) setErrors(errors)
 
     }, [newComment])
