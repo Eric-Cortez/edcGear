@@ -27,13 +27,16 @@
 
 .inline-comment {
     display: inline-block;
-    margin: 0 12px;
+    max-width: 290px;
+    padding: 0 14px 5px 14px;
+    padding-bottom: 0;
+    margin: 0 7px;
 
 }
 
-.inline-comment > * {
+/* .inline-comment > * {
     display: inline;
-}
+} */
 
 
 i.fa-heart {
@@ -50,6 +53,7 @@ i.fa-comment {
   padding: 0;
   margin: 8px;
   color: rgb(38,38,38);
+  cursor: pointer;
 }
 
 .user-image {
@@ -136,7 +140,10 @@ p.top-username-p {
     font-weight: 400;
     color: rgb(38,38,38);
     padding-bottom: 1.2px;
+    word-wrap: break-word;
+    display: inline;
 }
+
 
 .info-img-name {
     display: flex;
@@ -218,7 +225,7 @@ i.fa-ellipsis-h {
     line-height: 16px;    
     max-height: 100px; 
     max-width: 460px;  
-    -webkit-line-clamp: 3; 
+    -webkit-line-clamp: 2; 
     -webkit-box-orient: vertical;
     margin: 0;
 }

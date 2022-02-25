@@ -34,12 +34,12 @@ const AddPostForm = ({ setShowModal }) => {
 
     useEffect(() => {
         const errors = [];
-
+        if (caption?.length > 255) errors.push("Caption must be less than 255 characters") 
         if (imageUrl?.length > 255 || imageUrl?.length <= 0) errors.push("Image Url is must be less 255 characters")
         if (!imageUrl?.includes("http" || "https") || !imageUrl?.includes(".")) errors.push("Please provide a valid image Url")
         if (errors) setErrors(errors)
 
-    }, [imageUrl])
+    }, [imageUrl, caption])
 
     const updateImageUrl = (e) => {
         setImageUrl(e.target.value);
@@ -60,7 +60,7 @@ const AddPostForm = ({ setShowModal }) => {
 
                 <div className='each-error-div'>
                     {displayErrors && errors?.map((error, ind) => (
-                        <div key={ind}>{`* ${error}`}</div>
+                        <div id="each-post-error-div" key={ind}>{`* ${error}`}</div>
                     ))}
                 </div>
 
