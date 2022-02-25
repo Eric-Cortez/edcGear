@@ -8,7 +8,7 @@ def seed_posts():
     post2 = Post(
         user_id=1, image_url="https://www.thecoolector.com/wp-content/uploads/2021/06/06-Warrior-mini-2-800%C3%976001.jpg", body="Olight")
     post3 = Post(
-        user_id=4, image_url="http://cdn.shopify.com/s/files/1/1353/1287/products/Bigidesign-ClickEDC-Main-16x9web.jpg?v=1629820189", body="")
+        user_id=4, image_url="https://live.staticflickr.com/7920/46166446485_c089c7ca72_b.jpg", body="")
     post4 = Post(
         user_id=7, image_url="https://cdn.everydaycarry.com/uploads/21-01-13/15fff1955c68ed.jpg", body="Ben Banter 🔥🔥🔥🔥🔥 ")
     post5 = Post(
@@ -16,7 +16,7 @@ def seed_posts():
     post6 = Post(
         user_id=5, image_url="https://i.imgur.com/fORGmLF.png", body="Lil Native Exclusive 🥑🥑🥑🥑🥑🥑🥑🥑🥑 ")
     post7 = Post(
-        user_id=2, image_url="https://www.ubuy.com.ni/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvODExWUx0UlpMQ0wuX0FDX1NMMTUwMF8uanBn.jpg", body="")
+        user_id=2, image_url="https://cdn.hiconsumption.com/wp-content/uploads/2020/01/Best-Uncommon-EDC-Gear-FB.jpg", body="")
     post8 = Post(
         user_id=6, image_url="https://i.pinimg.com/736x/64/11/06/64110651b936e91fd4cf271c4c589976.jpg", body="daily carry")
     post9 = Post(
