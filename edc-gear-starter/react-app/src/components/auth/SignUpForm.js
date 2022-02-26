@@ -84,7 +84,9 @@ const SignUpForm = () => {
           <h6 className='sign-up-image-preview-title'>Profile Image Preview</h6>
           {!imageUrl || !imageUrl?.includes("http" || "https")?
             <img className="profile-image-preview" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='placeholder'/>
-            : <img className="profile-image-preview" src={imageUrl} alt="profile-preview"/> 
+            : <img className="profile-image-preview" src={imageUrl} alt="profile-preview"
+              onError={(e) => { e.target.src = 'https://sonuptraders.com/wp-content/uploads/2019/02/picture-not-available.jpg'; e.target.onError = null; }}
+            /> 
           }
         </div>
 
