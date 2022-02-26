@@ -52,7 +52,9 @@ function UserProfile() {
         <div id="profile-user-image-div">
           {!user?.image_url ?
             <img id="profile-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img'/> :
-            <img id="profile-image" src={user?.image_url} alt="user-profile"/>
+            <img id="profile-image" src={user?.image_url} alt="user-profile"
+              onError={(e) => { e.target.src = 'https://sonuptraders.com/wp-content/uploads/2019/02/picture-not-available.jpg'; e.target.onError = null; }}
+            />
           }
         </div>
 
@@ -82,7 +84,9 @@ function UserProfile() {
                 <Link key={`2${post?.id}`} to={`/posts/${post?.id}`}>
                   {!post?.image_url ?
                     <img id="each-user-post-img" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
-                  <img key={`3${post?.id}`} id="each-user-post-img" src={post?.image_url} alt="posts"/>
+                  <img key={`3${post?.id}`} id="each-user-post-img" src={post?.image_url} alt="posts"
+                      onError={(e) => { e.target.src = 'https://sonuptraders.com/wp-content/uploads/2019/02/picture-not-available.jpg'; e.target.onError = null; }}
+                  />
                   }
                 </Link>
               </div>

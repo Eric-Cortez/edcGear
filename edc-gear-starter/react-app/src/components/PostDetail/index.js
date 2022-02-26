@@ -83,7 +83,9 @@ const PostDetails = ({ postId }) => {
                 {!post?.image_url ?
                  <img id="post-modal-img" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
                 <Link to={`/posts/${post?.id}`}>
-                     <img id="post-modal-img" src={post?.image_url} alt="post" />
+                     <img id="post-modal-img" src={post?.image_url} alt="post" 
+                            onError={(e) => { e.target.src = 'https://sonuptraders.com/wp-content/uploads/2019/02/picture-not-available.jpg'; e.target.onError = null; }}
+                     />
                  </Link>
                 }
             </div>
@@ -94,7 +96,9 @@ const PostDetails = ({ postId }) => {
                     <Link id="post-link" className="comment-link" to={`/users/${post?.user_id}`}> 
                         {!allUsers?.find(user => user?.id === post?.user_id)?.image_url ?
                             <img className="post-modal-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
-                            <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile" />
+                            <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile" 
+                                onError={(e) => { e.target.src = 'https://sonuptraders.com/wp-content/uploads/2019/02/picture-not-available.jpg'; e.target.onError = null; }}
+                            />
                         }
                         <h5 id="profile-username-model">{allUsers?.find(user => user?.id === post?.user_id)?.username}</h5>
                     </Link>
@@ -107,7 +111,9 @@ const PostDetails = ({ postId }) => {
                             <div className='left-post-div'>
                                 {!allUsers?.find(user => user?.id === post?.user_id)?.image_url ?
                                  <img className="post-modal-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
-                                 <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile" />
+                                 <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile" 
+                                        onError={(e) => { e.target.src = 'https://sonuptraders.com/wp-content/uploads/2019/02/picture-not-available.jpg'; e.target.onError = null; }}
+                                 />
                                 }
                             </div>
                        </Link>
@@ -128,7 +134,9 @@ const PostDetails = ({ postId }) => {
                                 <div className='left-post-comment-div'>
                                     {!allUsers?.find(user => user?.id === comment?.user_id)?.image_url ?
                                         <img className="post-modal-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
-                                        <img className="post-modal-image" src={allUsers?.find(user => user?.id === comment?.user_id)?.image_url} alt="user-profile" />
+                                        <img className="post-modal-image" src={allUsers?.find(user => user?.id === comment?.user_id)?.image_url} alt="user-profile" 
+                                            onError={(e) => { e.target.src = 'https://sonuptraders.com/wp-content/uploads/2019/02/picture-not-available.jpg'; e.target.onError = null; }}
+                                        />
                                     }
                                 </div>
                             </Link>
