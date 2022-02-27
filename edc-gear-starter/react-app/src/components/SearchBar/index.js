@@ -13,7 +13,10 @@ function SearchBar() {
         
     }, [search])
     
-   
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
 
     let searchRes ; 
