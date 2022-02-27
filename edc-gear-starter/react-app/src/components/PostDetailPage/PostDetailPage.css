@@ -4,7 +4,7 @@
     justify-content: row;
     margin: 5% 5%;
     background-color: white;
-    max-width: 900px;
+    max-width: 800px;
     max-height: 550px;
 }
 
@@ -60,5 +60,5 @@
 
 
 #comment-list-div.detail-pg-div {
-    height: 63%;
+    height: 60%;
 }
