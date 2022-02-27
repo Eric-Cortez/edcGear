@@ -65,8 +65,10 @@ function UserProfile() {
            </div>
           {usersPosts && 
               <div id="post-count-div">
-                <p id="post-count-p">{usersPosts?.length}</p>
-                <p id="post-label">posts</p>
+              <p id="post-count-p">{usersPosts?.length}</p>
+              {usersPosts?.length === 1 ?
+                <p id="post-label">post</p> : <p id="post-label">posts</p>}
+               
             </div>}
         </div> 
       </div>
