@@ -5,7 +5,7 @@
     height: 100%;
     width: 100%;
     height: 517px;
-    width: 750px; 
+    width: 850px; 
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
 }
@@ -14,12 +14,12 @@
 #post-modal-img {
     height: 100%;
     width: 100%;
-    max-width: 550px;
+    max-width: 500px;
     max-height: 550px;
 }
 
 #post-comment-div {
-    width: 380px;
+    width: 350px;
 }
 
 .post-modal-image{
@@ -238,7 +238,7 @@ button.like-btn {
 #post-last-edited {
     font-size: 12px;
     color:#8e8e8e;
-    margin: 3px 0 5px 62px;
+    margin: 3px 0 5px 73px;
 }
 
 #post-modal-del{
@@ -315,4 +315,8 @@ i.fa-edit {
     background-color: none;
     border: none;
     cursor: pointer;
+}
+
+.each-comment-content-inner.inline-comment {
+ max-width: 255px;
 }
