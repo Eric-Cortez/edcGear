@@ -5,7 +5,7 @@
     height: 100%;
     width: 100%;
     height: 517px;
-    width: 750px; 
+    width: 850px; 
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
 }
@@ -56,9 +56,6 @@
     padding: 5px 14px;
     padding-bottom: 0;
     display: inline;
-    /* display: flex;
-    flex-direction: row;
-    justify-content: flex-start; */
 }
 
 .right-post-div > * {
@@ -180,7 +177,7 @@ textarea.post-detail-textarea {
 
 
  #each-comment-content-inner {
-    max-width: 200px;
+    max-width: 255px;
     padding: 0 14px 5px 14px;
     padding-bottom: 0;
     display: inline;  
@@ -232,6 +229,8 @@ button.like-btn {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    /* border: 2px solid red; */
+    padding-left: 20px;
 }
 
 .comment-timestamp-div > * {
@@ -241,7 +240,7 @@ button.like-btn {
 #post-last-edited {
     font-size: 12px;
     color:#8e8e8e;
-    margin: 3px 0 5px 62px;
+    margin: 3px 0 5px 73px;
 }
 
 #post-modal-del{
@@ -318,4 +317,8 @@ i.fa-edit {
     background-color: none;
     border: none;
     cursor: pointer;
+}
+
+.each-comment-content-inner.inline-comment {
+ max-width: 255px;
 }
