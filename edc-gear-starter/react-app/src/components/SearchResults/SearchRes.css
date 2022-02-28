@@ -40,6 +40,8 @@
 
 #post-res {
     color: black;
+    word-wrap: break-word;
+    max-width: 400px ;
 }
 
 #no-res-h5 {

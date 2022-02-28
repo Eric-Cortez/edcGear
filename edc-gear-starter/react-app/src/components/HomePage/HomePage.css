@@ -222,7 +222,7 @@ i.fa-ellipsis-h {
    overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    line-height: 16px;    
+    line-height: 20px;    
     max-height: 100px; 
     max-width: 460px;  
     -webkit-line-clamp: 2; 
@@ -231,7 +231,8 @@ i.fa-ellipsis-h {
 }
 
 .extra-content {
-    padding-top: 2px;
+    padding-top: 4px;
     margin: 0;
+    padding-bottom: 0;
 }
 

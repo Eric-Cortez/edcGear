@@ -16,7 +16,10 @@ function UserProfile() {
   const allUsers = useSelector(state => state?.user?.list)
   const profileUser = allUsers.find(user => user?.id === +userId)
 
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+  
   useEffect(() => {
 
     (async () => {
@@ -25,6 +28,8 @@ function UserProfile() {
     })();
 
   }, [dispatch]);
+
+
 
 
   useEffect(() => {
@@ -65,8 +70,10 @@ function UserProfile() {
            </div>
           {usersPosts && 
               <div id="post-count-div">
-                <p id="post-count-p">{usersPosts?.length}</p>
-                <p id="post-label">posts</p>
+              <p id="post-count-p">{usersPosts?.length}</p>
+              {usersPosts?.length === 1 ?
+                <p id="post-label">post</p> : <p id="post-label">posts</p>}
+               
             </div>}
         </div> 
       </div>

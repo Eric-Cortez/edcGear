@@ -28,6 +28,11 @@ const PostDetailPage = () => {
     const commentsForPost = comments.filter(comment => comment?.post_id === +postId)
     const allUsers = useSelector(state => state?.user?.list)
    
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+
     useEffect(() => {
         (async () => {
             await dispatch(getAllComments())

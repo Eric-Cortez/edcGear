@@ -23,7 +23,8 @@
 }
 
 #user-profile-info {
-    width: 100%;
+    max-width: 50%;
+    word-wrap: break-word;
     margin: 50px 20px;
     align-items: center;
 }
