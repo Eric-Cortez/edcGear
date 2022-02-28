@@ -14,12 +14,12 @@
 #post-modal-img {
     height: 100%;
     width: 100%;
-    max-width: 500px;
+    max-width: 550px;
     max-height: 550px;
 }
 
 #post-comment-div {
-    width: 350px;
+    width: 380px;
 }
 
 .post-modal-image{
@@ -56,9 +56,6 @@
     padding: 5px 14px;
     padding-bottom: 0;
     display: inline;
-    /* display: flex;
-    flex-direction: row;
-    justify-content: flex-start; */
 }
 
 .right-post-div > * {
@@ -180,7 +177,7 @@ textarea.post-detail-textarea {
 
 
  #each-comment-content-inner {
-    max-width: 200px;
+    max-width: 255px;
     padding: 0 14px 5px 14px;
     padding-bottom: 0;
     display: inline;  
