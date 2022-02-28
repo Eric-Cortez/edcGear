@@ -229,6 +229,8 @@ button.like-btn {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    /* border: 2px solid red; */
+    padding-left: 20px;
 }
 
 .comment-timestamp-div > * {
