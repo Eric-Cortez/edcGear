@@ -55,6 +55,7 @@ def post_like():
 @login_required
 def delete_like(likeId):
     like = Like.query.get(likeId)
-    db.session.delete(like)
-    db.session.commit()
-    return { "message": "Delete Successful" }
+    if like:
+        db.session.delete(like)
+        db.session.commit()
+        return { "message": "Delete Successful" }
