@@ -94,10 +94,12 @@ function HomePage() {
                             < button className="like-btn" onClick={deleteLike(post?.id)} > <i className="fa fa-heart unlike"></i></button > :
                             < button className="like-btn" onClick={handleLike(post?.id)} > <i className="fa fa-heart"></i></button >
                             } */}
+                            <div className='feed-likes-div'>
                             <LikePost postId={post?.id} post={post}/>
                             {likes &&
-                                <p>Likes {likes.filter(like => like?.post_id === post?.id).length}</p>
+                                <p className='main-like-count'>Likes {likes.filter(like => like?.post_id === post?.id).length}</p>
                             }
+                            </div>
 
                            
                             <PostDetailModal postId={post?.id} commentBubble="commentBubble" />

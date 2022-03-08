@@ -86,7 +86,9 @@ i.fa-comment {
 .post-nav-buttons {
     padding: 0 14px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    align-content: stretch;
+    justify-content: flex-start;
 }
 
 .thread-post-edit-delete-div,
@@ -239,3 +241,11 @@ i.fa-ellipsis-h {
 .fa.fa-heart.unlike {
     color: #ED4956 !important;
 }
+
+.main-like-count {
+    color: rgb(142,142,142);
+    font-size: 12px;
+    font-weight: 300;
+    margin: 0;
+}
+
