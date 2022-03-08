@@ -242,6 +242,10 @@ i.fa-ellipsis-h {
     color: #ED4956 !important;
 }
 
+.fa.fa-heart {
+    cursor: pointer;
+}
+
 .main-like-count {
     color: rgb(142,142,142);
     font-size: 12px;
