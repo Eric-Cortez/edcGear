@@ -18,8 +18,8 @@ function HomePage() {
     const users = useSelector(state => state?.user?.list)
     const likes = useSelector(state => state?.like?.list)
     const sessionUser = useSelector(state => state?.session?.user)
-    const [unlike, setUnlike] = useState(false)
-    const [likeBtn, setLikeBtn] = useState(true)
+    // const [unlike, setUnlike] = useState(false)
+    // const [likeBtn, setLikeBtn] = useState(true)
 
     useEffect(() => {
 
@@ -37,8 +37,8 @@ function HomePage() {
     const handleLike = (postId) => async (e) => {
         e.preventDefault();
         let newlike = await dispatch(postLike({ postId, userId: sessionUser?.id }));
-        if (unlike === false) setUnlike(true)
-        if (likeBtn === true) setLikeBtn(false)
+        // if (unlike === false) setUnlike(true)
+        // if (likeBtn === true) setLikeBtn(false)
     };
 
     const deleteLike = (postId) => async (e) => {
@@ -46,8 +46,8 @@ function HomePage() {
         const likeId = likes.find(like => like.post_id === postId && like?.user_id === sessionUser?.id)?.id
         let data = await dispatch(removeLike(likeId));
         await dispatch(getAllLike())
-        setUnlike(false)
-        setLikeBtn(true)
+        // setUnlike(false)
+        // setLikeBtn(true)
 
     };
 
@@ -81,13 +81,19 @@ function HomePage() {
                             />
                         }
                         <div className='post-nav-buttons'>
-                            {unlike && (
-                                < button className="like-btn" onClick={deleteLike(post?.id)} > <i className="fa fa-heart-broken"></i></button >
-                            )}
+                            {/* {unlike && (
+                                < button className="like-btn" onClick={deleteLike(post?.id)} > <i className="fa fa-heart red-unlike"></i></button >
+                            )} */}
 
-                            {likeBtn && (
+                            {/* {likeBtn && (
                                 < button className="like-btn" onClick={handleLike(post?.id)} > <i className="fa fa-heart"></i></button >
-                            )}
+                            )} */}
+                            {likes && likes.find(like => like.post_id === post?.id && like?.user_id === sessionUser?.id) ?
+
+                            < button className="like-btn" onClick={deleteLike(post?.id)} > <i className="fa fa-heart unlike"></i></button > :
+                            < button className="like-btn" onClick={handleLike(post?.id)} > <i className="fa fa-heart"></i></button >
+                            }
+
 
 
                             {likes &&

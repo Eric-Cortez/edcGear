@@ -236,3 +236,8 @@ i.fa-ellipsis-h {
     padding-bottom: 0;
 }
 
+.fa.fa-heart.unlike {
+    height: 20px;
+    width: 20px;
+    color: red !important;
+}

@@ -53,7 +53,6 @@ export const getAllLike = () => async dispatch => {
 
 export const postLike = (payload) => async dispatch => {
     const { postId, userId } = payload
-    console.log(payload, "thunk ---> ")
     const response = await fetch(`/api/likes/`, {
         method: 'POST',
         headers: {
@@ -77,7 +76,6 @@ export const removeLike = (likeId) => async dispatch => {
     const response = await fetch(`/api/likes/${likeId}/unlike`, {
         method: 'delete'
     })
-    console.log(response, "thunk ")
 
     if (response.ok) {
         const like = await response.json()
