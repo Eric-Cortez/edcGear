@@ -9,6 +9,7 @@ import EditDeleteModal from '../../context/EditDeletePostModal';
 import PostDetailModal from '../../context/PostDetailModal';
 import { calTimeFromMil } from "../utils/index.js"
 import { getAllLike, postLike, removeLike } from "../../store/like"
+import { LikePost } from '../LikesPost';
 
 
 function HomePage() {
@@ -17,7 +18,7 @@ function HomePage() {
     const comments = useSelector(state => state?.comment?.list);
     const users = useSelector(state => state?.user?.list)
     const likes = useSelector(state => state?.like?.list)
-    const sessionUser = useSelector(state => state?.session?.user)
+    // const sessionUser = useSelector(state => state?.session?.user)
     // const [unlike, setUnlike] = useState(false)
     // const [likeBtn, setLikeBtn] = useState(true)
 
@@ -34,22 +35,22 @@ function HomePage() {
     }, [dispatch])
 
 
-    const handleLike = (postId) => async (e) => {
-        e.preventDefault();
-        let newlike = await dispatch(postLike({ postId, userId: sessionUser?.id }));
-        // if (unlike === false) setUnlike(true)
-        // if (likeBtn === true) setLikeBtn(false)
-    };
+    // const handleLike = (postId) => async (e) => {
+    //     e.preventDefault();
+    //     let newlike = await dispatch(postLike({ postId, userId: sessionUser?.id }));
+    //     // if (unlike === false) setUnlike(true)
+    //     // if (likeBtn === true) setLikeBtn(false)
+    // };
 
-    const deleteLike = (postId) => async (e) => {
-        e.preventDefault();
-        const likeId = likes.find(like => like.post_id === postId && like?.user_id === sessionUser?.id)?.id
-        let data = await dispatch(removeLike(likeId));
-        await dispatch(getAllLike())
-        // setUnlike(false)
-        // setLikeBtn(true)
+    // const deleteLike = (postId) => async (e) => {
+    //     e.preventDefault();
+    //     const likeId = likes.find(like => like.post_id === postId && like?.user_id === sessionUser?.id)?.id
+    //     let data = await dispatch(removeLike(likeId));
+    //     await dispatch(getAllLike())
+    //     // setUnlike(false)
+    //     // setLikeBtn(true)
 
-    };
+    // };
 
     return (
         <div id="home-page">
@@ -88,17 +89,17 @@ function HomePage() {
                             {/* {likeBtn && (
                                 < button className="like-btn" onClick={handleLike(post?.id)} > <i className="fa fa-heart"></i></button >
                             )} */}
-                            {likes && likes.find(like => like.post_id === post?.id && like?.user_id === sessionUser?.id) ?
+                            {/* {likes && likes.find(like => like.post_id === post?.id && like?.user_id === sessionUser?.id) ?
 
                             < button className="like-btn" onClick={deleteLike(post?.id)} > <i className="fa fa-heart unlike"></i></button > :
                             < button className="like-btn" onClick={handleLike(post?.id)} > <i className="fa fa-heart"></i></button >
-                            }
-
-
-
+                            } */}
+                            <LikePost postId={post?.id} post={post}/>
                             {likes &&
                                 <p>Likes {likes.filter(like => like?.post_id === post?.id).length}</p>
                             }
+
+                           
                             <PostDetailModal postId={post?.id} commentBubble="commentBubble" />
 
 

@@ -7,6 +7,7 @@ import "./PostDetail.css"
 import { getAllUsers } from "../../store/user"
 import { calTimeFromMil } from "../utils/index.js"
 import { Link } from 'react-router-dom';
+import { LikePost } from '../LikesPost';
 
 const PostDetails = ({ postId }) => {
 
@@ -22,6 +23,7 @@ const PostDetails = ({ postId }) => {
     const comments = useSelector(state => state?.comment?.list)
     const commentsForPost = comments.filter(comment => comment?.post_id === +postId)
     const allUsers = useSelector(state => state?.user?.list)
+    const likes = useSelector(state => state?.like?.list)
   
 
 
@@ -154,6 +156,7 @@ const PostDetails = ({ postId }) => {
                                 <div>
 
                                     <div className='comment-timestamp-div'>
+                                       
                                         <p className="display-time-posted" key={post?.updated_at}>
                                             {calTimeFromMil(Date.parse(new Date().toString()) - Date.parse(comment?.updated_at), "short")}
                                         </p>
@@ -175,7 +178,13 @@ const PostDetails = ({ postId }) => {
 
                 <div id="model-likes-div">
                     <div className='post-timestamp-div'>
-                        <p className="display-time-posted" key={post?.updated_at}>
+                        <p className="display-time-posted new" key={post?.updated_at}>
+                            <div className='like-pg-div'>
+                                <LikePost postId={post?.id} post={post} />
+                                {likes &&
+                                <p className='like-pg-count'>Likes {likes.filter(like => like?.post_id === post?.id).length}</p>}
+                            </div>
+          
                             {calTimeFromMil(Date.parse(new Date().toString()) - Date.parse(post?.updated_at))}
                         </p>
                     </div>

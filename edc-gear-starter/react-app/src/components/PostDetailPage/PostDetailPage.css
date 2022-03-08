@@ -62,3 +62,28 @@
 #comment-list-div.detail-pg-div {
     height: 60%;
 }
+
+
+.post-timestamp-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.like-pg-div {
+    display: flex;
+    flex-direction: row;
+}
+
+.like-pg-div > * {
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+.like-pg-count {
+    align-self:  center;
+    padding: 0 10px;
+
+}
