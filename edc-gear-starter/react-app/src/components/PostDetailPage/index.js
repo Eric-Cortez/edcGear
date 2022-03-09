@@ -12,6 +12,9 @@ import { getAllUsers } from "../../store/user"
 import { Link } from 'react-router-dom';
 import PageNotFound from "../PageNotFound/index.js"
 import EditDeleteModal from '../../context/EditDeletePostModal';
+import { LikePost } from '../LikesPost';
+import { getAllLike } from '../../store/like';
+
 
 const PostDetailPage = () => {
 
@@ -27,7 +30,7 @@ const PostDetailPage = () => {
     const comments = useSelector(state => state?.comment?.list)
     const commentsForPost = comments.filter(comment => comment?.post_id === +postId)
     const allUsers = useSelector(state => state?.user?.list)
-   
+    const likes = useSelector(state => state?.like?.list)
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -38,6 +41,7 @@ const PostDetailPage = () => {
             await dispatch(getAllComments())
             await dispatch(getAllPosts())
             await dispatch(getAllUsers())
+            await dispatch(getAllLike())
 
         })();
     }, [dispatch])
@@ -214,9 +218,16 @@ const PostDetailPage = () => {
                     <div id="model-likes-div">
                         
                         <div className='post-timestamp-div'>
+                            <div className='like-pg-div'>
+                                <LikePost postId={post?.id} post={post} />
+                            {likes &&
+                                <p className='like-pg-count'>Likes {likes.filter(like => like?.post_id === post?.id).length}</p>}
+                            </div>
+                           
                             <p className="display-time-posted" key={post?.updated_at}>
                                 {calTimeFromMil(Date.parse(new Date().toString()) - Date.parse(post?.updated_at))}
                             </p>
+                
                         </div>
                     </div>
                    

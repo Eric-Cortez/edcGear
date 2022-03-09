@@ -106,8 +106,9 @@ textarea {
 }
 
 #model-likes-div {
-    height: 15px;
-    padding: 8px;
+    height:40px;
+    padding: 0 8px;
+    justify-content: center;
 }
 
 #inner-post-modal-comments {
@@ -322,3 +323,14 @@ i.fa-edit {
 .each-comment-content-inner.inline-comment {
  max-width: 255px;
 }
+
+
+.display-time-posted.new {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
