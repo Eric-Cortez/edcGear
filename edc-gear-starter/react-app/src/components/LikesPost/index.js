@@ -31,7 +31,7 @@ export const LikePost = ({ postId, post }) => {
 
     return (
         <>
-            {likes && likes.find(like => like.post_id === post?.id && like?.user_id === sessionUser?.id) ?
+            {likes && likes.find(like => like?.post_id === post?.id && like?.user_id === sessionUser?.id) ?
 
                 < button className="like-btn" onClick={deleteLike(post?.id)} > <i className="fa fa-heart unlike"></i></button > :
                 < button className="like-btn" onClick={handleLike(post?.id)} > <i className="fa fa-heart like"></i></button >
