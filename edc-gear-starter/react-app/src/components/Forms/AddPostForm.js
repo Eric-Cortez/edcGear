@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 import { getAllPosts, postPost } from '../../store/post';
 import "./GlobalForm.css"
+import UploadPicture from '../UploadPicture';
 
 
 const AddPostForm = ({ setShowModal }) => {
@@ -53,7 +54,8 @@ const AddPostForm = ({ setShowModal }) => {
     return (
         <div id="create-new-post-div">
 
-            <form onSubmit={onSubmit}>
+            <UploadPicture />
+            {/* <form onSubmit={onSubmit}>
                 <div id="create-new-post-title">
                     <h2 id="new-post-h2"> Create new post</h2>
                 </div>
@@ -75,9 +77,7 @@ const AddPostForm = ({ setShowModal }) => {
                 </div>
                 
                 <div id="post-caption-div" className='new-add-post'>
-                    {/* <label
-                        className='input-label'
-                    >Image Url</label> */}
+                   
                     <div id="left-post-div-new">
 
               
@@ -105,7 +105,7 @@ const AddPostForm = ({ setShowModal }) => {
                     </div>
                 </div>
 
-            </form>
+            </form> */}
         </div>
     )
 }
