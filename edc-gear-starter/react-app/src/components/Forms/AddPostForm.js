@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 import { getAllPosts, postPost } from '../../store/post';
 import "./GlobalForm.css"
-import UploadPicture from '../UploadPicture';
 
 
 const AddPostForm = ({ setShowModal }) => {
@@ -31,13 +30,13 @@ const AddPostForm = ({ setShowModal }) => {
             setShowModal(false)
         }
     };
-    console.log(imageUrl, "POST URL")
+ 
 
     useEffect(() => {
         const errors = [];
         if (caption?.length > 255) errors.push("Caption must be less than 255 characters") 
-        // if (imageUrl?.length > 255 || imageUrl?.length <= 0) errors.push("Image Url is must be less 255 characters")
-        // if (!imageUrl?.includes("http" || "https") || !imageUrl?.includes(".")) errors.push("Please provide a valid image Url")
+        if (imageUrl?.length > 255 || imageUrl?.length <= 0) errors.push("Image Url is must be less 255 characters")
+        if (!imageUrl?.includes("http" || "https") || !imageUrl?.includes(".")) errors.push("Please provide a valid image Url")
         if (errors) setErrors(errors)
 
     }, [imageUrl, caption])
@@ -54,7 +53,6 @@ const AddPostForm = ({ setShowModal }) => {
     return (
         <div id="create-new-post-div">
 
-            <UploadPicture setImageUrl={setImageUrl}/>
             <form onSubmit={onSubmit}>
                 <div id="create-new-post-title">
                     <h2 id="new-post-h2"> Create new post</h2>
@@ -63,7 +61,7 @@ const AddPostForm = ({ setShowModal }) => {
                 <div className='each-error-div'>
                     {displayErrors && errors?.map((error, ind) => (
                         <div id="each-post-error-div" key={ind}>{`* ${error}`}</div>
-                        ))}
+                    ))}
                 </div>
 
                 <div className='image-input-div new'>
@@ -77,11 +75,13 @@ const AddPostForm = ({ setShowModal }) => {
                 </div>
                 
                 <div id="post-caption-div" className='new-add-post'>
-                   
+                    {/* <label
+                        className='input-label'
+                    >Image Url</label> */}
                     <div id="left-post-div-new">
 
               
-                    {/* <input
+                    <input
                         className='image-url-input post-new'
                         placeholder='Image Url'
                         type='text'
@@ -89,7 +89,7 @@ const AddPostForm = ({ setShowModal }) => {
                         required
                         onChange={updateImageUrl}
                         value={imageUrl}
-                    ></input> */}
+                    ></input>
                         <textarea
                             placeholder='Add an optional caption...'
                             className='image-url-input post-new'
