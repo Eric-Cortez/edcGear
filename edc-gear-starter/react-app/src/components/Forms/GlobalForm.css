@@ -33,6 +33,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 0;
+    padding-bottom: 10px;
 }
 
 .image-input-div.new > * {
@@ -41,8 +44,8 @@
 
 
 .post-image-preview {
-   height: 95%;
-   width:  75%;
+   height: 90%;
+   width:  70%;
 }
 
 .text-area-caption {
@@ -248,7 +251,7 @@ button.edit-comment-submit-btn {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 100px;
+    height: 50px;
     padding: 0 20px;
     padding-left: 100px;
 }
@@ -282,6 +285,7 @@ button.edit-comment-submit-btn {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  height: 53px;
 }
 
 .post-submit-btn.org-btn{

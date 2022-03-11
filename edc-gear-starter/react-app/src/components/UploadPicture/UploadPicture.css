@@ -12,7 +12,7 @@ input[type=file]::file-selector-button {
     border-radius: 4px;
     color: whitesmoke;
     border: none;
-    height: 25px;
+    height: 30px;
     cursor: pointer;
     margin-top: 10px;
 }
@@ -24,14 +24,15 @@ input[type=file]::file-selector-button {
     background-color: none;
     background-color: #D27624;
     border-radius: 4px;
-    width: 50px;
+    width: 40px;
     align-self: center;
+     height: 30px;
 }
 
 .fa-cloud-upload {
     color: whitesmoke;
     border: none;
-    font-size: 30px;
+    font-size: 20px;
     cursor: pointer;
 }
 
@@ -44,4 +45,21 @@ input[type=file]::file-selector-button {
 .upload-btn {
     align-self: center;
     padding: 5px;
+}
+
+.post-upload-form {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-upload-form > * {
+    align-items: center;
+}
+
+.choose-photo-input{
+    padding-bottom: 10px;
 }

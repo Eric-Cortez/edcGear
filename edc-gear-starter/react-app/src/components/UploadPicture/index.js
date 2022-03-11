@@ -42,8 +42,9 @@ const UploadPicture = ({ setImageUrl }) => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="post-upload-form" onSubmit={handleSubmit}>
             <input
+                className="choose-photo-input"
                 type="file"
                 accept="image/*"
                 onChange={updateImage}
