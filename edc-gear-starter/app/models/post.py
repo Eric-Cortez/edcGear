@@ -19,8 +19,6 @@ class Post(db.Model):
         "Comment", back_populates="post", cascade="all,delete-orphan")
     like = db.relationship(
         "Like", back_populates="post", cascade="all,delete-orphan")
-    # photo_post = db.relationship(
-    #     "Image", back_populates="post_photo", cascade="all,delete-orphan")
     
 
     def to_dict(self):
