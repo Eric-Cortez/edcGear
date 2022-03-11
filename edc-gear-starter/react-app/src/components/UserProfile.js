@@ -16,6 +16,7 @@ function UserProfile() {
   const allUsers = useSelector(state => state?.user?.list)
   const profileUser = allUsers.find(user => user?.id === +userId)
 
+  // console.log()
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [])
