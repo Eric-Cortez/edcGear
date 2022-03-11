@@ -93,34 +93,58 @@
 }
 
 #signup-modal-div-main {
-  height: 520px;
-  width: 350px;
+  height: 350px;
+  width: 480px;
   background-color: #D3D2BC;
   border-radius: 4px;
 }
 
+.left-sign-up-div {
+  align-self: center;
+  width: 300px;
+  height: 250px;
+  margin: 15px;
+  border-right: 0.4px solid rgba(128,128,128,.2);
+}
 
+
+.right-sign-up-div {
+  height: 295px;
+  width: 245px;
+}
+.container-sign-up-div {
+  height: 295px;
+  width: 450px;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
 
 .sign-up-image-div,
 #sing-up-form-content {
-  margin: 0 40px;
   align-items: center;
+  max-width: 245px;
 }
 
 .sign-up-image-div {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* border: 2px solid rebeccapurple; */
+  
 }
 
 .each-error-div.sign-up-err {
   height: 70px;
   margin-top: 3px;
+  width: 181px;
+  margin-left: 30px;
+  padding: 0;
 }
 
-.each-error-div.sign-up-err {
- 
-   padding: 0;
+.each-error-div.sign-up-err > * {
+    display: flex;
+    justify-content: flex-start;
 }
 
 #err-sing-up {
@@ -140,6 +164,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 300px;
 }
 
 .sign-up-image-preview-title {
@@ -149,8 +174,8 @@
 }
 
 .profile-image-preview {
-  height: 100px;
-  width: 100px;
+  height: 140px;
+  width: 140px;
   border-radius: 50%;
   margin-bottom: 10px;
 }
@@ -163,7 +188,7 @@
    border: none;
    height: 25px;
    cursor: pointer;
-   margin-top: 5px;
+   margin-top: 10px;
 }
 
 #sign-up-submit-btn-div {

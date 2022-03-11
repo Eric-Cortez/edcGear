@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-// import { useHistory } from "react-router-dom";
 
+import "./UploadPicture.css"
 
 const UploadPicture = ({ setImageUrl }) => {
-    // const history = useHistory(); // so that we can redirect after the image upload is successful
     const [image, setImage] = useState(null);
     const [imageLoading, setImageLoading] = useState(false);
     const [preview, setPreview] = useState("")
@@ -30,7 +29,6 @@ const UploadPicture = ({ setImageUrl }) => {
             setImageLoading(false);
             setPreview(response.url)
             setImageUrl(response.url)
-            // history.push("/");
         }
         else {
             setImageLoading(false);
@@ -51,8 +49,10 @@ const UploadPicture = ({ setImageUrl }) => {
                     accept="image/*"
                     onChange={updateImage}
                 />
-            <button type="submit"><i class="fa fa-cloud-upload"></i></button>
-                {(imageLoading) && <p>Loading...</p>}
+              <div className="upload-btn-div">
+                <button className="upload-btn" type="submit"><i className="fa fa-cloud-upload"></i></button>
+                    {(imageLoading) && <p>Loading...</p>}
+              </div>
             </form>
         )
 }

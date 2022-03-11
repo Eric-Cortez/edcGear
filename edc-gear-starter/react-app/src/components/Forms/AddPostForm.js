@@ -54,7 +54,7 @@ const AddPostForm = ({ setShowModal }) => {
     return (
         <div id="create-new-post-div">
 
-                <UploadPicture setImageUrl={setImageUrl}/>
+            <UploadPicture setImageUrl={setImageUrl}/>
             <form onSubmit={onSubmit}>
                 <div id="create-new-post-title">
                     <h2 id="new-post-h2"> Create new post</h2>
