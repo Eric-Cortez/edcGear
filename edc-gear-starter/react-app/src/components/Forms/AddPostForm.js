@@ -35,15 +35,15 @@ const AddPostForm = ({ setShowModal }) => {
     useEffect(() => {
         const errors = [];
         if (caption?.length > 255) errors.push("Caption must be less than 255 characters") 
-        if (imageUrl?.length > 255 || imageUrl?.length <= 0) errors.push("Image Url is must be less 255 characters")
-        if (!imageUrl?.includes("http" || "https") || !imageUrl?.includes(".")) errors.push("Please provide a valid image Url")
+        // if (imageUrl?.length > 255 || imageUrl?.length <= 0) errors.push("Image Url is must be less 255 characters")
+        // if (!imageUrl?.includes("http" || "https") || !imageUrl?.includes(".")) errors.push("Please provide a valid image Url")
         if (errors) setErrors(errors)
 
     }, [imageUrl, caption])
 
-    const updateImageUrl = (e) => {
-        setImageUrl(e.target.value);
-    };
+    // const updateImageUrl = (e) => {
+    //     setImageUrl(e.target.value);
+    // };
 
     const updateCaption = (e) => {
         setCaption(e.target.value);
@@ -52,7 +52,7 @@ const AddPostForm = ({ setShowModal }) => {
 
     return (
         <div id="create-new-post-div">
-
+            {/* <UploadPicture setImageUrl={setImageUrl} /> */}
             <form onSubmit={onSubmit}>
                 <div id="create-new-post-title">
                     <h2 id="new-post-h2"> Create new post</h2>
@@ -81,7 +81,7 @@ const AddPostForm = ({ setShowModal }) => {
                     <div id="left-post-div-new">
 
               
-                    <input
+                    {/* <input
                         className='image-url-input post-new'
                         placeholder='Image Url'
                         type='text'
@@ -89,7 +89,7 @@ const AddPostForm = ({ setShowModal }) => {
                         required
                         onChange={updateImageUrl}
                         value={imageUrl}
-                    ></input>
+                    ></input> */}
                         <textarea
                             placeholder='Add an optional caption...'
                             className='image-url-input post-new'
