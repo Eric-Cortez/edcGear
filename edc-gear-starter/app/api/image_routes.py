@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from app.models import db, Image
+# from app.models import db, Image
 from flask_login import current_user, login_required
 from app.s3_helpers import (
     upload_file_to_s3, allowed_file, get_unique_filename)
@@ -8,7 +8,7 @@ image_routes = Blueprint("images", __name__)
 
 
 @image_routes.route("", methods=["POST"])
-@login_required
+# @login_required
 def upload_image():
     if "image" not in request.files:
         return {"errors": "image required"}, 400
@@ -28,9 +28,9 @@ def upload_image():
         return upload, 400
 
     url = upload["url"]
+    print(url, "-------->")
     # flask_login allows us to get the current user from the request
-    new_image = Image(user_id=current_user.id, url=url)
-    print("--------->", new_image)
-    db.session.add(new_image)
-    db.session.commit()
+    # new_image = Image(user_id=current_user.id, url=url)
+    # db.session.add(new_image)
+    # db.session.commit()
     return {"url": url}

@@ -2,16 +2,16 @@ import React, { useState } from "react";
 // import { useHistory } from "react-router-dom";
 
 
-const UploadPicture = () => {
+const UploadPicture = ({ setImageUrl }) => {
     // const history = useHistory(); // so that we can redirect after the image upload is successful
     const [image, setImage] = useState(null);
     const [imageLoading, setImageLoading] = useState(false);
+    const [preview, setPreview] = useState("")
   
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         e.stopPropagation()
-        console.log("hhhhhhhhhheeeeellllo")
         const formData = new FormData();
         formData.append("image", image);
 
@@ -23,10 +23,13 @@ const UploadPicture = () => {
             method: "POST",
             body: formData,
         });
-        console.log("RESSS", res)
+    
+       
         if (res.ok) {
-            await res.json();
+           const response =  await res.json();
             setImageLoading(false);
+            setPreview(response.url)
+            setImageUrl(response.url)
             // history.push("/");
         }
         else {
@@ -42,16 +45,16 @@ const UploadPicture = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type="file"
-                accept="image/*"
-                onChange={updateImage}
-            />
-            <button type="submit">Submit</button>
-            {(imageLoading) && <p>Loading...</p>}
-        </form>
-    )
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="file"
+                    accept="image/*"
+                    onChange={updateImage}
+                />
+            <button type="submit"><i class="fa fa-cloud-upload"></i></button>
+                {(imageLoading) && <p>Loading...</p>}
+            </form>
+        )
 }
 
 export default UploadPicture;

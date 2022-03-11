@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
+import UploadPicture from '../UploadPicture';
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
@@ -66,8 +67,8 @@ const SignUpForm = () => {
 
   return (
     <div id="signup-modal-div-main">
+      <UploadPicture setImageUrl={setImageUrl}/>
       <form onSubmit={onSignUp}>
-
         <div id="sign-up-title">
           <h2 id="sign-up-h2">Sign up</h2>
         </div>
@@ -77,9 +78,6 @@ const SignUpForm = () => {
             <div id="err-sing-up" key={ind}>{`* ${error}`}</div>
           ))}
         </div>
-
-
-
         <div className='sign-up-image-div'>
           <h6 className='sign-up-image-preview-title'>Profile Image Preview</h6>
           {!imageUrl || !imageUrl?.includes("http" || "https")?
@@ -151,7 +149,7 @@ const SignUpForm = () => {
             ></input>
           </div>
 
-          <div className='login-input-div sign-up-image-input'>
+          {/* <div className='login-input-div sign-up-image-input'>
             <label
               className="login-input-label"
             >imageUrl</label>
@@ -164,7 +162,7 @@ const SignUpForm = () => {
               onChange={updateImageUrl}
               value={imageUrl}
             ></input>
-          </div>
+          </div> */}
 
           <div id="sign-up-submit-btn-div">
             <button id="sing-up-submit-btn" type='submit'>Sign Up</button>
