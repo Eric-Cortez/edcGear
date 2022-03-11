@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 import { getAllPosts, postPost } from '../../store/post';
 import "./GlobalForm.css"
-
+import UploadPicture from '../UploadPicture';
 
 const AddPostForm = ({ setShowModal }) => {
     const history = useHistory()
@@ -52,7 +52,7 @@ const AddPostForm = ({ setShowModal }) => {
 
     return (
         <div id="create-new-post-div">
-            {/* <UploadPicture setImageUrl={setImageUrl} /> */}
+            <UploadPicture setImageUrl={setImageUrl} />
             <form onSubmit={onSubmit}>
                 <div id="create-new-post-title">
                     <h2 id="new-post-h2"> Create new post</h2>
