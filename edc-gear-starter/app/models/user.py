@@ -19,6 +19,8 @@ class User(db.Model, UserMixin):
         "Comment", back_populates="user")
     like = db.relationship(
         "Like", back_populates="user")
+    # photo_user = db.relationship(
+    #     "Image", back_populates="user_photo", cascade="all, delete-orphan")
 
 
     @property

@@ -1,0 +1,48 @@
+.choose-file-btn {
+    color: blue;
+}
+
+input[type=file] {
+    width: 200px;
+}
+
+input[type=file]::file-selector-button {
+    width: 100px;
+    background-color: #D27624;
+    border-radius: 4px;
+    color: whitesmoke;
+    border: none;
+    height: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* input[type=file]::file-selector-button:hover {
+} */
+.upload-btn {
+    border: none;
+    background-color: none;
+    background-color: #D27624;
+    border-radius: 4px;
+    width: 50px;
+    align-self: center;
+}
+
+.fa-cloud-upload {
+    color: whitesmoke;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.upload-btn-div {
+    /* border: 2px solid red; */
+    margin: 10px 20px;
+    display: flex;
+}
+
+.upload-btn {
+    align-self: center;
+    padding: 5px;
+}
+
