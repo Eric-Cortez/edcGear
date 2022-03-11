@@ -52,17 +52,11 @@ const AddPostForm = ({ setShowModal }) => {
 
     return (
         <div id="create-new-post-div">
+            <div id="create-new-post-title">
+                <h2 id="new-post-h2"> Create new post</h2>
+            </div>
             <UploadPicture setImageUrl={setImageUrl} />
             <form onSubmit={onSubmit}>
-                <div id="create-new-post-title">
-                    <h2 id="new-post-h2"> Create new post</h2>
-                </div>
-
-                <div className='each-error-div'>
-                    {displayErrors && errors?.map((error, ind) => (
-                        <div id="each-post-error-div" key={ind}>{`* ${error}`}</div>
-                    ))}
-                </div>
 
                 <div className='image-input-div new'>
                     <h6 className='sign-up-image-preview-title'>Profile Image Preview</h6>
@@ -73,14 +67,14 @@ const AddPostForm = ({ setShowModal }) => {
                         /> 
                     }
                 </div>
+                <div className='each-error-div'>
+                    {displayErrors && errors?.map((error, ind) => (
+                        <div id="each-post-error-div" key={ind}>{`* ${error}`}</div>
+                    ))}
+                </div>
                 
                 <div id="post-caption-div" className='new-add-post'>
-                    {/* <label
-                        className='input-label'
-                    >Image Url</label> */}
                     <div id="left-post-div-new">
-
-              
                     {/* <input
                         className='image-url-input post-new'
                         placeholder='Image Url'
