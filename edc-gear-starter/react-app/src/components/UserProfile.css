@@ -128,7 +128,7 @@
     width: fit-content;
 }
 
-@media only screen and (max-width: 1180px) {
+/* @media only screen and (max-width: 1180px) {
 
     #profile-images-div {
         grid-template-columns: repeat(3, 1fr);
@@ -186,4 +186,4 @@
         max-width: 100%;
     }
 
-}
+} */
