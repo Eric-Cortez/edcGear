@@ -92,9 +92,8 @@ To install EDC Gear on your local machine please clone the project repository.
 
 1 )  `git clone https://github.com/Eric-Cortez/edcGear.git`
 
-2 ) cd into edcGear and cd into edc-gear-starter
+2 ) cd into edcGear 
     `cd edcGear/`
-    `cd edc-gear-starter/`
 
 3 )  Install dependencies
      
@@ -110,7 +109,6 @@ To install EDC Gear on your local machine please clone the project repository.
    
    enter the pipenv shell, migrate your database, seed your database, and run the flask application 
      
-  •  `cd edc-gear-starter/` 
 
   •  `pipenv shell` to enter the pipenv shell 
 
@@ -118,15 +116,15 @@ To install EDC Gear on your local machine please clone the project repository.
 
   •  `flask seed all`
 
-  •  `flask run` while in the shell and within the backend (edc-gear-starter/) directory under localhost:5000
+  •  `flask run` while in the shell and within the backend (edcGear/) directory under localhost:5000
   
 7 ) To run the frontend react application...
 
-  •  Change into the frontend directory `cd edc-gear-starter/react-app/`
+  •  Change into the frontend directory `cd react-app/`
 
   •  Run `npm install` to install all dependencies from the package.json within the frontend directory 
   
-  •  `npm start` within the frontend directory(edc-gear-starter/react-app) under localhost:3000
+  •  `npm start` within the frontend directory(edcGear/react-app/) under localhost:3000
   
 ## Development 
 This project was developed by a single developer (Eric Cortez). Below is a description of the top features of the project and a brief description of challenges faced during the two week development cycle. 
