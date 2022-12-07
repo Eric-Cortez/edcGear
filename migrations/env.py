@@ -10,7 +10,7 @@ from sqlalchemy import pool
 from alembic import context
 import os
 
-environment = os.get("FLASK_ENV")
+environment = os.getenv("FLASK_ENV")
 SCHEMA = os.environ.get("SCHEMA")
 
 # this is the Alembic Config object, which provides

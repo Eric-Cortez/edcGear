@@ -48,8 +48,6 @@ app.register_blueprint(image_routes, url_prefix="/api/images")
 
 db.init_app(app)
 
-
-
 # drop all tables, create tables, and seed all             
 # def seed():
 #     """Seed all database functions"""
