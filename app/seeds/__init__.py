@@ -19,7 +19,7 @@ def seed():
         undo_likes()
         undo_comments()
         undo_posts()
-        undo_users
+        undo_users()
     #     # Before seeding, truncate all tables prefixed with schema name
     #     db.session.execute(
     #         f"TRUNCATE table {SCHEMA}.likes RESTART IDENTITY CASCADE;")
