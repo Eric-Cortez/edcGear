@@ -85,7 +85,7 @@ const EditPostForm = ({ modalPostId, setShowModal, setEditShowModal}) => {
                     {!currPost?.image_url ?
                     <img id="edit-post-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
                     <img id="edit-post-image" src={currPost?.image_url} alt={`${currPost?.body}`}
-                            onError={(e) => { e.target.src = 'https://sonuptraders.com/wp-content/uploads/2019/02/picture-not-available.jpg'; e.target.onError = null; }}
+                            onError={(e) => { e.target.src = 'https://filestore.community.support.microsoft.com/api/images/ext?url=https%3A%2F%2Fanswersstaticfilecdnv2.azureedge.net%2Fstatic%2Fimages%2Fimage-not-found.jpg'; e.target.onError = null; }}
                     />
                     }
                 </div>

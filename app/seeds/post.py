@@ -59,18 +59,18 @@ def seed_posts():
     post26 = Post(
         user_id=5, image_url="https://images.squarespace-cdn.com/content/v1/54ecbbfae4b0a4e937ba1b5c/1634223426196-IDH8IE3X1AZECHVNC54Y/23713EE7-C63D-4B22-AFCD-0721093957DA+-+Kin+Dioquino.jpeg?format=1000w", body="new carry 🔥🔥🔥🔥 ")
     post27 = Post(
-        user_id=5, image_url="https://www.watchgecko.com/wp/wp-content/uploads/2020/12/Luminox-Lifestyle-1200.jpg", body="#Serge#EDC")
+        user_id=5, image_url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROm8AbTkeV7m23GzWvZzwkjHC_gq78YJlkOA&usqp=CAU", body="#Serge#EDC")
     
     post28 = Post(
         user_id=7, image_url="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi1.wp.com%2Frainydaymagazine.com%2Fwp%2Fwp-content%2Fuploads%2F2017%2F10%2FEDC_UpdateAll.jpg&f=1&nofb=1", body="#favCarry")
     post29 = Post(
-        user_id=4, image_url="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.texantel.com.my%2Fimage%2Ftexantel%2Fimage%2Fcache%2Fdata%2Fall_product_images%2Fproduct-431%2Fi3tb-2-1080x810.jpg&f=1&nofb=1", body="#fridayCarry")
+        user_id=4, image_url="https://cdn11.bigcommerce.com/s-efe0x2hvzk/images/stencil/1280x1280/products/8788/40167/C81GP2.1__58874.1637682261.gif?c=2", body="#fridayCarry")
     post30 = Post(
-        user_id=6, image_url="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0095%2F0976%2F5198%2Fproducts%2FBDEDC_RUK-2_1024x.jpg%3Fv%3D1560828559&f=1&nofb=1", body="#BestEDC")
+        user_id=6, image_url="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/seiko-prospex-turtle-review-2-1657913132.jpg?crop=1.00xw:0.752xh;0,0.159xh&resize=1200:*", body="#BestEDC")
     post31 = Post(
         user_id=7, image_url="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.squarespace-cdn.com%2Fcontent%2Fv1%2F54ecbbfae4b0a4e937ba1b5c%2F1578427987601-3LDZEG8KF6J6OYHUJOEP%2FCasey%2BWilliams.jpg&f=1&nofb=1", body="#Friday")
     post32 = Post(
-        user_id=2, image_url="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0095%2F0976%2F5198%2Fcollections%2FSprybar_1200x1200.jpg%3Fv%3D1564599377&f=1&nofb=1", body="#EDCWeek")
+        user_id=2, image_url="https://cdn11.bigcommerce.com/s-efe0x2hvzk/images/stencil/1280x1280/products/23771/45155/BM430BK.4__07605.1658255350.jpg?c=2", body="#EDCWeek")
     post33 = Post(
         user_id=2, image_url="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2F40bennfnr8j31.jpg&f=1&nofb=1", body="#365")
     post34 = Post(

@@ -4,6 +4,10 @@ from flask_cors import CORS
 from flask_migrate import Migrate
 from flask_wtf.csrf import CSRFProtect, generate_csrf
 from flask_login import LoginManager
+from app.seeds.comment import seed_comments
+from app.seeds.post import seed_posts
+from app.seeds.users import seed_users
+from app.seeds.like import seed_likes
 
 from .models import db, User
 from .api.user_routes import user_routes
@@ -18,7 +22,7 @@ from .seeds import seed_commands
 
 from .config import Config
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../react-app/build', static_url_path='/')
 
 # Setup login manager
 login = LoginManager(app)
@@ -43,6 +47,27 @@ app.register_blueprint(like_routes, url_prefix="/api/likes")
 app.register_blueprint(image_routes, url_prefix="/api/images")
 
 db.init_app(app)
+
+
+
+# drop all tables, create tables, and seed all             
+# def seed():
+#     """Seed all database functions"""
+#     seed_users()
+#     seed_posts()
+#     seed_comments()
+#     seed_likes()
+
+
+# with app.app_context():
+#             db.drop_all()
+#             db.create_all()
+#             app.logger.info('Initialized the database!')
+#             # print("========>", db.session.query(User, username='Demo'))
+#             # if not db.session.query(User):
+#             seed()
+#             app.logger.info('seeded database!')
+
 Migrate(app, db)
 
 # Application Security
@@ -79,5 +104,6 @@ def inject_csrf_token(response):
 @app.route('/<path:path>')
 def react_root(path):
     if path == 'favicon.ico':
-        return app.send_static_file('favicon.ico')
+        return app.send_static_file('favicon.ico') 
+        # return app.send_from_directory('public', 'favicon.ico')
     return app.send_static_file('index.html')
