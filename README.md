@@ -18,7 +18,7 @@ This is a clone of [Instagram](https://www.instagram.com/).
 # EDC Gear
 EDC Gear is an application where users can capture and share their favorite everyday carry gear.
 Such as, watches, wallets, flashlights, pocket knives etc. 
-* Link to live  [EDCGear](https://edc-gear.herokuapp.com/) project. 
+* Link to live  [EDCGear](https://edc-gear.onrender.com/) project. 
 
 ## Key Functionalities 
 
