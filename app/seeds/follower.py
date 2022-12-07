@@ -1,5 +1,7 @@
 # from app.models import db, Follower
-
+# import os
+# environment = os.getenv("FLASK_ENV")
+# SCHEMA = os.environ.get("SCHEMA")
 
 # # Adds a demo user, you can add other users here if you want
 # def seed_followers():
@@ -20,4 +22,10 @@
 # # dependent entities
 # def undo_followers():
 #     db.session.execute('TRUNCATE followers RESTART IDENTITY CASCADE;')
+
+#     if environment == "production":
+#         db.session.execute(
+#             f"TRUNCATE table {SCHEMA}.followers RESTART IDENTITY CASCADE;")
+#     else:
+#         db.session.execute("DELETE FROM followers")
 #     db.session.commit()

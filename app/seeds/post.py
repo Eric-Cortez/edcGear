@@ -1,5 +1,7 @@
 from app.models import db, Post
-
+import os
+environment = os.getenv("FLASK_ENV")
+SCHEMA = os.environ.get("SCHEMA")
 
 # Adds a demo user, you can add other users here if you want
 def seed_posts():
@@ -147,4 +149,11 @@ def seed_posts():
 # dependent entities
 def undo_posts():
     db.session.execute('TRUNCATE posts RESTART IDENTITY CASCADE;')
+    
+    if environment == "production":
+        db.session.execute(
+            f"TRUNCATE table {SCHEMA}.posts RESTART IDENTITY CASCADE;")
+    else:
+        db.session.execute("DELETE FROM posts")
+    
     db.session.commit()
