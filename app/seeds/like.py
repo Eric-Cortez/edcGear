@@ -1,7 +1,4 @@
 from app.models import db, Like
-import os
-environment = os.getenv("FLASK_ENV")
-SCHEMA = os.environ.get("SCHEMA")
 
 # Adds a demo user, you can add other users here if you want
 def seed_likes():
@@ -66,11 +63,4 @@ def seed_likes():
 # dependent entities
 def undo_likes():
     db.session.execute('TRUNCATE likes RESTART IDENTITY CASCADE;')
-    
-    if environment == "production":
-        db.session.execute(
-            f"TRUNCATE table {SCHEMA}.likes RESTART IDENTITY CASCADE;")
-    else:
-        db.session.execute("DELETE FROM likes")
-        
     db.session.commit()

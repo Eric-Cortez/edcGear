@@ -1,7 +1,4 @@
 from app.models import db, User
-import os
-environment = os.getenv("FLASK_ENV")
-SCHEMA = os.environ.get("SCHEMA")
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
@@ -33,11 +30,4 @@ def seed_users():
 # dependent entities
 def undo_users():
     db.session.execute('TRUNCATE users RESTART IDENTITY CASCADE;')
-    
-    if environment == "production":
-        db.session.execute(
-            f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
-    else:
-        db.session.execute("DELETE FROM users")
-    
     db.session.commit()
