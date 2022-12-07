@@ -9,6 +9,10 @@ from alembic import op
 import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
 
+import os
+environment = os.getenv("FLASK_ENV")
+SCHEMA = os.environ.get("SCHEMA")
+
 # revision identifiers, used by Alembic.
 revision = '270f96afcf05'
 down_revision = '621817ab6bb0'
@@ -35,3 +39,6 @@ def downgrade():
     sa.PrimaryKeyConstraint('id', name='followers_pkey')
     )
     # ### end Alembic commands ###
+    if environment == "production":
+        op.execute(f"ALTER TABLE <table_name> SET SCHEMA {SCHEMA};")
+ 

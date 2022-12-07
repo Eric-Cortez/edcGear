@@ -63,7 +63,7 @@ const PostDetailPage = () => {
 
     useEffect(() => {
         const errors = [];
-        if(!comment || comment === " " || comment === "  ") errors.push("please provide a comment")
+        if (!comment || comment === " " || comment === "  ") errors.push("please provide a comment")
         if (comment?.length > 255) errors.push("Comment must be less than 255 characters")
         if (errors) setErrors(errors)
 
@@ -86,7 +86,7 @@ const PostDetailPage = () => {
 
     if (!post) {
         return (
-          <PageNotFound />
+            <PageNotFound />
         )
     }
 
@@ -95,17 +95,17 @@ const PostDetailPage = () => {
     return (
         <div id="single-post-div-main">
             <div id="post-page-content">
-                
+
                 <div>
                     {!post?.image_url ?
                         <img id="post-modal-img" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
                         <img id="post-modal-img" src={post?.image_url} alt="post"
-                            onError={(e) => { e.target.src = 'https://sonuptraders.com/wp-content/uploads/2019/02/picture-not-available.jpg'; e.target.onError = null; }}
+                            onError={(e) => { e.target.src = 'https://filestore.community.support.microsoft.com/api/images/ext?url=https%3A%2F%2Fanswersstaticfilecdnv2.azureedge.net%2Fstatic%2Fimages%2Fimage-not-found.jpg'; e.target.onError = null; }}
                         />
                     }
                 </div>
-               
-             
+
+
 
                 <div id="post-comment-div">
 
@@ -113,25 +113,25 @@ const PostDetailPage = () => {
                         <Link id="profile-link-username" className="post-link-pg" to={`/users/${allUsers?.find(user => user?.id === post?.user_id)?.id}`}>
                             {!allUsers?.find(user => user?.id === post?.user_id)?.image_url ?
                                 <img className="post-modal-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
-                                <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile" 
-                                    onError={(e) => { e.target.src = 'https://sonuptraders.com/wp-content/uploads/2019/02/picture-not-available.jpg'; e.target.onError = null; }}
+                                <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile"
+                                    onError={(e) => { e.target.src = 'https://filestore.community.support.microsoft.com/api/images/ext?url=https%3A%2F%2Fanswersstaticfilecdnv2.azureedge.net%2Fstatic%2Fimages%2Fimage-not-found.jpg'; e.target.onError = null; }}
                                 />
                             }
-                            
+
                             <h5 id="profile-username-model">{allUsers?.find(user => user?.id === post?.user_id)?.username}</h5>
                         </Link>
-                        <EditDeleteModal post={post}/>
+                        <EditDeleteModal post={post} />
                     </div>
 
 
                     <div id="comment-list-div" className='detail-pg-div'>
                         <div className='right-post-model-content'>
-                            <Link id="profile-link" className="comment-link" to={`/users/${allUsers?.find(user => user?.id === post?.user_id)?.id}`}> 
+                            <Link id="profile-link" className="comment-link" to={`/users/${allUsers?.find(user => user?.id === post?.user_id)?.id}`}>
                                 <div className='left-post-div'>
                                     {!allUsers?.find(user => user?.id === post?.user_id)?.image_url ?
                                         <img className="post-modal-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
-                                        <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile" 
-                                            onError={(e) => { e.target.src = 'https://sonuptraders.com/wp-content/uploads/2019/02/picture-not-available.jpg'; e.target.onError = null; }}
+                                        <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile"
+                                            onError={(e) => { e.target.src = 'https://filestore.community.support.microsoft.com/api/images/ext?url=https%3A%2F%2Fanswersstaticfilecdnv2.azureedge.net%2Fstatic%2Fimages%2Fimage-not-found.jpg'; e.target.onError = null; }}
                                         />
                                     }
 
@@ -146,24 +146,24 @@ const PostDetailPage = () => {
                             </div>
 
                         </div>
-                            <p id="post-last-edited">Edited · {calTimeFromMil(Date.parse(new Date().toString()) - Date.parse(post?.updated_at), "short")}</p> 
+                        <p id="post-last-edited">Edited · {calTimeFromMil(Date.parse(new Date().toString()) - Date.parse(post?.updated_at), "short")}</p>
 
                         {commentsForPost && commentsForPost.map(comment => (
                             <div key={`${comment.id} 1`} className='each-comment-div'>
-                                
+
                                 <Link id="profile-link" className="comment-link" to={`/users/${comment?.user_id}`}>
                                     <div className='left-post-comment-div'>
                                         {!allUsers?.find(user => user?.id === comment?.user_id)?.image_url ?
                                             <img className="post-modal-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
-                                            <img className="post-modal-image" src={allUsers?.find(user => user?.id === comment?.user_id)?.image_url} alt="user-profile" 
-                                                onError={(e) => { e.target.src = 'https://sonuptraders.com/wp-content/uploads/2019/02/picture-not-available.jpg'; e.target.onError = null; }}
+                                            <img className="post-modal-image" src={allUsers?.find(user => user?.id === comment?.user_id)?.image_url} alt="user-profile"
+                                                onError={(e) => { e.target.src = 'https://filestore.community.support.microsoft.com/api/images/ext?url=https%3A%2F%2Fanswersstaticfilecdnv2.azureedge.net%2Fstatic%2Fimages%2Fimage-not-found.jpg'; e.target.onError = null; }}
                                             />
                                         }
 
                                     </div>
                                 </Link>
 
-                              
+
                                 <div className='right-post-comment-div'>
                                     <div id="each-comment-content">
 
@@ -200,8 +200,8 @@ const PostDetailPage = () => {
 
 
 
-                    {/* <p>{post?.body}</p> */}
-                    {/* { commentsForPost && commentsForPost.map(comment => (
+                        {/* <p>{post?.body}</p> */}
+                        {/* { commentsForPost && commentsForPost.map(comment => (
                         <>
                             <p>{comment.body}</p>
                             <p>{comment.updated_at}</p>
@@ -216,23 +216,23 @@ const PostDetailPage = () => {
                     </div>
 
                     <div id="model-likes-div">
-                        
+
                         <div className='post-timestamp-div'>
                             <div className='like-pg-div'>
                                 <LikePost postId={post?.id} post={post} />
-                            {likes &&
-                                <p className='like-pg-count'>Likes {likes.filter(like => like?.post_id === post?.id).length}</p>}
+                                {likes &&
+                                    <p className='like-pg-count'>Likes {likes.filter(like => like?.post_id === post?.id).length}</p>}
                             </div>
-                           
+
                             <p className="display-time-posted" key={post?.updated_at}>
                                 {calTimeFromMil(Date.parse(new Date().toString()) - Date.parse(post?.updated_at))}
                             </p>
-                
+
                         </div>
                     </div>
-                   
 
-                    <div id="comment-pg-lower"> 
+
+                    <div id="comment-pg-lower">
                         <form onSubmit={onSubmit}>
                             <div className='each-error-div error-post-pg'>
                                 {displayErrors && errors?.map((error, ind) => (

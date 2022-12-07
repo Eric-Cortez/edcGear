@@ -40,7 +40,7 @@ function SearchResults() {
                 <div key={`1${post?.id}`} id="results-div">
                     <Link id="post-link" className="comment-link" to={`/posts/${post?.id}`}>
                         <img key={`2${post?.id}`} id="search-profile-img" src="https://pbs.twimg.com/profile_images/530428988326674432/9rLDicts_400x400.jpeg" alt="#" 
-                            onError={(e) => { e.target.src = 'https://sonuptraders.com/wp-content/uploads/2019/02/picture-not-available.jpg'; e.target.onError = null; }}
+                            onError={(e) => { e.target.src = 'https://filestore.community.support.microsoft.com/api/images/ext?url=https%3A%2F%2Fanswersstaticfilecdnv2.azureedge.net%2Fstatic%2Fimages%2Fimage-not-found.jpg'; e.target.onError = null; }}
                         />
                         <h5 id="post-res" key={`3${post?.id}`}> {post?.body}</h5>
                     </Link>
@@ -55,7 +55,7 @@ function SearchResults() {
                         {!user?.image_url ?
                             <img id="search-profile-img" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
                             <img id="search-profile-img" src={user?.image_url} alt="profile"
-                                onError={(e) => { e.target.src = 'https://sonuptraders.com/wp-content/uploads/2019/02/picture-not-available.jpg'; e.target.onError = null; }}
+                                onError={(e) => { e.target.src = 'https://filestore.community.support.microsoft.com/api/images/ext?url=https%3A%2F%2Fanswersstaticfilecdnv2.azureedge.net%2Fstatic%2Fimages%2Fimage-not-found.jpg'; e.target.onError = null; }}
                             />
                        }
                         <h4 key={`2${user?.id}`}>{user?.username}</h4>
@@ -68,7 +68,7 @@ function SearchResults() {
                     <div  key={`1${post?.id}`} id="results-div">
                         <Link id="post-link" className="comment-link" to={`/posts/${post?.id}`}> 
                             <img key={`2${post?.id}`} id="search-profile-img" src="https://pbs.twimg.com/profile_images/530428988326674432/9rLDicts_400x400.jpeg" alt="#" 
-                                onError={(e) => { e.target.src = 'https://sonuptraders.com/wp-content/uploads/2019/02/picture-not-available.jpg'; e.target.onError = null; }}
+                                onError={(e) => { e.target.src = 'https://filestore.community.support.microsoft.com/api/images/ext?url=https%3A%2F%2Fanswersstaticfilecdnv2.azureedge.net%2Fstatic%2Fimages%2Fimage-not-found.jpg'; e.target.onError = null; }}
                             />
                             <h5 id="post-res" key={`3${post?.id}`}> {post?.body}</h5>
                         </Link>

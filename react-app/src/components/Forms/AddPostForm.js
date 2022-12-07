@@ -30,11 +30,11 @@ const AddPostForm = ({ setShowModal }) => {
             setShowModal(false)
         }
     };
- 
+
 
     useEffect(() => {
         const errors = [];
-        if (caption?.length > 255) errors.push("Caption must be less than 255 characters") 
+        if (caption?.length > 255) errors.push("Caption must be less than 255 characters")
         // if (imageUrl?.length > 255 || imageUrl?.length <= 0) errors.push("Image Url is must be less 255 characters")
         // if (!imageUrl?.includes("http" || "https") || !imageUrl?.includes(".")) errors.push("Please provide a valid image Url")
         if (errors) setErrors(errors)
@@ -60,11 +60,11 @@ const AddPostForm = ({ setShowModal }) => {
 
                 <div className='image-input-div new'>
                     <h6 className='sign-up-image-preview-title'>Profile Image Preview</h6>
-                    {!imageUrl || !imageUrl?.includes("http" || "https")?
+                    {!imageUrl || !imageUrl?.includes("http" || "https") ?
                         <img className="post-image-preview" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='placeholder' />
-                        :<img className="post-image-preview" src={imageUrl} alt="post-preview"
-                            onError={(e) => { e.target.src = 'https://sonuptraders.com/wp-content/uploads/2019/02/picture-not-available.jpg'; e.target.onError = null; }}
-                        /> 
+                        : <img className="post-image-preview" src={imageUrl} alt="post-preview"
+                            onError={(e) => { e.target.src = 'https://filestore.community.support.microsoft.com/api/images/ext?url=https%3A%2F%2Fanswersstaticfilecdnv2.azureedge.net%2Fstatic%2Fimages%2Fimage-not-found.jpg'; e.target.onError = null; }}
+                        />
                     }
                 </div>
                 <div className='each-error-div'>
@@ -72,10 +72,10 @@ const AddPostForm = ({ setShowModal }) => {
                         <div id="each-post-error-div" key={ind}>{`* ${error}`}</div>
                     ))}
                 </div>
-                
+
                 <div id="post-caption-div" className='new-add-post'>
                     <div id="left-post-div-new">
-                    {/* <input
+                        {/* <input
                         className='image-url-input post-new'
                         placeholder='Image Url'
                         type='text'
