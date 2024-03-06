@@ -7,6 +7,7 @@ import SearchBar from '../SearchBar';
 import edcGear from '../../images/edcGear.png'
 import "./NavBar.css"
 import AddPostModal from '../../context/AddPostModal';
+import { brokenUrl } from '../../utils/broken_image_url';
 
 const NavBar = () => {
  
@@ -56,7 +57,7 @@ const NavBar = () => {
                 {!sessionUser?.image_url ?
               <img id="nav-user-img" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
               <img id="nav-user-img" src={sessionUser?.image_url} alt="profile"
-                      onError={(e) => { e.target.src = 'https://filestore.community.support.microsoft.com/api/images/ext?url=https%3A%2F%2Fanswersstaticfilecdnv2.azureedge.net%2Fstatic%2Fimages%2Fimage-not-found.jpg'; e.target.onError = null; }}
+                      onError={(e) => { e.target.src = brokenUrl; e.target.onError = null; }}
               />
                 }
               </Link>

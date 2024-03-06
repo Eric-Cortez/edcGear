@@ -10,6 +10,7 @@ import PostDetailModal from '../../context/PostDetailModal';
 import { calTimeFromMil } from "../utils/index.js"
 import { getAllLike, postLike, removeLike } from "../../store/like"
 import { LikePost } from '../LikesPost';
+import { brokenUrl } from '../../utils/broken_image_url.js'
 
 
 function HomePage() {
@@ -33,7 +34,6 @@ function HomePage() {
         })();
 
     }, [dispatch])
-
 
     // const handleLike = (postId) => async (e) => {
     //     e.preventDefault();
@@ -65,7 +65,7 @@ function HomePage() {
                                         {!users.find(user => user?.id === post?.user_id)?.image_url ?
                                             <img className="user-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
                                             <img className="user-image" src={users.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile"
-                                                onError={(e) => { e.target.src = 'https://filestore.community.support.microsoft.com/api/images/ext?url=https%3A%2F%2Fanswersstaticfilecdnv2.azureedge.net%2Fstatic%2Fimages%2Fimage-not-found.jpg'; e.target.onError = null; }}
+                                                onError={(e) => { e.target.src = brokenUrl; e.target.onError = null; }}
                                             />
                                         }
                                         <p className='top-username-p'>{users.find(user => user?.id === post?.user_id)?.username}</p>
@@ -78,7 +78,7 @@ function HomePage() {
                         {!post?.image_url ?
                             <img className="thread-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
                             <img className="thread-image" key={post?.image_url} src={post?.image_url} alt="posts on feed"
-                                onError={(e) => { e.target.src = 'https://filestore.community.support.microsoft.com/api/images/ext?url=https%3A%2F%2Fanswersstaticfilecdnv2.azureedge.net%2Fstatic%2Fimages%2Fimage-not-found.jpg'; e.target.onError = null; }}
+                                onError={(e) => { e.target.src = brokenUrl; e.target.onError = null; }}
                             />
                         }
                         <div className='post-nav-buttons'>
@@ -95,13 +95,13 @@ function HomePage() {
                             < button className="like-btn" onClick={handleLike(post?.id)} > <i className="fa fa-heart"></i></button >
                             } */}
                             <div className='feed-likes-div'>
-                            <LikePost postId={post?.id} post={post}/>
-                            {likes &&
-                                <p className='main-like-count'>Likes {likes.filter(like => like?.post_id === post?.id).length}</p>
-                            }
+                                <LikePost postId={post?.id} post={post} />
+                                {likes &&
+                                    <p className='main-like-count'>Likes {likes.filter(like => like?.post_id === post?.id).length}</p>
+                                }
                             </div>
 
-                           
+
                             <PostDetailModal postId={post?.id} commentBubble="commentBubble" />
 
 

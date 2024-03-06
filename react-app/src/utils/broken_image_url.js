@@ -1,0 +1,1 @@
+export const brokenUrl = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.veryicon.com%2Ficons%2Fbusiness%2Fnew-vision-2%2Fpicture-loading-failed-1.html&psig=AOvVaw2A7trPsV9XrgbbXxD1KHJT&ust=1709786036756000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCNDJ9Lzn3oQDFQAAAAAdAAAAABAT"

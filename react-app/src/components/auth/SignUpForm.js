@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 import UploadPicture from '../UploadPicture';
+import { brokenUrl } from "../../utils/broken_image_url"
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
@@ -74,7 +75,7 @@ const SignUpForm = () => {
             {!imageUrl || !imageUrl?.includes("http" || "https") ?
               <img className="profile-image-preview" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='placeholder' />
               : <img className="profile-image-preview" src={imageUrl} alt="profile-preview"
-                onError={(e) => { e.target.src = 'https://filestore.community.support.microsoft.com/api/images/ext?url=https%3A%2F%2Fanswersstaticfilecdnv2.azureedge.net%2Fstatic%2Fimages%2Fimage-not-found.jpg'; e.target.onError = null; }}
+                onError={(e) => { e.target.src = brokenUrl; e.target.onError = null; }}
               />
             }
           </div>
