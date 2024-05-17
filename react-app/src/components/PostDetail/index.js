@@ -8,6 +8,7 @@ import { getAllUsers } from "../../store/user"
 import { calTimeFromMil } from "../utils/index.js"
 import { Link } from 'react-router-dom';
 import { LikePost } from '../LikesPost';
+import { brokenUrl } from '../../utils/broken_image_url.js';
 
 const PostDetails = ({ postId }) => {
 
@@ -86,7 +87,7 @@ const PostDetails = ({ postId }) => {
                     <img id="post-modal-img" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
                     <Link to={`/posts/${post?.id}`}>
                         <img id="post-modal-img" src={post?.image_url} alt="post"
-                            onError={(e) => { e.target.src = 'https://filestore.community.support.microsoft.com/api/images/ext?url=https%3A%2F%2Fanswersstaticfilecdnv2.azureedge.net%2Fstatic%2Fimages%2Fimage-not-found.jpg'; e.target.onError = null; }}
+                            onError={(e) => { e.target.src = brokenUrl; e.target.onError = null; }}
                         />
                     </Link>
                 }
@@ -99,7 +100,7 @@ const PostDetails = ({ postId }) => {
                         {!allUsers?.find(user => user?.id === post?.user_id)?.image_url ?
                             <img className="post-modal-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
                             <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile"
-                                onError={(e) => { e.target.src = 'https://filestore.community.support.microsoft.com/api/images/ext?url=https%3A%2F%2Fanswersstaticfilecdnv2.azureedge.net%2Fstatic%2Fimages%2Fimage-not-found.jpg'; e.target.onError = null; }}
+                                onError={(e) => { e.target.src = brokenUrl; e.target.onError = null; }}
                             />
                         }
                         <h5 id="profile-username-model">{allUsers?.find(user => user?.id === post?.user_id)?.username}</h5>
@@ -114,7 +115,7 @@ const PostDetails = ({ postId }) => {
                                 {!allUsers?.find(user => user?.id === post?.user_id)?.image_url ?
                                     <img className="post-modal-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
                                     <img className="post-modal-image" src={allUsers?.find(user => user?.id === post?.user_id)?.image_url} alt="user-profile"
-                                        onError={(e) => { e.target.src = 'https://filestore.community.support.microsoft.com/api/images/ext?url=https%3A%2F%2Fanswersstaticfilecdnv2.azureedge.net%2Fstatic%2Fimages%2Fimage-not-found.jpg'; e.target.onError = null; }}
+                                        onError={(e) => { e.target.src = brokenUrl; e.target.onError = null; }}
                                     />
                                 }
                             </div>
@@ -137,7 +138,7 @@ const PostDetails = ({ postId }) => {
                                     {!allUsers?.find(user => user?.id === comment?.user_id)?.image_url ?
                                         <img className="post-modal-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='default-img' /> :
                                         <img className="post-modal-image" src={allUsers?.find(user => user?.id === comment?.user_id)?.image_url} alt="user-profile"
-                                            onError={(e) => { e.target.src = 'https://filestore.community.support.microsoft.com/api/images/ext?url=https%3A%2F%2Fanswersstaticfilecdnv2.azureedge.net%2Fstatic%2Fimages%2Fimage-not-found.jpg'; e.target.onError = null; }}
+                                            onError={(e) => { e.target.src = brokenUrl; e.target.onError = null; }}
                                         />
                                     }
                                 </div>

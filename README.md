@@ -125,6 +125,7 @@ To install EDC Gear on your local machine please clone the project repository.
   •  Run `npm install` to install all dependencies from the package.json within the frontend directory 
   
   •  `npm start` within the frontend directory(edcGear/react-app/) under localhost:3000
+  `npm use 16.13.1`
   
 ## Development 
 This project was developed by a single developer (Eric Cortez). Below is a description of the top features of the project and a brief description of challenges faced during the two week development cycle. 

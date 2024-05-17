@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { getAllPosts, postPost } from '../../store/post';
 import "./GlobalForm.css"
 import UploadPicture from '../UploadPicture';
+import { brokenUrl } from '../../utils/broken_image_url.js';
 
 const AddPostForm = ({ setShowModal }) => {
     const history = useHistory()
@@ -63,7 +64,7 @@ const AddPostForm = ({ setShowModal }) => {
                     {!imageUrl || !imageUrl?.includes("http" || "https") ?
                         <img className="post-image-preview" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.jennybeaumont.com%2Fwp-content%2Fuploads%2F2015%2F03%2Fplaceholder.gif&f=1&nofb=1" alt='placeholder' />
                         : <img className="post-image-preview" src={imageUrl} alt="post-preview"
-                            onError={(e) => { e.target.src = 'https://filestore.community.support.microsoft.com/api/images/ext?url=https%3A%2F%2Fanswersstaticfilecdnv2.azureedge.net%2Fstatic%2Fimages%2Fimage-not-found.jpg'; e.target.onError = null; }}
+                            onError={(e) => { e.target.src = brokenUrl; e.target.onError = null; }}
                         />
                     }
                 </div>
